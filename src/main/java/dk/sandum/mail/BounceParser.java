@@ -21,11 +21,8 @@ public class BounceParser {
         LOG.debug(msg.getMessageNumber() + ": \"" + msg.getSubject() + "\"");
 
         String rp[] = msg.getHeader("Return-Path");
-        if (rp != null && rp.length > 0 && !"<>".equals(rp[0])) {
-            LOG.info("RETURN PATH: '" + rp[0] + "'");
-            LOG.info("NOT A BOUNCE MESSAGE");
-            return null;
-        }
+        if (rp != null && rp.length > 0 && !"<>".equals(rp[0])) 
+            throw new BounceParserException("Return-Path '" + rp[0] + "'. Not a bounce.");
 
         MailDeliveryStatus res = new MailDeliveryStatus();
         res.setSubject(msg.getSubject());
@@ -134,12 +131,8 @@ public class BounceParser {
             Enumeration headers = msg.getAllHeaders();
             while (headers.hasMoreElements()) {
                 Header h = (Header) headers.nextElement();
-//                if (h.getName().startsWith("X-"))
                 res.addOrignalHeader(h.getName(), h.getValue());
-//                  out.println(prefix + "  " + h.getName() + "=" + h.getValue());
             }
-
-//              dumpOriginal(msg, prefix + "    ", out);
         }
         else {
             LOG.debug("ContentType: " + ct);
@@ -150,7 +143,8 @@ public class BounceParser {
             }
         }
     }
-    private static Pattern RECIPIENT_PATTERN = Pattern.compile("([^;]+;)?(.*[^.])[.]?", Pattern.MULTILINE | Pattern.DOTALL);
+    
+    private final static Pattern RECIPIENT_PATTERN = Pattern.compile("([^;]+;)?(.*[^.])[.]?", Pattern.MULTILINE | Pattern.DOTALL);
 
     private static InternetAddress parseRecipient(String value) throws AddressException, ParseException {
         Matcher m = RECIPIENT_PATTERN.matcher(value);
