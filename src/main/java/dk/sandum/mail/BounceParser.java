@@ -51,7 +51,7 @@ public class BounceParser {
             tryParsePart(p, res);
         }
         catch (IOException ex) {
-            LOG.warn(p.getDescription() + " failed", ex);
+            LOG.warn("failed to parse " + p.getContentType() + "-part / " + p.getDisposition() +", " + ex.getMessage());
         }
     }
 
