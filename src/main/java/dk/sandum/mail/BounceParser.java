@@ -51,7 +51,7 @@ public class BounceParser {
             tryParsePart(p, res);
         }
         catch (IOException ex) {
-            LOG.warn("failed to parse " + p.getContentType() + "-part / " + p.getDisposition() +", " + ex.getMessage());
+            LOG.warn("failed to parse MIME part ]" + p.getContentType() + "]: " + ex.getMessage());
         }
     }
 
@@ -91,7 +91,7 @@ public class BounceParser {
                     String value = e.getValue();
 
                     if ("Action".equals(name))
-                        res.setDeliveryAction(MailDeliveryAction.valueOf(value));
+                        res.setDeliveryAction(MailDeliveryAction.parse(value));
                     if ("Status".equals(name))
                         res.setDeliveryStatus(MailSystemStatusCode.parse(value));
                     if ("Original-Recipient".equals(name))
