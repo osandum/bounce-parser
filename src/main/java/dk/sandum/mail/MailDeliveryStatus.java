@@ -30,7 +30,7 @@ public class MailDeliveryStatus implements Serializable {
     private MailSystemStatusCode m_deliveryStatus;
     private InternetAddress m_finalRecipient;
     private InternetAddress m_originalRecipient;
-    private String m_reportingMTA;
+    private String m_reportingAgent;
 
     public String getSubjectLine() {
         return m_statusSubject;
@@ -88,12 +88,12 @@ public class MailDeliveryStatus implements Serializable {
         m_messageId = id;
     }
 
-    void setReportingMTA(String mta) {
-        m_reportingMTA = mta;
+    void setReportingAgent(String mta) {
+        m_reportingAgent = mta;
     }
 
-    public String getReportingMTA() {
-        return m_reportingMTA;
+    public String getReportingAgent() {
+        return m_reportingAgent;
     }
 
     public InternetAddress getFinalRecipient() {

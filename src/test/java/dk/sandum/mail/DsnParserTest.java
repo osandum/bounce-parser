@@ -18,8 +18,21 @@ public class DsnParserTest extends TestCase {
         super(testName);
     }
 
-    public void testParser() throws MessagingException, BounceParserException {
+    public void testDsnParser() throws MessagingException, BounceParserException {
         InputStream is = getClass().getResourceAsStream("/sample-dsn.eml");
+
+        Session s = Session.getDefaultInstance(new Properties());
+        MimeMessage dsn = new MimeMessage(s, is);        
+        assertNotNull(dsn);
+        
+        MailDeliveryStatus mds = BounceParser.parseMessage(dsn);
+        assertNotNull(mds);
+        
+        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
+    }
+
+    public void testMdnParser() throws MessagingException, BounceParserException {
+        InputStream is = getClass().getResourceAsStream("/dovecot-mdn-sample.eml");
 
         Session s = Session.getDefaultInstance(new Properties());
         MimeMessage dsn = new MimeMessage(s, is);        

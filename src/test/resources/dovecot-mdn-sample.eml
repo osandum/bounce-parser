@@ -1,0 +1,97 @@
+Return-Path: <>
+Received: from mail6.bemta3.messagelabs.com ([195.245.230.39])
+	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4)
+	for online-bounce@bruun-rasmussen.dk;
+	Sat, 10 May 2014 08:00:17 +0200
+Return-Path: <>
+Received: from [85.158.138.179:6116] by server-11.bemta-3.messagelabs.com id AB/C8-19438-170CD635; Sat, 10 May 2014 06:00:17 +0000
+X-Msg-Ref: server-7.tower-169.messagelabs.com!1399701617!3100170!1
+X-Originating-IP: [212.242.43.252]
+X-SpamReason: No, hits=0.0 required=7.0 tests=sa_preprocessor: 
+  QmFkIElQOiAyMTIuMjQyLjQzLjI1MiA9PiAzODU2Mg==\n,sa_preprocessor: 
+  QmFkIElQOiAyMTIuMjQyLjQzLjI1MiA9PiAzODU2Mg==\n
+X-StarScan-Received:
+X-StarScan-Version: 6.11.3; banners=-,-,-
+X-VirusChecked: Checked
+Received: (qmail 13642 invoked from network); 10 May 2014 06:00:17 -0000
+Received: from smtp2.cybercity.dk (HELO smtp2.cybercity.dk) (212.242.43.252)
+  by server-7.tower-169.messagelabs.com with SMTP; 10 May 2014 06:00:17 -0000
+Received: from uf4.cybercity.dk (uf4.cybercity.dk [212.242.42.51])
+	by smtp2.cybercity.dk (Postfix) with ESMTP id 0F0F66783B
+	for <online-bounce@bruun-rasmussen.dk>; Sat, 10 May 2014 08:00:17 +0200 (CEST)
+Received: by uf4.cybercity.dk (Postfix, from userid 2209862)
+	id 0C4943F43A; Sat, 10 May 2014 08:00:17 +0200 (CEST)
+Message-ID: <dovecot-1399701616-942937-0@uf4.cybercity.dk>
+Date: Sat, 10 May 2014 08:00:16 +0200
+From: Mail Delivery Subsystem <postmaster@mail.telenor.dk>
+To: <online-bounce@bruun-rasmussen.dk>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=disposition-notification;
+	boundary="34702/uf4.cybercity.dk"
+Subject: Rejected: =?iso-8859-1?Q?118_nye_emner_opfylder_Deres_s=F8gekriterier?=
+Auto-Submitted: auto-replied (rejected)
+Precedence: bulk
+
+This is a MIME-encapsulated message
+
+--34702/uf4.cybercity.dk
+Content-Type: text/plain; charset=utf-8
+Content-Disposition: inline
+Content-Transfer-Encoding: 8bit
+
+Your message to <tina.michael@vip.cybercity.dk> was automatically rejected:
+Quota exceeded (mailbox for user is full)
+--34702/uf4.cybercity.dk
+Content-Type: message/disposition-notification
+
+Reporting-UA: uf4.cybercity.dk; Dovecot Mail Delivery Agent
+Final-Recipient: rfc822; tina.michael@vip.cybercity.dk
+Original-Message-ID: <1140876397.137871399675921773.JavaMail.drift@bruun-rasmussen.dk>
+Disposition: automatic-action/MDN-sent-automatically; deleted
+
+--34702/uf4.cybercity.dk
+Content-Type: message/rfc822
+
+Return-Path: <online-bounce@bruun-rasmussen.dk>
+Delivered-To: tina.michael@vip.cybercity.dk
+Received: from cicero1.cybercity.dk (cicero1.cybercity.dk [212.242.40.4])
+	by uf4.cybercity.dk (Postfix) with ESMTP id E1B673F432
+	for <tina.michael@vip.cybercity.dk>; Sat, 10 May 2014 08:00:16 +0200 (CEST)
+X-Greylist: domain auto-whitelisted by SQLgrey-1.8.0
+Received: from mail.bruun-rasmussen.dk (mail.bruun-rasmussen.dk [77.234.168.9])
+	by cicero1.cybercity.dk (Postfix) with ESMTP id AA1FE1088B2
+	for <tina.michael@vip.cybercity.dk>; Sat, 10 May 2014 08:00:16 +0200 (CEST)
+X-Footer: YnJ1dW4tcmFzbXVzc2VuLmRr
+Received: from bifrost2.bruun-rasmussen.dk ([10.1.10.57])
+	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4);
+	Sat, 10 May 2014 07:59:01 +0200
+Received: from bifrost2.bruun-rasmussen.dk (localhost [127.0.0.1])
+	by bifrost2.bruun-rasmussen.dk (Postfix) with ESMTP id BD342125B2;
+	Sat, 10 May 2014 00:52:01 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=bruun-rasmussen.dk;
+	s=bifrost.prod; t=1399675921;
+	bh=vVh26hlei4F7xDsYALvNnK5IMWNNwUuSVVpPzuBezuI=;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:
+	 List-Unsubscribe;
+	b=msSTTUwjhsQS3Kuh6NijHj8KInqw6ZzNro/QxU3MvKfx7ov04C4+xwh506ZjyUwy1
+	 58AhjRxi7TiOvlgV4p3QgDARQAo4xeX1cdrTtVDRgTLhiJu+gTMFqgF14muNt4+S5I
+	 sord8hYUCgJn44d91+kI4mscOG1Z8Ms1IVzNDQIc=
+Date: Sat, 10 May 2014 00:52:01 +0200 (CEST)
+From: Bruun Rasmussen Online <online@bruun-rasmussen.dk>
+To: Tina Mathiasen <tina.michael@vip.cybercity.dk>
+Message-ID: <1140876397.137871399675921773.JavaMail.drift@bruun-rasmussen.dk>
+Subject: =?iso-8859-1?Q?118_nye_emner_opfylder_Deres_s=F8gekriterier?=
+MIME-Version: 1.0
+X-Agent-Search-For: 
+X-Mail-Generated: bifrost2; Sat May 10 00:52:01 CEST 2014
+Precedence: bulk
+List-Unsubscribe: <http://www.bruun-rasmussen.dk/delete-agent.do?onlineAgentId=45225619&utm_source=searchagent-unsubscribe&utm_medium=email>
+X-Agent-Id: 45225619
+X-Agent-Item-Category: Moderne malerier
+X-Customer-Number: 829509
+X-Language: da
+X-Mail-Dispatched: bifrost2; Sat May 10 00:52:01 CEST 2014
+
+
+
+--34702/uf4.cybercity.dk--

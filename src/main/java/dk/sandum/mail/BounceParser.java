@@ -99,10 +99,39 @@ public class BounceParser {
                     if ("final-recipient".equals(name))
                         res.setFinalRecipient(parseRecipient(value));
                     if ("reporting-mta".equals(name))
-                        res.setReportingMTA(value);
+                        res.setReportingAgent(value);
                 }
             } while (s.available() > 0);
             s.close();
+        }
+        else if (ct.startsWith("message/disposition-notification")) {
+            // Hmmmm, we got an http://tools.ietf.org/html/rfc3798 MDN:
+            InputStream s = new BufferedInputStream((InputStream) p.getContent());
+
+            do {
+                InternetHeaders dsnHeaders = new InternetHeaders(s);
+
+                Enumeration<Header> dsps = dsnHeaders.getAllHeaders();
+                while (dsps.hasMoreElements()) {
+                    Header e = dsps.nextElement();
+                    String name = e.getName().toLowerCase();
+                    String value = e.getValue();
+
+                    if ("disposition".equals(name)) {
+                        MailDisposition mdn = MailDisposition.parse(value);
+                        if (mdn.isAutomatedDeletion()) {
+                            res.setDeliveryAction(MailDeliveryAction.failed);
+                            res.setDeliveryStatus(MailSystemStatusCode.parse("4.0.0"));
+                        }
+                    }
+                    if ("original-recipient".equals(name))
+                        res.setOriginalRecipient(parseRecipient(value));
+                    if ("final-recipient".equals(name))
+                        res.setFinalRecipient(parseRecipient(value));
+                    if ("reporting-ua".equals(name))
+                        res.setReportingAgent(value);
+                }
+            } while (s.available() > 0);
         }
         else if (ct.startsWith("text/rfc822")) {
             InputStream s = new BufferedInputStream((InputStream) p.getContent());
