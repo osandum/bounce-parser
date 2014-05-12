@@ -56,7 +56,7 @@ public class BounceParser {
     }
 
     private static void tryParsePart(Part p, MailDeliveryStatus res) throws MessagingException, IOException {
-        String ct = p.getContentType();
+        String ct = p.getContentType().toLowerCase();
 
         if (ct.startsWith("multipart/")) {
             MimeMultipart c = (MimeMultipart) p.getContent();
@@ -87,18 +87,18 @@ public class BounceParser {
                 Enumeration<Header> dsps = dsnHeaders.getAllHeaders();
                 while (dsps.hasMoreElements()) {
                     Header e = dsps.nextElement();
-                    String name = e.getName();
+                    String name = e.getName().toLowerCase();
                     String value = e.getValue();
 
-                    if ("Action".equals(name))
+                    if ("action".equals(name))
                         res.setDeliveryAction(MailDeliveryAction.parse(value));
-                    if ("Status".equals(name))
+                    if ("status".equals(name))
                         res.setDeliveryStatus(MailSystemStatusCode.parse(value));
-                    if ("Original-Recipient".equals(name))
+                    if ("original-recipient".equals(name))
                         res.setOriginalRecipient(parseRecipient(value));
-                    if ("Final-Recipient".equals(name))
+                    if ("final-recipient".equals(name))
                         res.setFinalRecipient(parseRecipient(value));
-                    if ("Reporting-MTA".equals(name))
+                    if ("reporting-mta".equals(name))
                         res.setReportingMTA(value);
                 }
             } while (s.available() > 0);

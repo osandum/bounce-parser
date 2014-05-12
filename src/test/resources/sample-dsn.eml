@@ -1,0 +1,371 @@
+Return-Path: <>
+Received: from mail6.bemta3.messagelabs.com ([195.245.230.39])
+	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4)
+	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256 bits))
+	for online-bounce@bruun-rasmussen.dk;
+	Sat, 10 May 2014 22:57:56 +0200
+Return-Path: <>
+Received: from [85.158.138.179:45043] by server-2.bemta-3.messagelabs.com id 25/98-23530-4D29E635; Sat, 10 May 2014 20:57:56 +0000
+X-Msg-Ref: server-3.tower-169.messagelabs.com!1399755474!3191643!1
+X-Originating-IP: [195.54.99.213]
+X-SpamReason: No, hits=0.0 required=7.0 tests=sa_preprocessor: 
+  VHJ1c3RlZCBJUDogMTk1LjU0Ljk5LjIxMyA9PiAxMTczMDY=\n
+X-StarScan-Received:
+X-StarScan-Version: 6.11.3; banners=-,-,-
+X-VirusChecked: Checked
+Received: (qmail 13300 invoked from network); 10 May 2014 20:57:54 -0000
+Received: from smtprelay-b22.telenor.se (HELO smtprelay-b22.telenor.se) (195.54.99.213)
+  by server-3.tower-169.messagelabs.com with DHE-RSA-AES256-SHA encrypted SMTP; 10 May 2014 20:57:54 -0000
+Received: from ipb4.telenor.se (ipb4.telenor.se [195.54.127.167])
+	by smtprelay-b22.telenor.se (Postfix) with ESMTP id 3893A14002
+	for <online-bounce@bruun-rasmussen.dk>; Sat, 10 May 2014 22:57:54 +0200 (CEST)
+X-SENDER-IP: [195.54.127.12]
+X-LISTENER: [smtp.bredband.net]
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: AtIFAPORblPDNn8MmWdsb2JhbACDG4EThlalMQkGgmMBl09+Fg4BAQEBAQgLCwcUKIIyQxkBARM6AQEBCh4VD0kBiEUBCJxfrWyFNIVWhwGBGg4CAQECaoMVgRmSaoJgDJoxOzCBAQgX
+X-IPAS-Result: AtIFAPORblPDNn8MmWdsb2JhbACDG4EThlalMQkGgmMBl09+Fg4BAQEBAQgLCwcUKIIyQxkBARM6AQEBCh4VD0kBiEUBCJxfrWyFNIVWhwGBGg4CAQECaoMVgRmSaoJgDJoxOzCBAQgX
+X-IronPort-AV: E=Sophos;i="4.97,1025,1389740400"; 
+   d="scan'208,145,147,217";a="578495027"
+Received: from mm-proxy3.telenor.se ([195.54.127.12])
+  by ipb4.telenor.se with ESMTP; 10 May 2014 22:57:53 +0200
+Received: by mm-proxy3.telenor.se (8.5.103) id 52D6B7EF02FD8376 for online-bounce@bruun-rasmussen.dk; Sat, 10 May 2014 22:57:53 +0200
+From: Mail Delivery Service <postmaster@mm-proxy3.telenor.se>
+Subject: Delivery Status Notification
+To: online-bounce@bruun-rasmussen.dk
+Date: Sat, 10 May 2014 22:57:53 +0200
+Message-ID: <52D6B7EF02FD8375@mm-proxy3.telenor.se>
+X-CP-Transaction-ID: 52D6B7EF02FD8374
+X-CP-For: jannejar@algonet.se
+MIME-Version: 1.0
+Content-Type: Multipart/Report; report-type=delivery-status; boundary="========/52D6B7EF02FD8374/mm-proxy3.telenor.se"
+
+This multi-part MIME message contains a Delivery Status Notification.
+If you can see this text, your mail client may not be able to understand MIME
+formatted messages or DSNs (see RFC 2045 through 2049 for general MIME
+information and RFC 1891 through 1894 for DSN specific information).
+
+--========/52D6B7EF02FD8374/mm-proxy3.telenor.se
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: 8bit
+
+ - These recipients of your message have been processed by the mail server:
+jannejar@algonet.se; Failed; 5.2.2 (mailbox full)
+
+    Remote MTA mm-be6.telenor.se: SMTP diagnostic: 552 RCPT TO:<jannejar@algonet.se> Mailbox disk quota exceeded
+
+
+
+--========/52D6B7EF02FD8374/mm-proxy3.telenor.se
+Content-Type: Message/Delivery-Status
+
+Reporting-MTA: dns; mm-proxy3.telenor.se
+Received-from-MTA: dns; ipb5.telenor.se (195.54.127.168)
+Arrival-Date: Sat, 10 May 2014 22:57:53 +0200
+
+Final-Recipient: rfc822; jannejar@algonet.se
+Action: Failed
+Status: 5.2.2 (mailbox full)
+Remote-MTA: dns; mm-be6.telenor.se
+Diagnostic-Code: smtp; 552 RCPT TO:<jannejar@algonet.se> Mailbox disk quota exceeded
+
+--========/52D6B7EF02FD8374/mm-proxy3.telenor.se
+Content-Type: Message/RFC822
+
+Return-Path: <online-bounce@bruun-rasmussen.dk>
+Received: from ipb5.telenor.se (195.54.127.168) by mm-proxy3.telenor.se (8.5.103)
+        id 52D6B7EF02FD8374 for jannejar@algonet.se; Sat, 10 May 2014 22:57:53 +0200
+X-LISTENER: [mailgw.glocalnet.net]
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: Ai4FAL2RblNN6qgJ/2dsb2JhbABZgkJEAU6+bodbB3cWdIIyOgEBBxkBARY3AQEBCQEeBRAPBzASAYhFAQirCIRVAQWgBREGjFeGQpJumWWDODsw
+X-IPAS-Result: Ai4FAL2RblNN6qgJ/2dsb2JhbABZgkJEAU6+bodbB3cWdIIyOgEBBxkBARY3AQEBCQEeBRAPBzASAYhFAQirCIRVAQWgBREGjFeGQpJumWWDODsw
+X-IronPort-AV: E=Sophos;i="4.97,1025,1389740400"; 
+   d="scan'208,217,147,145";a="674911530"
+Received: from mail.bruun-rasmussen.dk ([77.234.168.9])
+  by ipb5.telenor.se with ESMTP; 10 May 2014 22:57:53 +0200
+X-Footer: YnJ1dW4tcmFzbXVzc2VuLmRr
+Received: from bifrost2.bruun-rasmussen.dk ([10.1.10.57])
+	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4);
+	Sat, 10 May 2014 22:57:40 +0200
+Received: from bifrost2.bruun-rasmussen.dk (localhost [127.0.0.1])
+	by bifrost2.bruun-rasmussen.dk (Postfix) with ESMTP id 5175010C05D;
+	Sat, 10 May 2014 22:57:40 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=bruun-rasmussen.dk;
+	s=bifrost.prod; t=1399755460;
+	bh=CAPIQW9yeavjBmjCBN9ynvTq7bhlfDPpD6X3QCD2qvo=;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type;
+	b=GmDyMsr9tysAPkpsS1yT3hkCQ8QCf1VlMuFy/DNnQ8vu+slF7YxBaJm3a2oXfJKWF
+	 mjf3vqXR71Jk1nqCVllZrXNmlRKhZjP6lKGcQCWUKtESJYHJvUCTeTHe5tvSyyasP5
+	 WE9LQnygn5K4+pJ5XIiWELTG8xZmoPMVoF4hUBMo=
+Date: Sat, 10 May 2014 22:57:40 +0200 (CEST)
+From: Bruun Rasmussen Online <online@bruun-rasmussen.dk>
+To: Janne Jarzelius <jannejar@algonet.se>
+Message-ID: <1720339393.202891399755460321.JavaMail.drift@bruun-rasmussen.dk>
+Subject: =?iso-8859-1?Q?=D6verbud_p=E5_katalognr_1420/192?=
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_20478_1684709565.1399755460200"
+X-Mail-Generated: bifrost2; Sat May 10 22:57:40 CEST 2014
+X-Customer-Number: 829739
+X-Auction-Number: 1420
+X-Language: sv
+X-Auction-Id: 100000697
+X-Mail-Dispatched: bifrost2; Sat May 10 22:57:40 CEST 2014
+
+------=_Part_20478_1684709565.1399755460200
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body><style media="screen" type="text/css"><!--
+BODY, TD, TH, P { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; line-height: 150%; }
+H1, H2, H3, H4 { margin: 10px 10px 6px 0px; color: #666666; line-height: 150%; }
+H1 { font-size: 18px; }
+H2 { font-size: 16px; }
+H3 { font-size: 14px; }
+H4 { font-size: 12px; }
+A:link, A:visited { color:#701123; }
+A:active { color:red; }
+A:hover, A.subfoot:hover, A.linknav:hover, A.sublinknav:hover { color:red; }
+.sheet { background-color: #FFFFFF; margin: 79px; padding: 79px; width: 550px; border: thin solid #666666; }
+.dimmed { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #999999; }
+.shout { font-weight:bold; color:red; }
+TD.box-title { border-bottom: thin solid; }
+TD.box-body { padding-top: 8px; padding-left: 8px; padding-bottom: 8px; }
+.article .imageBox { border-bottom: 1px solid #CCC; border-top: 1px solid #CCC; padding: 3px 0px 3px 0px; margin: 3px 0px 7px 7px; float: right; }
+.article A { text-decoration: none; }
+.article A:hover { text-decoration: underline; }
+.imageBox IMG { border: 0px; margin: 0px; padding: 0px; }
+.innerLayout { background-color: white; }
+TD.layout { padding: 8px; }
+TD.textBodyLeft { width:100%; padding: 0px 15px 0px 0px; }
+TD.textBodyRight, TD.textImage { width: 240px; }
+.textImage { padding: 5px 0px 5px 0px; border-top: 1px solid #666666; border-bottom: 1px solid #666666; }
+.textSummary { padding: 5px 5px 5px 5px; border-top: 1px solid #666666; border-bottom: 1px solid #666666; }
+.textImage P, .textImageText P { margin: 5px 0px 5px 0px; }
+    --></style><div style="border:1px solid #701123; background-color: white;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td background="cid:part.1.1399755460114@mail" bgcolor="#701123" height="70" width="100%"><img alt="[logo]" border="0" height="49" hspace="24" src="cid:part.2.1399755460114@mail" width="274"></td></tr><tr><td background="cid:part.3.1399755460114@mail" height="16"></td></tr></table><div style="padding: 0px 48px 16px 93px">
+    
+
+    <h2>Ni har blivit &ouml;verbjuden p&aring; katalognr 1420/192</h2>
+
+    <p>
+      Ni har bjudit p&aring; nedanst&aring;ende katalognummer, men Ni har blivit &ouml;verbjuden av en annan budgivare.
+    </p>
+
+    <table border="0" padding="0" spacing="8">
+      <tr>
+        <td valign="top">
+          <a href="http://www.bruun-rasmussen.dk/search.do?mode=detail&iid=300652202&utm_medium=email&utm_campaign=1420&utm_source=overbid-notify&utm_content=item-image"><img height="80" src="cid:part.4.1399755460114@mail" style="border: solid 1px #701123" width="80"></a>
+        </td>
+
+        <td>&nbsp;</td>
+
+        <td valign="top">
+          <p>
+            <a href="http://www.bruun-rasmussen.dk/your-bids.do?mode=detail&aid=100000697&iid=300652202&utm_medium=email&utm_campaign=1420&utm_source=overbid-notify&utm_content=item-link"><small><b>1420/192</b>:</small>&nbsp;Dansk Louis XVI kommode med buet front, senere beslag. K&oslash;benhavn, 18. &aring;rh.s slutning. H. 79. B. 73. D. 48.</a><br>Auktion 1420, Havnen<br>
+            Ert senaste bud: <strong>DKK 2&nbsp;500</strong>
+
+    (SEK 3&nbsp;000)<br>
+            H&ouml;gsta bud &auml;r nu: <strong>DKK 2&nbsp;600</strong>
+
+    (SEK 3&nbsp;100)
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    
+      <p>
+       Detta f&ouml;rem&aring;l s&auml;ljs p&aring; online-auktion m&aring;ndag den 12 maj 2014&nbsp;
+       med f&ouml;rv&auml;ntat klubbslag kl. 21:03:40.
+     </p>
+    
+
+    <p><small>Budmeddelanden skickas ut i enlighet med Era inst&auml;llningar under <a href="http://www.bruun-rasmussen.dk/ssl/edit-notifications.do?utm_medium=email&utm_campaign=1420&utm_source=overbid-notify&utm_content=notifications">E-post och SMS-meddelanden</a> p&aring; Er sida.</small></p>
+    <p>Med v&auml;nlig h&auml;lsning<br><strong>Bruun Rasmussen Konstauktioner</strong><br><a href="http://www.bruun-rasmussen.dk/index.do?utm_medium=email&utm_campaign=1420&utm_source=overbid-notify&utm_content=signature">www.bruun-rasmussen.dk</a></p>
+  </div></div></body></html>
+------=_Part_20478_1684709565.1399755460200
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-ID: <part.3.1399755460114@mail>
+
+R0lGODlhCQATAMQAANTY4vz9/fHy9fj5+uvt8dXZ4r/F077E097h6dTX4fz8/cvQ2/n6+9/i6ff4
++vP09+bo7vDy9cDF1Pf4+f39/t3g6OXn7crP2+rs8f39/fv8/Pr6+/T19/7+/nARI////yH5BAAA
+AAAALAAAAAAJABMAAAVa4CeOo2ee53FIksEax7XIVz0XQALseYFUFUQDWGlYIEiL8kjAYAhNJ0Yg
+iFitVY52q31MBgPHZBzebBhmM1rD1ijaiow8kAnQMxRKR9/pUz4dIoGCJIWGh4UhADs=
+------=_Part_20478_1684709565.1399755460200
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-ID: <part.2.1399755460114@mail>
+
+R0lGODlhEgExAOYAAEwMGMOiqH1FUP///6V4gevg4l4bKJlmZt3P0YdcZLWVm2sQIXY6RdDAw2MP
+H2sqN5t0fPXw8ebd341faK6Mk1sOHbmgpcOwtPj29otFUqN2fmweLdXDxqeFi3QpOJ1pc1oOHH9J
+U76kqJRZZJZocWodK4M8Ss60uPLu76d2gHkrOmMpNHM6St/Q09a9xbSNlIxKV4RJVMClqu/n6FMN
+GrKGj45dZ5ReaIRDUGUdKruVnJZ0emspNcSlq3w7SOLT1mseLHouPJlmZopIVHEfLuzh462Fjb2f
+pc62useztotZY5lmZplmZlIIGWQcKXNDTP8A/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5
+BAEHAFAALAAAAAASATEAAAf/gFCCg4SFhoeIiYqLjI2Oj5CRkpOUlZaXkQuam5ydnguYoaKjpKWm
+p6SeDqusqxWvrayeqLS1tre4tZ2sPkpGMhzBHAPEEcIcCkZKPrKcuc/Q0dK3ux4EHBHE2sQtwgXb
+4BwEKg7O0+fo6eqInBsf3wUnRiQxPq8VsQ739zExvy0DOHwot2mdwYMIUbWrEeHEBw+tPknc1GrD
+iB4FRphLyLGjR0acRgxIsWGVxEYSHaiowYFIwY8wY3bcRERHDYIbUYIq5CnICRMvZQodKm3ThghA
+cyqaGBRKJx0aNRGdSpWW0QEblLJTpaKkyaacesBoWrWs2UmaNhRIupPnxFUX/4NlG1BABjOwmoi0
+YHu2r1+QCxzoIEDQrSpWFUicIFGClQcjcxUUJrQJBofJfzNrrlwAs6BOQT7o4ABwWwclIEyuYoCC
+mAjPTgOLg625dlVNDgoQljqI4oceOmAEWQXiAQcNIogVUILTQQhtSnhTdvAhAhDptrNPDfxhgAfs
+uH1kbF6BQQQNr1gTI4GzQukk5QxpAjJAQ3zt+IXiPtHCsyYfERiBU2Ak0FUBbs8NgEIJFCnAzX2U
+ydYfdvlVmJAmJQwgWVufOXDCADE050Nr9m1SwTcgUtQBMZdx2JsDRgzgA4UW1qhOYEoMwJ6Lsg3A
+3CYloPgAJxU0QEwMJibhGv+E08VQH5OfMSXllLxRGeWUvXUSoZVXztIllXhxCeaYZJqTUowh8rhA
+gTIQ5MCKA8BHJIrfaZJDayjUech/cUIZW2D5NINboANGtBNFFDXzZaJfHaplloMG+hKjk1EqKKCK
+XmmooY4OiCmnn3JKaKOc/rnLMDOq6YCDH2hSQWs6NvcAMRsG5mAEDNAWWwUDTCjfECfMEMGwxEaA
+QIk3BFvssBIcgU8KHMyAQUD3BRZABDcMwYEE00ZQ7QI3YLtAEAG0EAEKMzxQWGARBMCkJgcou2yz
++EilSQoSDNsikUlEgMGw07Yw7gvmohDBC5UGJoHBr5U7lwZVOhDBhAt40O//v9lgIHBgN3BL7ADY
+kpvvssQ6AGy+KCBwICfh3kDRMCsbplINRDiQIzE5EDmMCPisUiAHENHYG68DHChfYEcQQwE+FSRN
+rT7DDLC0AzFIMAAGAqwiAIvVOjCMfQ6AQAwKXWvwZGBEX60uRdRyaGLU6FFtNQY42BsYBdpkTdG0
+M6S2Cg4p4JY2BjHjZva0l+mDADEldqjgKh5Mi4DfDgAe2AvE2NCzAylkENjWA0zOyg0DsAKBNhKs
+HJjZJS5AtNFHc+KAkn3iVkK/YDtg8QAh1OsiTxVkE3OEDpw+AAQ90wCrK0YOkFpgNBAjAXHENND1
+MBC4gifsq5/teujTpm5i/9tbFknM8w5EP8D0oLiKrvSqkz5AAzT4TiQK+A9wxIAVYLDw/ExrXvYO
+xSsU4MNsUvOb7DJWv0YFRmwALMcq9heY012AGBTsXute9ztILSAH2tgRDHQQgSQYoGc9CKGupoMq
+GlWQGMjTBw26JcHmoU9909NH9a53vHK8SkHccwDrCMKrBqxAcivjVYvk4wAbShCHzcGcACyQOYJ4
+QBsWUOD9ULCDq6nOAUl7QmusFxgBVquA+MCBNiCgxcAsbgAzEID9XFW9zd3ATWaDQAKUJsEh0rFo
+HZxOgXCmCRgMIUbLWUUJooaCnAXyRcNA0u9eGCcNEOAIM1gfD2pIjPpVQP8AVhuAy743Px4O8IcG
+PJQQvadEGtgAg64gH0+a2MlXgPJqo3SV/0AwQyDiBm/EwAAH5NiecwGgNfvqHwKOWcoywvCMQJyg
+NjCQBGIGhgeZJMYMpja++YGgAjHAHB6PRwMqDmACq/AjKWG3ldkRQ04mghN7HOAEFHVghR2KpAuL
+Jz25YICa6tJH8wwmvSwScYeq/JoPt6dKdSrxFcabQAXEtsRZDnQuCLCA/cA4gAeAAATGa50DeJCE
+aY1tg+eigfECmjQeKK+ZtOwhAUG2spFywKRwvCPaIBBKFgWUaBjzV+kMd7xXDAMDHj3dBolhNC/F
+BoTrKdSsiAER52hjSG7/c4brAOJIJhqPjcQx5x3NNwAa8GBaGFiB6ohGxnyeDZVBdGhAeua0CUSv
+otNpnlnRSoMBRW4GENCABiAwrVRSpAI26CkFgxeBjyLzo8Kc6Bg5KdPP8CoCqttpTxEmOB4cwaQY
+gAhb/da/cYKtAnNbgVIPCshPvGiQho1S2krkgOTMtUqf4OAk+SlT6PHtFTZELPy62YDMVgBm7vMl
+RVZLx2SmVpZ5PZ9w1/fFYRyDA82jgKf0sUdiuGJYr3jlAFZAxU3+kIzurCwdMauKCnQXA9ulQSiT
+8Io6uokiftRH+LooUuRqQgU9qAFu03tP3KatwAt4AKx+1L4FjOAEIzgo/3v3xFvk4UZ9MwAuU1dh
+PPrihm/Pe2Am3ZRJDIQYagOoW3PbU+JmMrF5PQOmh3UXp82FbW5thF4ov4tZfVgNAcLUHkzFy83A
+zIpisqvAS3ssO5BisL4RxM0QhqBBN531ar31mnfKASAdJGyqBXCk3aAaK9zAqZG7KJCAHABCvE4H
+gVOTGzHuqOXWcnQAnL1znJvWtsCIlwN2hGNz+nxNk7rZra2tAO0Q5jXCFYoHT+YAnfUxAViyy1uf
+0wYPcJONfUnsallzhdVyeYIQuaLSUnMAAV5Q1RtfTbTEEJ0rZpCCdHrPz9oQKZpWoaS1Nbi2xGCw
+vaxKVU7kAEUepoiTOv9DNQ35KTYIvBqxJJCEtdW5PaEcpRBLDLBtFgoH3MLYvzLoFAeQDzeQhi4k
+vWuibDuJ3LHRMuGESiz/6fTSbrKapzvdnn6BDGASwAFO6O0vjQncAdeStr9KWNNtAIwYgVsA6+y2
+yvpQJEfMIVpXcTNVBeBjBK1qENdkN8jeBsZJLcBHgX60p0jlQ3YOxBTMJXWYl9vNTJFyocxnLkG8
+jApUDrzUpUI1dELxHOhGR9TNh35FAbnHR4VSUspVkiITfSNPBo4a1HGTozXLYAAM6mCZtDr2tmDJ
+VNJxrWHIPpEtlX1MaHft2+eO25R044ADeA1FCtSCHJTDSQyGEchyNWD/9ShICT2TQX/0UYQ2Cc1G
+kC+KAwqEjxIAhBmr6I4Mwr6Ao7QACKsgwAA27x8CbUMBMSDACbLiAB9UPfKwTweGIhBhB5RABgWw
+STDSxAkf9IADNThBCoKm88lvgwNDcNNo8Bn75lslMEbwtANgAIOSsL3tsdOdBoxwF6NEIFXODz80
+cNOCsWB/UWRZe8wdUAMBPV788E+FJkywr0eFYiImoFj8S0H3/vv//1m1AL+BE7ZAEz+QFe+3f2iB
+G+QAc8nnJttlMpQCcxQRBIzSgJaiEhShAhgIKDznco1iGA82IKfACURQBAj4SAq4gCkQECAQAJfh
+ARFwBBqwLRWAA5lE/2eX0QISoAEvkAIncARKogEw6ACkMz0egDklAi14wwEvKHwnYDYn8AJIMAyr
+ECw++CSYk2FCBDRWI1gBxy0a8FmjtHYmgBSeooKO4AkwcAIukYArKAmuEgENkAT74x6po19HAAIc
+UFI3cFy8IgEP0DMVYDabwwFJ0zu8AjY1qDwNgIgStIivYDYg8BwhUgEvQDjBIwESAAI16GTf5AF8
+GAE0QAPGIDRGoQNiEXP+twptKGDpF4eW4D7/NIjBA2j6YAw0wAEQQAFIBWg8YDUzMFaGCDkzsIuN
+JTZx04goUIuRWB+T6DzFWIjOEzwzdAQQ4IRKFQwgYCQtgAJJsGmBxP8JllEEOhADoGdzTBEoPkAA
+P9ADKqAVsngJ7NIA3DKInHgP1MSHGgACnwVor8ADVrhKrMABL6ABeNOP0Ng0TogC9hhauPEkqwQC
+WxMDr4A5+IBZZ4UA2liNHoUNM5Ry7yc7PqAA2VAEHGAE89APLNmSLtkP26cAwxABPWACJDiPqSAx
+HCBfoYUDGCACqhdaXmMfqFU0J0AANZhDZlMOQ7B4YIRZEjADlhRwt8iT8WhujFg6XjMDBEAAM7gK
+3mKEc8U6GhCF2AACZxUAcAhzPhB9KAIOcBmXHAAVDoSTpqAJN3BwnbMKN6ABAqcJGRCPgVFrKpAC
+GkB8hQmYgjmYf6NbAbXGl3rpOQuQAoKZmIHhASlQa5ugbTggcB4gWI7pAThAZxkQcTpBKTCpkqqZ
+DKqpkkoQA61mf3YpfwBYm7YpJZDwCT8XC2o3myVYm3F3c7fpf5Xwdr55nKMQCAA7
+------=_Part_20478_1684709565.1399755460200
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-ID: <part.1.1399755460114@mail>
+
+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
+QK5vTUK//9k=
+------=_Part_20478_1684709565.1399755460200
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-ID: <part.4.1399755460114@mail>
+
+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
+IG64bb/df5q14dTdeJIVPuDiq4SlCVZmf//Z
+------=_Part_20478_1684709565.1399755460200--
+
+
+
+--========/52D6B7EF02FD8374/mm-proxy3.telenor.se--
+
