@@ -1,0 +1,115 @@
+Return-Path: <>
+Received: from mail6.bemta3.messagelabs.com ([195.245.230.39])
+	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4)
+	for online-bounce@bruun-rasmussen.dk;
+	Tue, 13 May 2014 00:03:26 +0200
+Return-Path: <>
+Received: from [195.245.230.51:10217] by server-4.bemta-3.messagelabs.com id 94/95-17399-C2541735; Mon, 12 May 2014 22:03:24 +0000
+X-Msg-Ref: server-6.tower-33.messagelabs.com!1399932203!3873546!1
+X-Originating-IP: [194.90.6.72]
+X-SpamReason: No, hits=0.0 required=7.0 tests=ML_IS_POSSIBLE_BOUNCE,
+  UNPARSEABLE_RELAY
+X-StarScan-Received:
+X-StarScan-Version: 6.11.3; banners=-,-,-
+X-VirusChecked: Checked
+Received: (qmail 21323 invoked from network); 12 May 2014 22:03:23 -0000
+Received: from mxin14.netvision.net.il (HELO mxin14.netvision.net.il) (194.90.6.72)
+  by server-6.tower-33.messagelabs.com with SMTP; 12 May 2014 22:03:23 -0000
+Received: from process-daemon.mxin14.netvision.net.il by
+ mxin14.netvision.net.il
+ (Oracle Communications Messaging Server 7u4-24.01(7.0.4.24.0) 64bit (built Nov
+ 17 2011)) id <0N5H00000EIXQU00@mxin14.netvision.net.il> for
+ online-bounce@bruun-rasmussen.dk; Tue, 13 May 2014 01:03:23 +0300 (IDT)
+Received: from mxin14.netvision.net.il
+ (Oracle Communications Messaging Server 7u4-24.01(7.0.4.24.0) 64bit (built Nov
+ 17 2011)) id <0N5H0003IELNQV00@mxin14.netvision.net.il>; Tue,
+ 13 May 2014 01:03:23 +0300 (IDT)
+Date: Tue, 13 May 2014 01:03:23 +0300 (IDT)
+From: Internet Mail Delivery <postmaster@mxin14.netvision.net.il>
+Subject: Delivery Notification: Delivery has failed
+To: online-bounce@bruun-rasmussen.dk
+Message-id: <0N5H0003KELNQV00@mxin14.netvision.net.il>
+MIME-version: 1.0
+Content-type: multipart/report; report-type=delivery-status;
+ boundary="Boundary_(ID_a4Cp6LHCr6o12YvkF7Gz9A)"
+
+
+--Boundary_(ID_a4Cp6LHCr6o12YvkF7Gz9A)
+Content-type: text/plain; charset=us-ascii
+Content-language: en-US
+
+This report relates to a message you sent with the following header fields:
+
+  Message-id: <1748395402.300511399932198141.JavaMail.drift@bruun-rasmussen.dk>
+  Date: Tue, 13 May 2014 00:03:16 +0200 (CEST)
+  From: Bruun Rasmussen Online <online@bruun-rasmussen.dk>
+  To: Sharhar Waserman <nr_dawn@netvision.net.il>
+  Subject: One new lot matches your search criteria
+
+Your message cannot be delivered to the following recipients:
+
+  Recipient address: @mss11s.netvision.net.il.lmtp:35065@lmtpcs-daemon
+  Original address: nr_dawn@netvision.net.il
+  Reason: LMTP transmission failure has occurred
+  Diagnostic code: lmtp;550 4.2.2 Delivery failed: Over quota
+  Remote system: dns;mss11s.netvision.net.il (TCP|194.90.6.72|47622|194.90.6.104|225)
+
+
+--Boundary_(ID_a4Cp6LHCr6o12YvkF7Gz9A)
+Content-type: message/delivery-status
+
+Reporting-MTA: dns;mxin14.netvision.net.il (lmtpcs-daemon)
+Arrival-date: Tue, 13 May 2014 01:03:23 +0300 (IDT)
+
+Original-recipient: rfc822;nr_dawn@netvision.net.il
+Final-recipient: rfc822;@mss11s.netvision.net.il.lmtp:35065@lmtpcs-daemon
+Action: failed
+Status: 4.2.2 (LMTP transmission failure has occurred)
+Remote-MTA: dns;mss11s.netvision.net.il (TCP|194.90.6.72|47622|194.90.6.104|225)
+Diagnostic-code: lmtp;550 4.2.2 Delivery failed: Over quota
+
+--Boundary_(ID_a4Cp6LHCr6o12YvkF7Gz9A)
+Content-type: text/rfc822-headers
+
+Return-path: <online-bounce@bruun-rasmussen.dk>
+Received: from lmtpcs-daemon.mxin14.netvision.net.il by mxin14.netvision.net.il
+ (Oracle Communications Messaging Server 7u4-24.01(7.0.4.24.0) 64bit (built Nov
+ 17 2011)) id <0N5H0003IELNQV00@mxin14.netvision.net.il>; Tue,
+ 13 May 2014 01:03:23 +0300 (IDT)
+Received: from mail.bruun-rasmussen.dk ([77.234.168.9])
+ by mxin14.netvision.net.il
+ (Oracle Communications Messaging Server 7u4-24.01(7.0.4.24.0) 64bit (built Nov
+ 17 2011)) with ESMTP id <0N5H00FTRELM24Q0@mxin14.netvision.net.il> for
+ nr_dawn@netvision.net.il; Tue, 13 May 2014 01:03:23 +0300 (IDT)
+Received: from bifrost2.bruun-rasmussen.dk ([10.1.10.57])
+	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4); Tue,
+ 13 May 2014 00:03:19 +0200
+Received: from bifrost2.bruun-rasmussen.dk (localhost [127.0.0.1])
+	by bifrost2.bruun-rasmussen.dk (Postfix) with ESMTP id 22DF210C07B; Tue,
+ 13 May 2014 00:03:18 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=bruun-rasmussen.dk;
+	s=bifrost.prod; t=1399932199;	bh=r7mE6yUJYOZT+otcRkRCurtB1drwgEt2jFdm+Cxi41M=;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type: List-Unsubscribe;
+	b=rHuQ/fLDIa2o9Go2qvf7neDqjYtz8ocj0Swi99z3nmia9VIGL14w/w2fPJ4mIuYT7
+ 6+gGRunqBODSgT8lHN+4yMxPeEjQXe39iKDXN67J1Afo4VVq7HUd9NOEyR9sz72g1O
+ 8TzwPZTJvYfW9S4dXh3rB/u15jl2gm9z4uEEIeSE=
+Date: Tue, 13 May 2014 00:03:16 +0200 (CEST)
+From: Bruun Rasmussen Online <online@bruun-rasmussen.dk>
+Subject: One new lot matches your search criteria
+To: Sharhar Waserman <nr_dawn@netvision.net.il>
+Message-id: <1748395402.300511399932198141.JavaMail.drift@bruun-rasmussen.dk>
+MIME-version: 1.0
+Precedence: bulk
+X-Footer: YnJ1dW4tcmFzbXVzc2VuLmRr
+X-Agent-Search-For:
+X-Mail-Generated: bifrost; Tue May 13 00:03:16 CEST 2014
+X-Agent-Id: 76289523
+X-Agent-Item-Category: Weapons
+X-Customer-Number: 820703
+X-Language: en
+X-Mail-Dispatched: bifrost2; Tue May 13 00:03:16 CEST 2014
+List-Unsubscribe:
+ <http://www.bruun-rasmussen.dk/delete-agent.do?onlineAgentId=76289523&utm_source=searchagent-unsubscribe&utm_medium=email>
+
+
+--Boundary_(ID_a4Cp6LHCr6o12YvkF7Gz9A)--

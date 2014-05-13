@@ -13,34 +13,33 @@ import junit.framework.TestCase;
  * @author osa
  */
 public class DsnParserTest extends TestCase {
-    
+
     public DsnParserTest(String testName) {
         super(testName);
     }
 
-    public void testDsnParser() throws MessagingException, BounceParserException {
-        InputStream is = getClass().getResourceAsStream("/sample-dsn.eml");
+    private MailDeliveryStatus parseEml(String eml) throws MessagingException, BounceParserException {
+        InputStream is = getClass().getResourceAsStream(eml);
 
         Session s = Session.getDefaultInstance(new Properties());
-        MimeMessage dsn = new MimeMessage(s, is);        
+        MimeMessage dsn = new MimeMessage(s, is);
         assertNotNull(dsn);
-        
+
         MailDeliveryStatus mds = BounceParser.parseMessage(dsn);
         assertNotNull(mds);
-        
-        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
+
+        return mds;
     }
 
-    public void testMdnParser() throws MessagingException, BounceParserException {
-        InputStream is = getClass().getResourceAsStream("/dovecot-mdn-sample.eml");
+    public void testSampleDsn() throws MessagingException, BounceParserException {
+        assertEquals(MailDeliveryAction.failed, parseEml("/sample-dsn.eml").getDeliveryAction());
+    }
 
-        Session s = Session.getDefaultInstance(new Properties());
-        MimeMessage dsn = new MimeMessage(s, is);        
-        assertNotNull(dsn);
-        
-        MailDeliveryStatus mds = BounceParser.parseMessage(dsn);
-        assertNotNull(mds);
-        
-        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
+    public void testLmtpResponse() throws MessagingException, BounceParserException {
+        assertEquals(MailDeliveryAction.failed, parseEml("/lmtp-sample.eml").getDeliveryAction());
+    }
+
+    public void testMdn() throws MessagingException, BounceParserException {
+        assertEquals(MailDeliveryAction.failed, parseEml("/dovecot-mdn-sample.eml").getDeliveryAction());
     }
 }

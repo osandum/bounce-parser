@@ -173,7 +173,7 @@ public class BounceParser {
         }
     }
     
-    private final static Pattern RECIPIENT_PATTERN = Pattern.compile("([^;]+;)?(.*[^.])[.]?", Pattern.MULTILINE | Pattern.DOTALL);
+    private final static Pattern RECIPIENT_PATTERN = Pattern.compile("([^;]+;)?(@[-.a-z0-9]*[^.]:)?(.*[^.])[.]?", Pattern.MULTILINE | Pattern.DOTALL);
 
     private static InternetAddress parseRecipient(String value) throws AddressException, ParseException {
         Matcher m = RECIPIENT_PATTERN.matcher(value);
@@ -181,7 +181,7 @@ public class BounceParser {
             System.err.println("### \"" + value + "\":\n### - recipient line doesn't match " + RECIPIENT_PATTERN);
             throw new ParseException(value);
         }
-        InternetAddress is[] = InternetAddress.parse(m.group(2));
+        InternetAddress is[] = InternetAddress.parse(m.group(3));
         if (is.length != 1)
             throw new ParseException(value);
         return is[0];
