@@ -21,7 +21,7 @@ public class BounceParser {
         LOG.debug(msg.getMessageNumber() + ": \"" + msg.getSubject() + "\"");
 
         String rp[] = msg.getHeader("Return-Path");
-        if (rp != null && rp.length > 0 && !"<>".equals(rp[0])) 
+        if (rp != null && rp.length > 0 && !"<>".equals(rp[0]))
             throw new BounceParserException("Return-Path '" + rp[0] + "'. Not a bounce.");
 
         MailDeliveryStatus res = new MailDeliveryStatus();
@@ -36,6 +36,7 @@ public class BounceParser {
         if (to != null && to.length > 0 && !"<>".equals(to[0]))
             res.setDeliveredTo(to[0]);
 
+        LOG.info("##  =========");
         parsePart(msg, res);
 
         if (res.getDeliveryAction() == null)
@@ -58,6 +59,15 @@ public class BounceParser {
     private static void tryParsePart(Part p, MailDeliveryStatus res) throws MessagingException, IOException {
         String ct = p.getContentType().toLowerCase();
 
+        if (LOG.isInfoEnabled()) {
+            LOG.info("##  ContentType: " + ct);
+            Enumeration headers = p.getAllHeaders();
+            while (headers.hasMoreElements()) {
+                Header h = (Header) headers.nextElement();
+                LOG.info("##  " + h.getName() + "=" + h.getValue());
+            }
+        }
+
         if (ct.startsWith("multipart/")) {
             MimeMultipart c = (MimeMultipart) p.getContent();
             for (int i = 0; i < c.getCount(); i++) {
@@ -67,6 +77,14 @@ public class BounceParser {
         }
         else if (ct.startsWith("text/plain")) {
             String plainText = p.getContent().toString();
+            
+            QmailFailure qf = QmailFailure.tryParse(plainText);
+            if (qf != null) {
+                res.setFinalRecipient(parseRecipient(qf.getRecipient()));
+                res.setReportingAgent(qf.getReportingHost());
+                res.setDeliveryAction(MailDeliveryAction.failed);
+                res.setDeliveryStatus(MailSystemStatusCode.parse("4.0.0"));
+            }
             // Analyze plainText - it will often contain a copy of our own mail
             // including all headers sent
             //        out.println(prefix + "(" + plainText.length() + " characters of plain text):");
@@ -172,7 +190,7 @@ public class BounceParser {
             }
         }
     }
-    
+
     private final static Pattern RECIPIENT_PATTERN = Pattern.compile("([^;]+;)?(@[-.a-z0-9]*[^.]:)?(.*[^.])[.]?", Pattern.MULTILINE | Pattern.DOTALL);
 
     private static InternetAddress parseRecipient(String value) throws AddressException, ParseException {

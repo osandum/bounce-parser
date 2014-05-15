@@ -39,6 +39,10 @@ public class DsnParserTest extends TestCase {
         assertEquals(MailDeliveryAction.failed, parseEml("/lmtp-sample.eml").getDeliveryAction());
     }
 
+    public void testQmailResponse() throws MessagingException, BounceParserException {
+        assertEquals(MailDeliveryAction.failed, parseEml("/qmail-failure-sample.eml").getDeliveryAction());
+    }
+
     public void testMdn() throws MessagingException, BounceParserException {
         assertEquals(MailDeliveryAction.failed, parseEml("/dovecot-mdn-sample.eml").getDeliveryAction());
     }
