@@ -36,7 +36,6 @@ public class BounceParser {
         if (to != null && to.length > 0 && !"<>".equals(to[0]))
             res.setDeliveredTo(to[0]);
 
-        LOG.info("##  =========");
         parsePart(msg, res);
 
         if (res.getDeliveryAction() == null)
@@ -59,12 +58,12 @@ public class BounceParser {
     private static void tryParsePart(Part p, MailDeliveryStatus res) throws MessagingException, IOException {
         String ct = p.getContentType().toLowerCase();
 
-        if (LOG.isInfoEnabled()) {
-            LOG.info("##  ContentType: " + ct);
+        if (LOG.isDebugEnabled()) {
+            LOG.debug("##  ContentType: " + ct);
             Enumeration headers = p.getAllHeaders();
             while (headers.hasMoreElements()) {
                 Header h = (Header) headers.nextElement();
-                LOG.info("##  " + h.getName() + "=" + h.getValue());
+                LOG.debug("##  " + h.getName() + "=" + h.getValue());
             }
         }
 
