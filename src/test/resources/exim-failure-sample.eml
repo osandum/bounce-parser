@@ -1,0 +1,333 @@
+Return-Path: <>
+Received: from mail6.bemta14.messagelabs.com ([193.109.254.103])
+	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4)
+	for online-bounce@bruun-rasmussen.dk;
+	Sat, 10 May 2014 07:59:32 +0200
+Return-Path: <>
+Received: from [193.109.255.99:21331] by server-5.bemta-14.messagelabs.com id 92/18-26413-440CD635; Sat, 10 May 2014 05:59:32 +0000
+X-Msg-Ref: server-8.tower-48.messagelabs.com!1399701569!2826121!1
+X-Originating-IP: [81.19.232.133]
+X-SpamReason: No, hits=2.7 required=7.0 tests=BODY_RANDOM_LONG,EM_ROLEX,
+  ML_IS_POSSIBLE_BOUNCE
+X-StarScan-Received:
+X-StarScan-Version: 6.11.3; banners=-,-,-
+X-VirusChecked: Checked
+Received: (qmail 7306 invoked from network); 10 May 2014 05:59:29 -0000
+Received: from mx3.mailme.dk (HELO mx3.mailme.dk) (81.19.232.133)
+  by server-8.tower-48.messagelabs.com with SMTP; 10 May 2014 05:59:29 -0000
+Received: from root by mx3.mailme.dk with local (Exim 4.71)
+	id 1Wj0Jk-0007Dp-Qg
+	for online-bounce@bruun-rasmussen.dk; Sat, 10 May 2014 07:59:28 +0200
+Date: Sat, 10 May 2014 07:59:28 +0200
+Message-Id: <E1Wj0Jk-0007Dp-Qg@mx3.mailme.dk>
+X-Failed-Recipients: lasse_jeppesen@mailme.dk
+Auto-Submitted: auto-replied
+From: Mail Delivery System <Mailer-Daemon@mx3.mailme.dk>
+To: online-bounce@bruun-rasmussen.dk
+Subject: Mail delivery failed: returning message to sender
+X-SA-Exim-Connect-IP: <locally generated>
+X-SA-Exim-Mail-From: 
+
+This message was created automatically by mail delivery software.
+
+A message that you sent could not be delivered to one or more of its
+recipients. This is a permanent error. The following address(es) failed:
+
+  lasse_jeppesen@mailme.dk
+    (sa) Message rejected by abuse@mailme.dk
+    (sa) User profile spam level exceeded
+    (sa) Adjust if needed at http://www.mailme.dk
+
+------ This is a copy of the message, including all the headers. ------
+------ The body of the message is 21525 characters long; only the first
+------ 16384 or so are included here.
+
+Return-path: <online-bounce@bruun-rasmussen.dk>
+Received: from [77.234.168.9] (helo=mail.bruun-rasmussen.dk)
+	by mx3.mailme.dk with esmtp (Exim 4.71)
+	(envelope-from <online-bounce@bruun-rasmussen.dk>)
+	id 1Wj0Jf-0007Dj-Ct
+	for lasse_jeppesen@mailme.dk; Sat, 10 May 2014 07:59:28 +0200
+X-Footer: YnJ1dW4tcmFzbXVzc2VuLmRr
+Received: from bifrost2.bruun-rasmussen.dk ([10.1.10.57])
+	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4);
+	Sat, 10 May 2014 07:59:05 +0200
+Received: from bifrost2.bruun-rasmussen.dk (localhost [127.0.0.1])
+	by bifrost2.bruun-rasmussen.dk (Postfix) with ESMTP id E51471263D;
+	Sat, 10 May 2014 00:52:25 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=bruun-rasmussen.dk;
+	s=bifrost.prod; t=1399675946;
+	bh=G3nKx69yXgOjZZg3SgrHu9ZX8ZkXetN8vcFtNW3ncyk=;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:
+	 List-Unsubscribe;
+	b=UIE+0UzIjNlsMmSL+Rtw+H0avTyQknTTApc0K8qQ7f77TjYxyuHdcLjfD8wt/ji81
+	 L4Cz/tmpGd85EvnnLP5Ff+gGwlPtpyJ/6MmZvaVfcro5iCoO6sQ9xq2GFoFVqpCFQx
+	 /1cxZ7gCYtY7qt4R+IugpaIaeXe7X1N0FTkA61nc=
+Date: Sat, 10 May 2014 00:52:25 +0200 (CEST)
+From: Bruun Rasmussen Online <online@bruun-rasmussen.dk>
+To: Lasse Neregaard Jeppesen <lasse_jeppesen@mailme.dk>
+Message-ID: <2070711897.139261399675945936.JavaMail.drift@bruun-rasmussen.dk>
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_13969_318827104.1399675945891"
+X-Agent-Search-For: Rolex
+X-Mail-Generated: bifrost2; Sat May 10 00:52:25 CEST 2014
+Precedence: bulk
+List-Unsubscribe: <http://www.bruun-rasmussen.dk/delete-agent.do?onlineAgentId=179007549&utm_source=searchagent-unsubscribe&utm_medium=email>
+X-Agent-Id: 179007549
+X-Agent-Item-Category: Ure
+X-Customer-Number: 278095
+X-Language: da
+X-Mail-Dispatched: bifrost2; Sat May 10 00:52:25 CEST 2014
+X-SA-Exim-Connect-IP: 77.234.168.9
+X-SA-Exim-Mail-From: online-bounce@bruun-rasmussen.dk
+Subject: =?iso-8859-1?Q?2_nye_emner_opfylder_Deres_s=F8gekriterier?=
+X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on mx3.mailme.dk
+X-Spam-Flag: YES
+X-Spam-Level: *****
+X-Spam-Status: Yes, score=6.0 required=5.0 tests=DATE_IN_PAST_06_12,EM_ROLEX,
+	HTML_MESSAGE,MIME_HTML_ONLY,RDNS_NONE,SPF_PASS,T_DKIM_INVALID autolearn=no
+	version=3.3.1
+X-SA-Exim-Version: 4.0 (built Sat, 24 Jul 2004 09:53:34 +0200)
+X-SA-Exim-Scanned: Yes (on mx3.mailme.dk)
+
+------=_Part_13969_318827104.1399675945891
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<html><body><style media=3D"screen" type=3D"text/css"><!--
+BODY, TD, TH, P { font-family: Verdana, Arial, Helvetica, sans-serif; font-=
+size: 12px; line-height: 150%; }
+H1, H2, H3, H4 { margin: 10px 10px 6px 0px; color: #666666; line-height: 15=
+0%; }
+H1 { font-size: 18px; }
+H2 { font-size: 16px; }
+H3 { font-size: 14px; }
+H4 { font-size: 12px; }
+A:link, A:visited { color:#701123; }
+A:active { color:red; }
+A:hover, A.subfoot:hover, A.linknav:hover, A.sublinknav:hover { color:red; =
+}
+.sheet { background-color: #FFFFFF; margin: 79px; padding: 79px; width: 550=
+px; border: thin solid #666666; }
+.dimmed { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10=
+px; color: #999999; }
+.shout { font-weight:bold; color:red; }
+TD.box-title { border-bottom: thin solid; }
+TD.box-body { padding-top: 8px; padding-left: 8px; padding-bottom: 8px; }
+.article .imageBox { border-bottom: 1px solid #CCC; border-top: 1px solid #=
+CCC; padding: 3px 0px 3px 0px; margin: 3px 0px 7px 7px; float: right; }
+.article A { text-decoration: none; }
+.article A:hover { text-decoration: underline; }
+.imageBox IMG { border: 0px; margin: 0px; padding: 0px; }
+.innerLayout { background-color: white; }
+TD.layout { padding: 8px; }
+TD.textBodyLeft { width:100%; padding: 0px 15px 0px 0px; }
+TD.textBodyRight, TD.textImage { width: 240px; }
+.textImage { padding: 5px 0px 5px 0px; border-top: 1px solid #666666; borde=
+r-bottom: 1px solid #666666; }
+.textSummary { padding: 5px 5px 5px 5px; border-top: 1px solid #666666; bor=
+der-bottom: 1px solid #666666; }
+.textImage P, .textImageText P { margin: 5px 0px 5px 0px; }
+    --></style><div style=3D"border:1px solid #701123; background-color: wh=
+ite;"><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%=
+"><tr><td background=3D"cid:part.1.1399675945841@mail" bgcolor=3D"#701123" =
+height=3D"70" width=3D"100%"><img alt=3D"[logo]" border=3D"0" height=3D"49"=
+ hspace=3D"24" src=3D"cid:part.2.1399675945841@mail" width=3D"274"></td></t=
+r><tr><td background=3D"cid:part.3.1399675945841@mail" height=3D"16"></td><=
+/tr></table><div style=3D"padding: 0px 48px 16px 93px"><h2>2 nye emner opfy=
+lder Deres s&oslash;gekriterier</h2><p>De har p&aring; www.bruun-rasmussen.=
+dk oprettet en s&oslash;geagent med flg. kriterier:</p><table><tr><td><b>S&=
+oslash;g p&aring; &#147;Rolex&#148;&nbsp;i kategorien&nbsp;Ure</b></td></tr=
+></table><p>Deres s&oslash;geagent har fundet 2 nye emner der opfylder Dere=
+s s&oslash;gekriterier:
+    </p><table border=3D"0" padding=3D"0" spacing=3D"8"><tr><td valign=3D"t=
+op"><a href=3D"http://www.bruun-rasmussen.dk/search.do?mode=3Ddetail&iid=3D=
+300652208&utm_term=3DRolex%5BUre%5D&utm_medium=3Demail&utm_source=3Dsearcha=
+gent&utm_content=3Ditem-image"><img height=3D"80" src=3D"cid:part.4.1399675=
+945841@mail" style=3D"border: solid 1px #701123" width=3D"80"></a></td><td>=
+&nbsp;</td><td valign=3D"top"><p><a href=3D"http://www.bruun-rasmussen.dk/s=
+earch.do?mode=3Ddetail&aid=3D100000707&iid=3D300652208&utm_term=3DRolex%5BU=
+re%5D&utm_medium=3Demail&utm_source=3Dsearchagent&utm_content=3Ditem-link">=
+<small><b>1421/1101</b>:</small>&nbsp;Rolex: Damearmb&aring;ndsur af guld o=
+g st&aring;l. Model Date, ref. 6917. Automatisk v&aelig;rk med dato. Ca. 19=
+79.</a><br>Auktion 1421, Havnen</p></td></tr><tr><td valign=3D"top"><a href=
+=3D"http://www.bruun-rasmussen.dk/search.do?mode=3Ddetail&iid=3D300638099&u=
+tm_term=3DRolex%5BUre%5D&utm_medium=3Demail&utm_source=3Dsearchagent&utm_co=
+ntent=3Ditem-image"><img height=3D"80" src=3D"cid:part.5.1399675945841@mail=
+" style=3D"border: solid 1px #701123" width=3D"80"></a></td><td>&nbsp;</td>=
+<td valign=3D"top"><p><a href=3D"http://www.bruun-rasmussen.dk/search.do?mo=
+de=3Ddetail&aid=3D100000707&iid=3D300638099&utm_term=3DRolex%5BUre%5D&utm_m=
+edium=3Demail&utm_source=3Dsearchagent&utm_content=3Ditem-link"><small><b>1=
+421/1102</b>:</small>&nbsp;Rolex: Herrearmb&aring;ndsur af st&aring;l. Mode=
+l Precision. Mekanisk v&aelig;rk med manuelt optr&aelig;k. 1950-60erne.</a>=
+<br>Auktion 1421, Havnen</p></td></tr></table><br><p>Klik for at&nbsp;<a hr=
+ef=3D"http://www.bruun-rasmussen.dk/agent-search.do?agentId=3D179007549&run=
+Id=3D210&utm_source=3Dsearchagent&utm_medium=3Demail&utm_term=3DRolex%5BUre=
+%5D">se nye emner</a></p><p>Klik for at&nbsp;<a href=3D"http://www.bruun-ra=
+smussen.dk/search.do?q=3DRolex&cid=3D37659&utm_source=3Dsearchagent&utm_med=
+ium=3Demail&utm_term=3DRolex%5BUre%5D">udf&oslash;re hele s&oslash;gningen<=
+/a></p><p>Klik for at&nbsp;<a href=3D"http://www.bruun-rasmussen.dk/your-ag=
+ents.do?utm_source=3Dsearchagent&utm_medium=3Demail&utm_term=3DRolex%5BUre%=
+5D">se Deres s&oslash;geagenter</a></p><p>Med venlig hilsen<br><strong>Bruu=
+n Rasmussen Kunstauktioner</strong><br><a href=3D"http://www.bruun-rasmusse=
+n.dk/index.do?utm_medium=3Demail&utm_source=3Dsearchagent&utm_content=3Dsig=
+nature">www.bruun-rasmussen.dk</a></p></div></div></body></html>
+------=_Part_13969_318827104.1399675945891
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-ID: <part.4.1399675945841@mail>
+
+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
+------=_Part_13969_318827104.1399675945891
+Content-Type: image/jpeg
+Content-Transfer-Encoding: base64
+Content-ID: <part.1.1399675945841@mail>
+
+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
+QK5vTUK//9k=
+------=_Part_13969_318827104.1399675945891
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-ID: <part.2.1399675945841@mail>
+
+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
+dKX0JPXCGrGhAuuy/wBO5wpGkCGugAEnoDdUM

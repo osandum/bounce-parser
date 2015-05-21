@@ -7,13 +7,16 @@ import javax.mail.Session;
 import javax.mail.internet.MimeMessage;
 import static junit.framework.Assert.*;
 import junit.framework.TestCase;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *
  * @author osa
  */
 public class DsnParserTest extends TestCase {
-
+    private final static Logger LOG = LoggerFactory.getLogger(DsnParserTest.class);
+    
     public DsnParserTest(String testName) {
         super(testName);
     }
@@ -25,6 +28,8 @@ public class DsnParserTest extends TestCase {
         MimeMessage dsn = new MimeMessage(s, is);
         assertNotNull(dsn);
 
+        
+        LOG.info("\n# ============================\n# Parse \"" + dsn.getSubject() + "\"" + dsn.getMessageID());
         MailDeliveryStatus mds = BounceParser.parseMessage(dsn);
         assertNotNull(mds);
 
@@ -45,5 +50,13 @@ public class DsnParserTest extends TestCase {
 
     public void testMdn() throws MessagingException, BounceParserException {
         assertEquals(MailDeliveryAction.failed, parseEml("/dovecot-mdn-sample.eml").getDeliveryAction());
+    }
+
+    public void testSkylineDk() throws MessagingException, BounceParserException {
+        assertEquals(MailDeliveryAction.failed, parseEml("/skylinemail_dk.eml").getDeliveryAction());
+    }
+
+    public void testEximResponse() throws MessagingException, BounceParserException {
+        assertEquals(MailDeliveryAction.failed, parseEml("/exim-failure-sample.eml").getDeliveryAction());
     }
 }
