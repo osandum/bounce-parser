@@ -40,8 +40,12 @@ public class BounceParser {
 
         if (res.getDeliveryAction() == null)
             throw new BounceParserException("Unrecognized DSN format. No action code found.");
-        if (res.getDeliveryStatus() == null)
-            throw new BounceParserException("Unrecognized DSN format. No status code found.");
+        if (res.getDeliveryStatus() == null) {
+            if (res.getDeliveryAction().isFailed())
+                res.setDeliveryStatus(MailSystemStatusCode.parse("4.0.0"));
+            else
+                throw new BounceParserException("Unrecognized DSN format. No status code found.");
+        }
 
         return res;
     }
@@ -83,6 +87,15 @@ public class BounceParser {
                 res.setReportingAgent(qf.getReportingHost());
                 res.setDeliveryAction(MailDeliveryAction.failed);
                 res.setDeliveryStatus(MailSystemStatusCode.parse("4.0.0"));
+            }
+            else {
+                EximFailure xf = EximFailure.tryParse(plainText);
+                if (xf != null) {
+                    res.setFinalRecipient(parseRecipient(xf.getRecipient()));
+                    res.setReportingAgent(xf.getReportingHost());
+                    res.setDeliveryAction(MailDeliveryAction.failed);
+                    res.setDeliveryStatus(MailSystemStatusCode.parse("4.0.0"));                    
+                }
             }
             // Analyze plainText - it will often contain a copy of our own mail
             // including all headers sent
