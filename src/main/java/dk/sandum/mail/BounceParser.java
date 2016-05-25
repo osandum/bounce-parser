@@ -36,7 +36,15 @@ public class BounceParser {
         if (to != null && to.length > 0 && !"<>".equals(to[0]))
             res.setDeliveredTo(to[0]);
 
-        parsePart(msg, res);
+        try {
+            parsePart(msg, res);
+        }
+        catch (IOException ex) {
+            throw new BounceParserException("failed to parse MIME message [" + msg.getContentType() + "]: " + ex.getMessage());
+        }
+        catch (ParseException ex) {
+            throw new BounceParserException("failed to parse MIME message [" + msg.getContentType() + "]: " + ex.getMessage());           
+        }
 
         if (res.getDeliveryAction() == null)
             throw new BounceParserException("Unrecognized DSN format. No action code found.");
@@ -50,16 +58,7 @@ public class BounceParser {
         return res;
     }
 
-    private static void parsePart(Part p, MailDeliveryStatus res) throws MessagingException {
-        try {
-            tryParsePart(p, res);
-        }
-        catch (IOException ex) {
-            LOG.warn("failed to parse MIME part ]" + p.getContentType() + "]: " + ex.getMessage());
-        }
-    }
-
-    private static void tryParsePart(Part p, MailDeliveryStatus res) throws MessagingException, IOException {
+    private static void parsePart(Part p, MailDeliveryStatus res) throws MessagingException, IOException {
         String ct = p.getContentType().toLowerCase();
 
         if (LOG.isDebugEnabled()) {
@@ -75,7 +74,12 @@ public class BounceParser {
             MimeMultipart c = (MimeMultipart) p.getContent();
             for (int i = 0; i < c.getCount(); i++) {
                 BodyPart bp = c.getBodyPart(i);
-                parsePart(bp, res);
+                try {
+                    parsePart(bp, res);
+                }
+                catch (IOException ex) {
+                    LOG.warn("failed to parse MIME part ]" + bp.getContentType() + "]: " + ex.getMessage());
+                }
             }
         }
         else if (ct.startsWith("text/plain")) {
@@ -205,15 +209,22 @@ public class BounceParser {
 
     private final static Pattern RECIPIENT_PATTERN = Pattern.compile("([^;]+;)?(@[-.a-z0-9]*[^.]:)?(.*[^.])[.]?", Pattern.MULTILINE | Pattern.DOTALL);
 
-    private static InternetAddress parseRecipient(String value) throws AddressException, ParseException {
+    private static InternetAddress parseRecipient(String value) throws ParseException {
         Matcher m = RECIPIENT_PATTERN.matcher(value);
         if (!m.matches()) {
             System.err.println("### \"" + value + "\":\n### - recipient line doesn't match " + RECIPIENT_PATTERN);
             throw new ParseException(value);
         }
-        InternetAddress is[] = InternetAddress.parse(m.group(3));
+        InternetAddress is[];
+        try {
+            is = InternetAddress.parse(m.group(3));
+        }
+        catch (AddressException ex) {
+            throw new ParseException(value + " - " + ex.getMessage());
+        }
         if (is.length != 1)
             throw new ParseException(value);
+
         return is[0];
     }
 }

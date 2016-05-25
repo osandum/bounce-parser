@@ -1,0 +1,77 @@
+Return-Path: <>
+Received: from localhost
+	by mail.bruun-rasmussen.dk (Kerio Connect 9.0.4); Tue, 24 May 2016 12:16:04 +0200
+Date: Tue, 24 May 2016 12:16:04 +0200
+Message-ID: <3796083626-12526@mail.bruun-rasmussen.dk>
+MIME-Version: 1.0
+From: Mail Delivery Subsystem <postmaster@mail.bruun-rasmussen.dk>
+To: <online-bounce@bruun-rasmussen.dk>
+Subject: Returned email: Tip fra Christian Rasmussen-Sand: Moderne
+ skulpturer, emne 1621/599
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="MIME-3796083626-1825076266-delim"
+
+--MIME-3796083626-1825076266-delim
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+This is an informative message sent by mail.bruun-rasmussen.dk.
+
+The server was not able to deliver your email message 
+
+  Subject: Tip fra Christian Rasmussen-Sand: Moderne skulpturer, emne 1621/599
+  Date: Tue, 24 May 2016 12:16:02 +0200 (CEST)
+
+
+
+to the following addresses:
+
+  <allborg@dgh_allborg.dk> (mail.bruun-rasmussen.dk: Host not found)
+--MIME-3796083626-1825076266-delim
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mail.bruun-rasmussen.dk
+Arrival-Date: Tue, 24 May 2016 12:16:03 +0200
+
+Original-Recipient: allborg@dgh_allborg.dk
+Final-Recipient: rfc822;allborg@dgh_allborg.dk
+Action: failed
+Status: 5.4.4
+Diagnostic-Code: DNS; Host not found
+	
+--MIME-3796083626-1825076266-delim
+Content-Type: text/rfc822-headers
+
+X-Footer: YnJ1dW4tcmFzbXVzc2VuLmRr
+Received: from bifrost2.bruun-rasmussen.dk ([10.1.10.57])
+	by mail.bruun-rasmussen.dk (Kerio Connect 9.0.4) with ESMTP;
+	Tue, 24 May 2016 12:16:03 +0200
+Received: from bifrost2.bruun-rasmussen.dk (localhost [127.0.0.1])
+	by bifrost2.bruun-rasmussen.dk (Postfix) with ESMTP id 0110210C0A1;
+	Tue, 24 May 2016 12:16:03 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=bruun-rasmussen.dk;
+	s=bifrost.prod; t=1464084963;
+	bh=rO0x6iZKaARS+PdtlOYkbSPDBVuuYd9SNkhgIiwYJn0=;
+	h=Date:From:Reply-To:To:Message-ID:Subject:MIME-Version:
+	 Content-Type;
+	b=s/h+x2GeBY5iKV5Fahp7XyZdHA0lUp37T+lIpActD9TNOwUmF31xPcImZUot1xMnA
+	 kcEiCSeOPz1B5yaEfjqioTfZxfb6wAoVbOG2FRtgwAiR46XRAJKqunb61UNUjBv2at
+	 NUNaTg0FkQKIoZrqTURfUchKJ0j0YvZIYLqMjfhA=
+Date: Tue, 24 May 2016 12:16:02 +0200 (CEST)
+From: Bruun Rasmussen Online <online@bruun-rasmussen.dk>
+Reply-To: Christian Rasmussen-Sand <chrs@chrs.dk>
+To: allborg@dgh_allborg.dk
+Message-ID: <1461253075.494071464084963002.JavaMail.drift@bruun-rasmussen.dk>
+Subject: Tip fra Christian Rasmussen-Sand: Moderne skulpturer, emne 1621/599
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_52758_901047881.1464084962982"
+X-Mail-Generated: bifrost3; Tue May 24 12:16:03 CEST 2016
+X-Auction-Number: 1621
+X-Language: da
+X-Auction-Id: 100000844
+X-Mail-Dispatched: bifrost2; Tue May 24 12:16:03 CEST 2016
+
+--MIME-3796083626-1825076266-delim--
+

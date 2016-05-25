@@ -59,4 +59,14 @@ public class DsnParserTest extends TestCase {
     public void testEximResponse() throws MessagingException, BounceParserException {
         assertEquals(MailDeliveryAction.failed, parseEml("/exim-failure-sample.eml").getDeliveryAction());
     }
+
+    public void testBadAddress() throws MessagingException, BounceParserException {
+        try {
+            parseEml("/bad-address-sample.eml");
+            fail("BounceParserException expected");
+        }
+        catch (BounceParserException ex) {
+            // expected
+        }
+    }
 }
