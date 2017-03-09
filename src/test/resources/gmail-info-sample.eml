@@ -1,0 +1,379 @@
+Return-Path: <>
+Received: from in12g.electric.net ([89.104.206.16])
+	by mail.bruun-rasmussen.dk (Kerio Connect 9.2.1) with ESMTPS
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256 bits))
+	for online-bounce@bruun-rasmussen.dk;
+	Tue, 7 Mar 2017 15:33:02 +0100
+Received: from 1clGAe-0002nR-4X by in12g.electric.net with hostsite:794582 (Exim 4.87)
+	id 1clGAg-0003nX-4O
+	for online-bounce@bruun-rasmussen.dk; Tue, 07 Mar 2017 06:33:02 -0800
+Received: by emcmailer; Tue, 07 Mar 2017 06:33:02 -0800
+Received: from mail-lf0-x241.google.com ([2a00:1450:4010:c07::241])
+	by in12g.electric.net with esmtps (TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128)
+	(Exim 4.87)
+	id 1clGAe-0002nR-4X
+	for online-bounce@bruun-rasmussen.dk; Tue, 07 Mar 2017 06:33:00 -0800
+Received: by mail-lf0-x241.google.com with SMTP id g70so287160lfh.3
+        for <online-bounce@bruun-rasmussen.dk>; Tue, 07 Mar 2017 06:33:00 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=googlemail.com; s=20161025;
+        h=from:to:auto-submitted:subject:references:in-reply-to:message-id
+         :date;
+        bh=4ugxifWMPCbhwYgJWEl9pSb6LXTA1Uaf1DrpgiQsiU4=;
+        b=jxFpvjg96ZO5/j333K4nImKGaizH3EH6bXBvXAIebK8w3U4u78iC5gYTVMdY3LiAMz
+         5/aF1/zoNJE9pZ0YvclKt+GVUnjhuUq5NFOTxjYFnLPEg+Ow16XZn1q/Ufp/Jq+LK3/g
+         kLnU/4fbujA1KbK05VSi2N740G/tv2tEZ0KeZ2Jd86KxG275D/aPUYnEQpmVTWyGAR/H
+         mnRvi3r0e3vC9WbFMZPiC5TrcRG4rWMy6OfB88d5sCxrYQXNF1EdBnRkugbQD8Q27sjd
+         zyolZ4e4DbZk/IN0o+z9P54tq8e9V1F4FtP8t+aIBKCiU8wwaYPPPLH/R32rlheQN95w
+         5SAQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:from:to:auto-submitted:subject:references
+         :in-reply-to:message-id:date;
+        bh=4ugxifWMPCbhwYgJWEl9pSb6LXTA1Uaf1DrpgiQsiU4=;
+        b=HbeG04q8ttRaASSHuC5tNptqnPn1Ep9M9SwyZaNNhO4xgez5iJ1cIux1QKjbaMf5gH
+         yBMG/dVPnu1m4XfAVU0GE+ZOy6Q/ClHcE5WQulWm10bx1LvorBqUBPIvHr4+TBiARBsf
+         4qy52YHqDWJgBoWVCr/jBl/JNkmk008gzZoSkXfGtln17IHYbAQE4d9sJvYvxLUhUfZC
+         4LrzqWwCqWhlngGYXC2m95WGJZ7ofPi9NWGgXQPvJ76TYeJ6mjJctXsSvECL4iCgFV1P
+         l8pbDBWiLaS2ORBf4izOPjiysitO67yymJb1Yzoe/2i/2xtYwsmWGOxTBYvH9tdBzsI0
+         fmaQ==
+X-Gm-Message-State: AMke39lUtgBo+q4KhctsFXK1a473WRTDYe0WgmuGbmtbZhsVZqtMtFwWMLMvzSH/RQE55bnWwmqRWX49j9KSMT8heJ/pPuqUeyDYRw==
+X-Received: by 10.25.229.156 with SMTP id i28mr172971lfk.11.1488897175028;
+        Tue, 07 Mar 2017 06:32:55 -0800 (PST)
+Content-Type: multipart/report; boundary=001a113bf3de397be2054a24e351; report-type=delivery-status
+Received: by 10.25.229.156 with SMTP id i28mr188583lfk.11; Tue, 07 Mar 2017
+ 06:32:55 -0800 (PST)
+From: Mail Delivery Subsystem <mailer-daemon@googlemail.com>
+To: online-bounce@bruun-rasmussen.dk
+Auto-Submitted: auto-replied
+Subject: Delivery Status Notification (Delay)
+References: <768005219.467661488799420829.JavaMail.drift@bruun-rasmussen.dk>
+In-Reply-To: <768005219.467661488799420829.JavaMail.drift@bruun-rasmussen.dk>
+Message-ID: <58bec497.9ce5190a.e8d95.041c.GMRIR@mx.google.com>
+Date: Tue, 07 Mar 2017 06:32:55 -0800 (PST)
+X-FM-OS: Linux 2.2.x-3.x
+X-FM-GeoIP: IE
+X-Proto: esmtps
+X-Revdns: mail-lf0-x241.google.com
+X-HELO: mail-lf0-x241.google.com
+X-TLS: TLSv1.2:ECDHE-RSA-AES128-GCM-SHA256:128
+X-Authenticated_ID: 
+X-Origin-IP: 2a00:1450:4010:c07::241
+X-Env-From: 
+X-DKIM: pass
+X-PolicySMART: 6888962
+X-SPAM-Status: NO, ALLOW RULE=ALL:UAALL
+X-Virus-Status: Scanned by VirusSMART (c)
+X-Virus-Status: Scanned by VirusSMART (s)
+
+--001a113bf3de397be2054a24e351
+Content-Type: multipart/related; boundary=001a113bf3de397c99054a24e352
+
+--001a113bf3de397c99054a24e352
+Content-Type: multipart/alternative; boundary=001a113bf3de397ca2054a24e353
+
+--001a113bf3de397ca2054a24e353
+Content-Type: text/plain; charset=UTF-8
+
+
+** Delivery incomplete **
+
+There was a temporary problem delivering your message to krzo@berlingske.dk. Gmail will retry for 140 more hours. You'll be notified if the delivery fails permanently.
+
+Learn more here: https://support.google.com/mail/answer/7720
+
+The response from the remote server was:
+The recipient server did not accept our requests to connect. Learn more at https://support.google.com/mail/answer/7720 
+[217.111.209.227 217.111.209.227: generic::failed_precondition: connect error (0): error]
+
+--001a113bf3de397ca2054a24e353
+Content-Type: text/html; charset=UTF-8
+
+
+<html>
+<head>
+<style>
+* {
+font-family:Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+<table cellpadding="0" cellspacing="0" class="email-wrapper" style="padding-top:32px;background-color:#ffffff;"><tbody>
+<tr><td>
+<table cellpadding=0 cellspacing=0><tbody>
+<tr><td style="max-width:560px;padding:24px 24px 32px;background-color:#fafafa;border:1px solid #e0e0e0;border-radius:2px">
+<img style="padding:0 24px 16px 0;float:left" width=72 height=72 alt="Error Icon" src="cid:icon.png">
+<table style="min-width:272px;padding-top:8px"><tbody>
+<tr><td><h2 style="font-size:20px;color:#212121;font-weight:bold;margin:0">
+Delivery incomplete
+</h2></td></tr>
+<tr><td style="padding-top:20px;color:#757575;font-size:16px;font-weight:normal;text-align:left">
+There was a temporary problem delivering your message to <a style='color:#212121;text-decoration:none'><b>krzo@berlingske.dk</b></a>. Gmail will retry for 140 more hours. You'll be notified if the delivery fails permanently.
+</td></tr>
+<tr><td style="padding-top:24px;color:#4285F4;font-size:14px;font-weight:bold;text-align:left">
+<a style="text-decoration:none" href="https://support.google.com/mail/answer/7720">LEARN MORE</a>
+</td></tr>
+</tbody></table>
+</td></tr>
+</tbody></table>
+</td></tr>
+<tr style="border:none;background-color:#fff;font-size:12.8px;width:90%">
+<td align="left" style="padding:48px 10px">
+The response from the remote server was:<br/>
+<p style="font-family:monospace">
+The recipient server did not accept our requests to connect. Learn more at https://support.google.com/mail/answer/7720
+[217.111.209.227 217.111.209.227: generic::failed_precondition: connect error (0): error]
+</p>
+</td>
+</tr>
+</tbody></table>
+</body>
+</html>
+
+--001a113bf3de397ca2054a24e353--
+--001a113bf3de397c99054a24e352
+Content-Type: image/png; name="icon.png"
+Content-Disposition: attachment; filename="icon.png"
+Content-Transfer-Encoding: base64
+Content-ID: <icon.png>
+
+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
+--001a113bf3de397c99054a24e352--
+--001a113bf3de397be2054a24e351
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; googlemail.com
+Received-From-MTA: dns; online-bounce@bruun-rasmussen.dk
+Arrival-Date: Mon, 06 Mar 2017 03:23:43 -0800 (PST)
+X-Original-Message-ID: <768005219.467661488799420829.JavaMail.drift@bruun-rasmussen.dk>
+
+Final-Recipient: rfc822; krzo@berlingske.dk
+Action: delayed
+Status: 4.4.1
+Diagnostic-Code: smtp; The recipient server did not accept our requests to connect. Learn more at https://support.google.com/mail/answer/7720 
+ [217.111.209.227 217.111.209.227: generic::failed_precondition: connect error (0): error]
+Last-Attempt-Date: Tue, 07 Mar 2017 06:32:55 -0800 (PST)
+Will-Retry-Until: Mon, 13 Mar 2017 04:23:44 -0700 (PDT)
+
+--001a113bf3de397be2054a24e351
+Content-Type: message/rfc822
+Content-Transfer-Encoding: quoted-printable
+
+X-Gm-Message-State: AMke39ndiePtKy/HDyK3WZ6Yko/YCV9WMmXEc4wdMzFUUPxDpeJ/oXC=
+yNnR8e7f4tJ6J3fyDbwWjPR5lvrC6gpSdHHiGnR2sRv9jZXdr/mmdrxgXaMgzgaE0vKr8eASoWE=
+pWWrtluA=3D=3D
+X-Received: by 10.25.229.156 with SMTP id i28mr4673707lfk.11.1488799424138;
+        Mon, 06 Mar 2017 03:23:44 -0800 (PST)
+X-Received: by 10.25.229.156 with SMTP id i28mr4673703lfk.11.1488799423829;
+        Mon, 06 Mar 2017 03:23:43 -0800 (PST)
+Return-Path: <online-bounce@bruun-rasmussen.dk>
+Received: from mail.bruun-rasmussen.dk (mail.bruun-rasmussen.dk. [62.242.14=
+7.169])
+        by mx.google.com with ESMTPS id e79si8319281lji.261.2017.03.06.03.2=
+3.43
+        for <krzo@berlingske.dk>
+        (version=3DTLS1_1 cipher=3DECDHE-RSA-AES128-SHA bits=3D128/128);
+        Mon, 06 Mar 2017 03:23:43 -0800 (PST)
+Received-SPF: pass (google.com: domain of online-bounce@bruun-rasmussen.dk =
+designates 62.242.147.169 as permitted sender) client-ip=3D62.242.147.169;
+Authentication-Results: mx.google.com;
+       dkim=3Dpass header.i=3D@bruun-rasmussen.dk;
+       spf=3Dpass (google.com: domain of online-bounce@bruun-rasmussen.dk d=
+esignates 62.242.147.169 as permitted sender) smtp.mailfrom=3Donline-bounce=
+@bruun-rasmussen.dk
+X-Footer: YnJ1dW4tcmFzbXVzc2VuLmRr
+Received: from bifrost3.bruun-rasmussen.dk ([10.1.10.59])
+	by mail.bruun-rasmussen.dk (Kerio Connect 9.2.1) with ESMTP
+	for krzo@berlingske.dk;
+	Mon, 6 Mar 2017 12:23:40 +0100
+Received: from bifrost3.bruun-rasmussen.dk (localhost [127.0.0.1])
+	by bifrost3.bruun-rasmussen.dk (Postfix) with ESMTP id CAF21120B2
+	for <krzo@berlingske.dk>; Mon,  6 Mar 2017 12:23:40 +0100 (CET)
+DKIM-Signature: v=3D1; a=3Drsa-sha256; c=3Dsimple/simple; d=3Dbruun-rasmuss=
+en.dk;
+	s=3Dbifrost.prod; t=3D1488799420;
+	bh=3DYJpQ91InvRLuzdL0QjdJdCHnjdI0/dZQq+EQUpvkWRw=3D;
+	h=3DDate:From:To:Message-ID:Subject:MIME-Version:Content-Type:
+	 List-Post:List-Unsubscribe;
+	b=3DFCXW0bBVs4Yi5C13p8BescSG2R3LsF/vOH0mTIzEHMGHHP6Rqe5faUVFfa2OkXYQe
+	 TJBp/9w5rbPVJbDcDf4Tp1e5vuz1zTwnP6+d9vAOoIgUwKNZGmt6wbz1fMYA1KJAC5
+	 R//mTRHsIP4SxRmsitvPho8aMvcLJyl/q9CHHH8I=3D
+Date: Mon, 6 Mar 2017 12:23:40 +0100 (CET)
+From: Bruun Rasmussen Nyhedsbrev <nyhedsbrev@bruun-rasmussen.dk>
+To: =3D?ISO-8859-1?Q?Kristoffer_Z=3DF8llner?=3D <krzo@berlingske.dk>
+Message-ID: <768005219.467661488799420829.JavaMail.drift@bruun-rasmussen.dk=
+>
+Subject: Nu begynder auktionen over moderne kunst og nordisk design
+MIME-Version: 1.0
+Content-Type: multipart/related;=20
+	boundary=3D"----=3D_Part_49710_323437142.1488799420814"
+X-Mail-Generated: bifrost; Mon Mar 06 12:23:40 CET 2017
+Precedence: bulk
+List-Post: NO (posting not allowed on this list)
+List-Unsubscribe: <http://www.bruun-rasmussen.dk/unsubscribe?3B37086D3162E3=
+0FA4A03AE18560F87609253631&utm_source=3Dnewsletter&utm_campaign=3DNewslette=
+r_870_IV-unsubscribe&utm_medium=3Demail>
+X-BR-Subscription-Id: 3B37086D3162E30FA4A03AE18560F87609253631
+X-Language: da
+X-BR-Reference:=20
+X-BR-Mail-Id: ea1fa65977bb889a
+X-Mail-Dispatched: bifrost3; Mon Mar 06 12:23:40 CET 2017
+X-Gm-Spam: 0
+X-Gm-Phishy: 0
+
+------=3D_Part_49710_323437142.1488799420814
+Content-Type: text/html; charset=3Dus-ascii
+Content-Transfer-Encoding: 7bit
+
+<html><body bgcolor=3D"#F5F5F5"><style media=3D"screen" type=3D"text/css"><=
+!--
+BODY, TD, TH, P { font-family: Verdana, Arial, Helvetica, sans-serif; font-=
+size: 12px; line-height: 150%; }
+H1, H2, H3, H4 { margin: 10px 10px 6px 0px; color: #666666; line-height: 15=
+0%; }
+H1 { font-size: 18px; }
+H2 { font-size: 16px; }
+H3 { font-size: 14px; }
+H4 { font-size: 12px; }
+A:link, A:visited { color:#701123; }
+A:active { color:red; }
+A:hover, A.subfoot:hover, A.linknav:hover, A.sublinknav:hover { color:red; =
+}
+.sheet { background-color: #FFFFFF; margin: 79px; padding: 79px; width: 550=
+px; border: thin solid #666666; }
+.shout { font-weight:bold; color:red; }
+TD.box-title { border-bottom: thin solid; }
+TD.box-body { padding-top: 8px; padding-left: 8px; padding-bottom: 8px; }
+.article .imageBox { border-bottom: 1px solid #CCC; border-top: 1px solid #=
+CCC; padding: 3px 0px 3px 0px; margin: 3px 0px 7px 7px; float: right; }
+.article A { text-decoration: none; }
+.article A:hover { text-decoration: underline; }
+.imageBox IMG { border: 0px; margin: 0px; padding: 0px; }
+.innerLayout { background-color: white; }
+TD.layout { padding: 8px; }
+TD.textBodyLeft { padding: 0px 15px 0px 0px; }
+TD.textBodyRight, TD.textImage { width: 240px; }
+.textImage { padding: 5px 0px 5px 0px; border-top: 1px solid #666666; borde=
+r-bottom: 1px solid #666666; }
+.textSummary { padding: 5px 5px 5px 5px; border-top: 1px solid #666666; bor=
+der-bottom: 1px solid #666666; }
+.textImage P, .textImageText P { margin: 5px 0px 5px 0px; }
+.mailSheet { background-color: white; max-width: 980px; text-align: start; =
+border: 1px solid #701123; }
+.mailBody { padding: 0px 48px 16px 93px; }     =20
+.mailBody IMG { max-width: 600px; height: auto;  }
+    --></style><center><div class=3D"mailSheet"><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100%"><tr><td background=3D"cid:part.=
+1.1488799420779@mail" bgcolor=3D"#701123" height=3D"70" width=3D"100%"><img=
+ alt=3D"[logo]" border=3D"0" height=3D"49" hspace=3D"24" src=3D"cid:part.2.=
+1488799420779@mail" width=3D"274"></td></tr><tr><td background=3D"cid:part.=
+3.1488799420779@mail" height=3D"16"></td></tr></table><div class=3D"mailBod=
+y"><table cellpadding=3D"0" cellspacing=3D"0" class=3D"innerLayout"><!-- RO=
+W 1 of 1--><tr><td class=3D"layout" colspan=3D"99"><table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" class=3D"article" width=3D"100%"><tr><td wi=
+dth=3D"100%">
+<h1>Moderne kunst og design i Bredgade</h1>
+<table width=3D"100%"><tr>
+<td class=3D"textBodyLeft" valign=3D"top">
+<table><tr><td background=3D"cid:part.4.1488799420779@mail" class=3D"textSu=
+mmary" style=3D"background-color: #F4F4E9; background-repeat: repeat-x; bac=
+kground-position: bottom;">
+<p>Den internationale auktion i Bredgade er i fuld gang, og i denne uge g&a=
+elig;lder det moderne kunst, kunsth&aring;ndv&aelig;rk og nordisk design. K=
+om og v&aelig;r med!&nbsp;</p>
+</td></tr></table>
+<div class=3D"textBodyText">
+<p>&nbsp;</p>
+<p>Blandt ugens h&oslash;jdepunkter er&nbsp;v&aelig;rker af den tyske kunst=
+ner <a href=3D"https://bruun-rasmussen.dk/m/collections/GuntherForg870?utm_=
+content=3Dcopy&utm_source=3Dnewsletter&utm_campaign=3DNewsletter_870_IV&utm=
+_medium=3Demail&mail_ref=3Dea1fa65977bb889a">G&uuml;nther F&ouml;rg</a>, <a=
+ href=3D"http://www.bruun-rasmussen.dk/search.do?mode=3Ddetail&iid=3D300908=
+964&utm_content=3Dcopy&utm_source=3Dnewsletter&utm_campaign=3DNewsletter_87=
+0_IV&utm_medium=3Demail&mail_ref=3Dea1fa65977bb889a">PH's f&oslash;rste sta=
+nderlampe</a> fra slutningen af 1920&rsquo;erne og et unikabord af arkitekt=
+en <a href=3D"http://www.bruun-rasmussen.dk/search.do?mode=3Ddetail&iid=3D3=
+00911910&utm_content=3Dcopy&utm_source=3Dnewsletter&utm_campaign=3DNewslett=
+er_870_IV&utm_medium=3Demail&mail_ref=3Dea1fa65977bb889a">Poul Kj&aelig;rho=
+lm</a>.&nbsp;</p>
+<h4>&nbsp;</h4>
+<h4>
+<strong>Auktion: moderne kunst og design</strong>
+</h4>
+<ul>
+<li>
+<p>Tirsdag 7/3 kl. 16: <a href=3D"https://bruun-rasmussen.dk/m/auctions/100=
+5235?utm_content=3Dcopy&utm_source=3Dnewsletter&utm_campaign=3DNewsletter_8=
+70_IV&utm_medium=3Demail&mail_ref=3Dea1fa65977bb889a">M
+----- Message truncated -----
+
+--001a113bf3de397be2054a24e351--

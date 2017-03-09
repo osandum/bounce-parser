@@ -60,6 +60,10 @@ public class DsnParserTest extends TestCase {
         assertEquals(MailDeliveryAction.failed, parseEml("/exim-failure-sample.eml").getDeliveryAction());
     }
 
+    public void testGmailResponse() throws MessagingException, BounceParserException {
+        assertEquals(MailDeliveryAction.delayed, parseEml("/gmail-dalayed-sample.eml").getDeliveryAction());
+    }
+
     public void testBadAddress() throws MessagingException, BounceParserException {
         try {
             parseEml("/bad-address-sample.eml");
