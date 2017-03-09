@@ -39,13 +39,20 @@
     <dependencies>
         <dependency>
             <groupId>javax.mail</groupId>
-            <artifactId>mailapi</artifactId>
-            <version>1.4.3</version>
+            <artifactId>javax.mail-api</artifactId>
+            <version>1.5.6</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.6.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.5.6</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -62,7 +69,7 @@
         </dependency>
     </dependencies>
 
-    <repositories>
+    <!-- repositories>
         <repository>
             <id>sandum-release</id>
             <name>Inhouse Internal Release Repository</name>
@@ -86,7 +93,7 @@
                 <enabled>true</enabled>
             </snapshots>
         </repository>
-    </repositories>
+    </repositories -->
 
 </project>
 
