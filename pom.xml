@@ -12,7 +12,7 @@
 
     <groupId>dk.sandum</groupId>
     <artifactId>bounce-parser</artifactId>
-    <version>0.9-SNAPSHOT</version>
+    <version>0.8.5</version>
 
     <name>E-mail Bounce Parser</name>
 
@@ -68,32 +68,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <!-- repositories>
-        <repository>
-            <id>sandum-release</id>
-            <name>Inhouse Internal Release Repository</name>
-            <url>http://sandum.net/repo/release</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-
-        <repository>
-            <id>sandum-snapshot</id>
-            <name>Inhouse Internal Snapshot Repository</name>
-            <url>http://sandum.net/repo/snapshot</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories -->
 
 </project>
 
