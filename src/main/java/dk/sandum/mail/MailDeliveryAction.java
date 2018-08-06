@@ -5,14 +5,14 @@ package dk.sandum.mail;
  */
 public enum MailDeliveryAction {
 
-    failed, delayed, delivered, relayed, expanded;
+    failed, failure, delayed, delivered, relayed, expanded;
 
     public static MailDeliveryAction parse(String action) {
         return action == null ? null : valueOf(action.toLowerCase());
     }
 
     public boolean isFailed() {
-        return equals(failed);
+        return equals(failed) || equals(failure);
     }
 
     public boolean isDelayed() {

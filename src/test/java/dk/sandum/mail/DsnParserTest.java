@@ -64,6 +64,10 @@ public class DsnParserTest extends TestCase {
         assertEquals(MailDeliveryAction.delayed, parseEml("/gmail-delayed-sample.eml").getDeliveryAction());
     }
 
+    public void testSurftownResponse() throws MessagingException, BounceParserException {
+        assertEquals(MailDeliveryAction.failed, parseEml("/surftown-failure-sample.eml").getDeliveryAction());
+    }
+
     public void testBadAddress() throws MessagingException, BounceParserException {
         try {
             parseEml("/bad-address-sample.eml");

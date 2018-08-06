@@ -9,7 +9,7 @@ import junit.framework.TestCase;
  */
 public class QmailFailureParserTest extends TestCase {
 
-    private final static String PLAIN_FAILURE = "Hi. This is the qmail-send program at qmail29.zonnet.nl.\n" +
+    private final static String PLAIN_FAILURE1 = "Hi. This is the qmail-send program at qmail29.zonnet.nl.\n" +
 "I'm afraid I wasn't able to deliver your message to the following addresses.\n" +
 "This is a permanent error; I've given up. Sorry it didn't work out.\n" +
 "---------------------------------------------------------------------\n" +
@@ -33,13 +33,26 @@ public class QmailFailureParserTest extends TestCase {
 "The users mailfolder is over the allowed quota (size).\n" +
 "";
     
+    private final static String PLAIN_FAILURE2 = "Hi. This is the qmail-send program at mail19.surf-town.net.\n" +
+"I'm afraid I wasn't able to deliver your message to the following addresses.\n" +
+"This is a permanent error; I've given up. Sorry it didn't work out.\n" +
+"\n" +
+"<carina@bjornsabro.dk>:\n" +
+"user is over quota\n" +
+"";
+    
     public QmailFailureParserTest(String testName) {
         super(testName);
     }
 
-    // TODO add test methods here. The name must begin with 'test'. For example:
-    public void testHello() throws ParseException {
-        QmailFailure res = QmailFailure.tryParse(PLAIN_FAILURE);
+    public void testFailure1() throws ParseException {
+        QmailFailure res = QmailFailure.tryParse(PLAIN_FAILURE1);
+        
+        assertNotNull(res);
+    }
+
+    public void testFailure2() throws ParseException {
+        QmailFailure res = QmailFailure.tryParse(PLAIN_FAILURE2);
         
         assertNotNull(res);
     }

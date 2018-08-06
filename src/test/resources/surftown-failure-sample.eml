@@ -1,0 +1,184 @@
+Received: from DB6PR01MB3896.eurprd01.prod.exchangelabs.com
+ (2603:10a6:800:7d::26) by VI1PR01MB3904.eurprd01.prod.exchangelabs.com with
+ HTTPS via VI1PR0801CA0082.EURPRD08.PROD.OUTLOOK.COM; Thu, 5 Jul 2018 16:37:48
+ +0000
+Received: from DB6PR01CA0006.eurprd01.prod.exchangelabs.com
+ (2603:10a6:6:45::19) by DB6PR01MB3896.eurprd01.prod.exchangelabs.com
+ (2603:10a6:6:49::17) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.930.20; Thu, 5 Jul
+ 2018 16:37:47 +0000
+Received: from AM5EUR02FT053.eop-EUR02.prod.protection.outlook.com
+ (2a01:111:f400:7e1e::201) by DB6PR01CA0006.outlook.office365.com
+ (2603:10a6:6:45::19) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.930.19 via Frontend
+ Transport; Thu, 5 Jul 2018 16:37:47 +0000
+Authentication-Results: spf=none (sender IP is 89.104.206.13)
+ smtp.helo=in12d.electric.net; bruun-rasmussen.dk; dkim=none (message not
+ signed) header.d=none;bruun-rasmussen.dk; dmarc=fail action=none
+ header.from=mail10.surf-town.net;
+Received-SPF: None (protection.outlook.com: in12d.electric.net does not
+ designate permitted sender hosts)
+Received: from in12d.electric.net (89.104.206.13) by
+ AM5EUR02FT053.mail.protection.outlook.com (10.152.9.196) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id
+ 15.20.906.15 via Frontend Transport; Thu, 5 Jul 2018 16:37:47 +0000
+Received: from 1fb7GM-000Ac0-52 by in12d.electric.net with hostsite:2153977 (Exim 4.90_1)
+	id 1fb7GM-000AmV-5p
+	for online-bounce@bruun-rasmussen.dk; Thu, 05 Jul 2018 09:37:46 -0700
+Received: by emcmailer; Thu, 05 Jul 2018 09:37:46 -0700
+Received: from mailout-lvl1-01.surftown.com ([212.97.133.98])
+	by in12d.electric.net with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
+	(Exim 4.90_1)
+	id 1fb7GM-000Ac0-52
+	for online-bounce@bruun-rasmussen.dk; Thu, 05 Jul 2018 09:37:46 -0700
+Received: from surftown.com (mail.surftown.com [212.97.133.57])
+	by mailout-lvl1-01.surftown.com (Postfix) with ESMTP id 523AB601CB
+	for <online-bounce@bruun-rasmussen.dk>; Thu,  5 Jul 2018 18:37:41 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at surftown.com
+Received: (qmail 7360 invoked for bounce); 5 Jul 2018 16:37:40 -0000
+Date: Thu, 5 Jul 2018 16:37:40 +0000
+From: <MAILER-DAEMON@mail10.surf-town.net>
+To: <online-bounce@bruun-rasmussen.dk>
+Content-Type: multipart/mixed;
+	boundary="1530808656mail10.surf-town.net319888"
+Subject: failure notice
+X-FM-OS: Linux 2.2.x-3.x
+X-FM-GeoIP: DK
+X-Proto: esmtps
+X-Revdns: mailout-lvl1-01.surftown.com
+X-HELO: mailout-lvl1-01.surftown.com
+X-TLS: TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256
+X-Authenticated_ID:
+X-Origin-IP: 212.97.133.98
+X-Env-From:
+X-DKIM:
+X-PolicySMART: 6888962
+X-SPAM-Status: NO, ALLOW RULE=ALL:UAALL
+X-Virus-Status: Scanned by VirusSMART (c)
+X-Virus-Status: Scanned by VirusSMART (s)
+Message-ID: <E1fb7GM-000AmV-5p@in12d.electric.net>
+Return-Path: <>
+X-MS-Exchange-Organization-ExpirationStartTime: 05 Jul 2018 16:37:47.3208
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: Original Submit
+X-MS-Exchange-Organization-ExpirationInterval: 2:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: Original Submit
+X-MS-Exchange-Organization-Network-Message-Id: 32bd6c2d-778f-427d-759c-08d5e295a40e
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 18581e6b-2327-4856-bb5a-d9d366690de0:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-Forefront-Antispam-Report: CIP:89.104.206.13;IPV:NLI;CTRY:DK;EFV:NLI;SFV:NSPM;SFS:(8156002)(2970300002)(428003)(189003)(199004)(1930700014)(16586007)(90146011)(33896004)(5660300001)(46656002)(45826003)(5000100001)(126002)(4610100001)(90996001)(486006)(476003)(221733001)(86372001)(7116003)(84326002)(105586002)(564344004)(106466001)(2351001)(26005)(15650500001)(42186006)(63326003)(6916009)(15003)(93136011)(336012)(42882007)(78352004)(246002)(2876002)(2476003)(55666002)(1096003)(14444005)(9686003)(86152003)(8676002)(356003)(17816001)(7596002)(3480700004)(7636002)(305945005)(129973001);DIR:INB;SFP:;SCL:1;SRVR:DB6PR01MB3896;H:in12d.electric.net;FPR:;SPF:None;LANG:en;PTR:in12d.electric.net;MX:0;A:0;
+X-Microsoft-Exchange-Diagnostics: 1;AM5EUR02FT053;1:etbNC1C61jmAavc9SNUvS2VS9hm5qpnPqbXeBroXnT8FbZnVaaOVwcKpuBORngOda3LYE3n27N+g1JtEpXzrXlXVmeGMEbtTQApLyx8Rm1CgWc2c62pp7H5pXHPhH5M6
+X-MS-Exchange-Organization-AuthSource: AM5EUR02FT053.eop-EUR02.prod.protection.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 32bd6c2d-778f-427d-759c-08d5e295a40e
+X-Microsoft-Antispam: UriScan:;BCL:0;PCL:0;RULEID:(7020095)(4652040)(5600053)(711020)(4605076)(49563074)(1401150)(71702078);SRVR:DB6PR01MB3896;
+X-Microsoft-Exchange-Diagnostics: 1;DB6PR01MB3896;3:NMMRoEfmDRII1o3EXMAUMUijbbH8GjA1eZRV/MoYnVnoIrAl1W9G7J6pXoS+kkfPC7RDEi/PrxHhH11niAsRFLXrS4RFdCt/ZXbxJObjgIG2s15flYO4CssNHk47OzKz2PJ4uGDFRCMAiEXvQREADCsolUVG3jxIZqtlJZV5gBh0hrigsFu2q+w8HWZfb7gNYmvy+0lgM14UEn6T77jXHlgxckJvvANUvp1T10SMZjWx5151z779y42qrgckS47JcsuC0NCOtz06c61nwPBfsYlYWpi0XFtxGCXxRUB6Y9ia1CGza9cQMMaMz9Qk9e0uPSGo+GJsNuTpxXvM7N8QGVEftlBR+7XSxlch94HStVU=;25:GLyNDXQnnVlX90Wqe8T5USACHmwH3RRlY8NaiCDVHyk69KbIRbaFQVfy0SYWiAl23Hd0e8L8VtwCiTQQIPjEJiNGMzkWoqc3EikflPuTpqJuTm0WxFSljlk+M3Y18TiZe5quwChdn64agopHzvxeDZPxDNTUavrpjy8VOhVVCRDyhDfK3n1BYLavtJ+8wwQpSDrwVsQtOwj7Dtrc3/wcMCB3cT9sKnfr0lWUN44pgSZQbyIvxl8wQoBUI4PVwM47a80NfyrFM0lNDWZVJGuaOVVJ67q2ybKxPwKtU51IvXd3yTG3HreGwRBdy/NAtU+FeQh7OFH5bSqFsmpYx/pHVA==
+X-MS-TrafficTypeDiagnostic: DB6PR01MB3896:
+X-Microsoft-Exchange-Diagnostics: 1;DB6PR01MB3896;31:wEneEblXZXD47FNM6BZ5ZTenHANTXeofh4f+h6HSgb2czIGjOv9f0mWfVXLrVYKb+wJtfTjtzjdiqIZ6q2iRyOKWa75J+lg/08SWQh/0ablR5Xu1SXkO/HzF1WnZp1bfIYvD5WBLKBgo7m7pF6KusC1B0+TXKEAzsWL2zVsXBC9eglgT7e5fFr2+VjobFDZNXVIDmPVeDvayplYljpLAOf3yszDih7uN8b6eqoT+7Kw=;4:enh5CVTSz2IgyRYJYMLqZj7ZqPw5lpDPROpvLu8sV3tLx/T+ZpvLa7vYGEWi9w57v1pn1YXuRmikWULMjE5CSsZGPsKs8gvZxLMo1RkA3G5U/dfc3+nVhmcSzuTMLD2Xl494FQCUiYZAWD9W3KyMSQTlghSE7HovbAFc3bLi62KgrK5Nm1x+FZG+WPfooaE0d8fAYPIDWta1YHLE0atAnArA1SIFE+R2e9QqvX02woo0Yhhb+HsKIc/Jx+mcYCv6oTFHCGGkNl9WgO2Vth7KWg==
+X-Exchange-Antispam-Report-Test: UriScan:;
+X-Exchange-Antispam-Report-CFA-Test: BCL:0;PCL:0;RULEID:(102415395)(2401047)(7630418)(5008015)(8121501046)(7631346)(7632307)(7633261)(1430482)(1431068)(1435076)(1551054)(823300264)(823330083)(9101536074)(10201501046)(93006095)(93000095)(3002001)(3231254)(901025)(902075)(913088)(7045084)(944500087)(944510158)(944921075)(946801078)(946901078)(52103095)(52104123)(52105095)(52106170)(52401190)(52601095)(52505095)(52406095)(52304095)(52206095)(1610001)(8301001075)(8301003183)(9300000083)(9301000104)(201708071742011)(7699016);SRVR:DB6PR01MB3896;BCL:0;PCL:0;RULEID:;SRVR:DB6PR01MB3896;
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Exchange-Diagnostics: =?us-ascii?Q?1;DB6PR01MB3896;23:VCyN7DqdpF/BvPVNj9MdfWHJ8M+QnO7vgEEYvSq1c?=
+ =?us-ascii?Q?58m0KJIkdOYJbeC/WAagaXj9YgpKgmmB0PH7aohGqmzn1Zwd6ZAtGFwRorRV?=
+ =?us-ascii?Q?UeYUKXkmBCRgsv8pPFi8O++Q+/losLAYhQTcInzJ4z2twYDw/fyX0ZX0QQyE?=
+ =?us-ascii?Q?3pIS0y8UjtqYzU7aDGy50zQo6+UldetVGNujjz2XybMwkq+aFkrqXRiKzKzB?=
+ =?us-ascii?Q?BQ3PMVxVwfWG60R+O6yO/CsB6gPGw/6IcE1ueCuOlDq/ypG8mOlGRrUmys/y?=
+ =?us-ascii?Q?ORycJQKJr09ATr0AP2AAIaTd8YY7Ikocklp8poBgd2XvOiYF/2Ukpar0j4pJ?=
+ =?us-ascii?Q?HTx1FfAt3wkNKUlDBRnXhs1dAt17qAZn4KMw5cRLEaSIR5V+WqUUazl6GgtV?=
+ =?us-ascii?Q?WDeK/HZ0NiqTJlRYufeIGxscUX+3ucHITx73ycSH7Bx0dJFpB+b0m/Tdq36c?=
+ =?us-ascii?Q?w7+gQbyTIhRjA1r5tBPiy/puEgwHl4JGpCDzGRFqAXvQ3D8jLSKXnax6oJO/?=
+ =?us-ascii?Q?e4UK/TnTNWlTpdLBZiCRJbIbHP7253aS3Stg74vtOv6MVvyrhhzFX6zkYsrM?=
+ =?us-ascii?Q?jLKzsK+CuyTgnsSepCoqRsetW6wyHxjnf9VZju08SxXgLtteogYl0kenkMfo?=
+ =?us-ascii?Q?qA73i/EU1Ob69/MMMm8oWcZKEX/0UmsRZFyEfMcZG3bfghcpHAfaXzLLg7L1?=
+ =?us-ascii?Q?yg7aI0x6uve32xg+sxUwJ0pnJ8vXp258V7TQ9nR1knSSLkNqYtRpw+JRxBlu?=
+ =?us-ascii?Q?us7DyeZ+o3ODsmnk/uDQrMveKiKQ2xGfE/CCYaoiX8F66gNm+ebH6OBrd3hC?=
+ =?us-ascii?Q?d0nBxkNTUrgeZEaetncC17EXTsGbRGCxrCNd9StJkdiFhmZohXvXgQ7h9P0I?=
+ =?us-ascii?Q?SB3VdtNPxep06/MO6RRyPoX8FEwrwdibxLm2eaf2IS9yoMM586IsVhg0RXET?=
+ =?us-ascii?Q?Oj8eWZwtx9vQ3y3FUFEi5zI00BKvJxt0wQKczfeg/17NN2BVLeCN6xlmVLOY?=
+ =?us-ascii?Q?+5UXq8sLegLYjRx4ls4K+xh3DAI1pY1pmVAiEyWj5j8RygfiX50Q8MMZQP5T?=
+ =?us-ascii?Q?Pyzbs+75KSRZIb4CwOFihh0sS9EMSvSpYuU6knPCqtSgGOB49ACFGGZ8yrKE?=
+ =?us-ascii?Q?PGBbqFEi6WUkNP8T0vJyQJwXh8RAen78n+HUJlwO88jBM8P7wQez+7TTM4TD?=
+ =?us-ascii?Q?ILxrb3kxTGByYk=3D?=
+X-Microsoft-Antispam-Message-Info: M4sQx7ffz1HhQPHh4zZjfeq32MA3VjCJJxVr3IbuwtR9vouEj6lRj28EX5FdGv3Nwy8/c+Z5siFOtnqqvG3VrK4dkgxvLirA2ImFJP91gKQ17TKb+4l0a9tse7tBlIvDRSUZtQx1swwLooefgfXqsAMrIPyoqpLZ4LlZ+mvnIIUoULfACaRlp5qBzHW1FETOQ1V0Ux9UotoJztDQDfy+8T6oOY59CSxkq/Z1QfQV/UyC6Q2WqCXJ7C92hFp/IqVnEjqwiy8C4U5lxYMO8JhzgTY2mxYkpeSeut3jKFLxEdyeeJz2e37MECnLmrc3yMkm1hRJAe1mieBvUHaUUXOFmGHj2IdQsVQPX+zEvB06N9C+Cc3AW+9GZp6xvV6V84JnKNSqpc8+CMX3QAV+TW478xEl0QVYb7c7osKQYwv0/00aGdf3BZ3oul5rCQe84eTkTkbtJZnU82Oqy6PJq7XhJzp0/DzJVKtoJPAxy4SccGYmnoEiJheV5ss614VOqxzX9zmL624zeXQcXRW6d/NlRa+PgofvCd4EMOE3xbTAg2WKmSrYYr76f/HHxXBLtEkTLVrEDHH76q2CotY0WBLOxhkYAbkg9gXhswL9VNvo4FA=
+X-Microsoft-Exchange-Diagnostics: 1;DB6PR01MB3896;6:ufy9Ln4JLKxcLw6vrt0pnXvzwM1W8BS3YAjbBBSTDKKgCMq6ZGToDvZO0mwdd3UDAOksEiCd20H98Wi/OarcSlX5nL5/6CeQ60hcIgBePGHdo5U64dbs0syplXcoX77dV8cfEkgIHl+rhxF8uP8AfgCSJr8ZMTI2SBkbawVIp95JgGoVjnjDRRurPs7G2NNjcoJNvG62d8Pk7i6D7UUPSvOREhJoTOYF5PBJ9y06VYCR5YfH4whSqJU+W/7q02PTXg8rA8B9wxcKM74piO2Hx69mH5lzNKSS5gaJGxsTgnnbdYzvIexkgxKqRUn92j7BY1aFUDgfe+GdD26tyWChhAKwKGyPn7UVFnSyS01BdRYHY3awohomSdJSTs3z9ogDiYSgjCxm4yEc/ff56QK6jpX1I5CQO4YnA9HNWz0MXclPof77BK7lvoZOx0ol8IoeRJHNdXEjDJBnZmvCiXdKaw==;5:Ajx4W2RxniVelvEFCUg7MIB1SWMZ+g6+HdFn9x7JKYOXF7tuJmeTnY+cpDZzfi9JcQuLaokU5nTGmUPuSdxEnNxgczVZ9e0h6rE0o3mx8s4na5anDuyi363aYFddkL0ACO4rXEKnPHgdWi1+LkD2M1tblgaRLC7UojeHtqIWEj8=;24:78YhTc5NK6K9WHKQW3Zak3/JzgMe+XGUp10U8Ook/xqXtQp7oBB/qfQYlYeNS5/yK4y8c+8ffJZrg5HBvycbKYvJw9W2yDmmCUe4MdEP+PQ=
+SpamDiagnosticOutput: 1:99
+SpamDiagnosticMetadata: NSPM
+X-Microsoft-Exchange-Diagnostics: 1;DB6PR01MB3896;7:VP/pCep9iXbvHqWMZ5eNd6NXIqSY8SmzbbUVZgbYHRdzERL9aLcVn/trdNhYZqeicTpXDBs7NBHv7tPeaLur1N1adVjvSzttpUC4nh/zAu6VkHj1g0BK6lBtvrwIQpom882RsdJPQ4RRnhWOx5t/xJHC2xuA6cgpss4P3RHdfbZKX8rQMfXx8acXIrHc2PU5yivkWD0nASNaYN34RUsJgJAxJsFIQI/ZXRudPzErJ5iPYzqiyAXtQCKdQWo5jZBy
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Jul 2018 16:37:47.0239
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 32bd6c2d-778f-427d-759c-08d5e295a40e
+X-MS-Exchange-CrossTenant-Id: 18581e6b-2327-4856-bb5a-d9d366690de0
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR01MB3896
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:01.4201407
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.0930.000
+X-Microsoft-Exchange-Diagnostics:
+	1;VI1PR01MB3904;27:JfNFRMM0D8h1qqhziroBm8RFM4tmqKNbbN6O+nTTDqvuAGwV5SI8MObz+DLBdyMuxYvylAWWwfDkoPAWWfcq5k3FtfKQChgivzTCjhMe8OX5AKwLwAPz6kOvAnn30sxqLyp37+a8kgNFRL+DDJepqZ4ggyduknTs3/f7iOrbo/0lpTM9WsbKQ/TeNcxS4MQ205oRB2WrtPcyAU2LPVgn9qG4NiY0K1e/1NFRsNpAILJPSc32MnjITJT++/u+zCiMkSNFFOJILaiix0m8c1cht345iPmOLzdyJRdSlNQA8Y8m8BYAflK2sjbxNudZxScFXDfL+lk2gKvjeoPSSb6aYw==
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;ex:0;auth:0;dest:I;ENG:(20160514016)(750119)(520011016);
+X-Microsoft-Antispam-Message-Info:
+	eFOj/Fgtb6e8XrWjbiVxV4fLJtXfUDMI/FlrrjAcBzZH/G8Fhr7uwkevL06gGd8amFEBm78FBrBXUHzW5idIzlCdaKHO2+PWBHPgRdIAqnExbLM4Db5C1WO3yGBFCL0VxtcXYOilCvmLuWpGG9jiWTiiKiP+paqMs+RVDVCqaK10kDYTpl591cxo4JNcPBS7G68qlnLxyjZf7v6A2QFbe9VEvzGnI6UUk0Vnbw6LhkNdMVGyk7k/XUAM5u6ii3p577LByoxDzVFzOo4C8JbbBv0wPNs+z81sNVBQaf1D+EEdqmPCJDLrhLXRFzxE/68v38caJ09tPCKE/ECDeeZTtEp9nzMA3WdWCLs5EagYnNH9xbx5SCHrMf5CvxGWXwwZMQBD5f5/zIFrLw7g3f+B7h2VH/bBwafhItdEOuCDnuWO1iio0f4638OiuAYXk9fCqv2hy8lCMni5G0GjOBcpZEI7lNBCcDKM5VwLtU3zi8rpK2t06/KYFAHB/zRnKKj+QlT77I9Byw6ImjmtbXGDKnBxXEt5NytQZS0CNArxZUeElx922p7XaD5I2PuS/j0f5Rqzwck5JpO1AGhqBrdHxq5542aIMz3hnuES6gAswsM=
+MIME-Version: 1.0
+
+--1530808656mail10.surf-town.net319888
+Hi. This is the qmail-send program at mail10.surf-town.net.
+I'm afraid I wasn't able to deliver your message to the following addresses.
+This is a permanent error; I've given up. Sorry it didn't work out.
+
+<thomas@skurk.dk>:
+user is over quota
+
+
+--- Enclosed are the original headers of the message.
+
+--1530808656mail10.surf-town.net319888
+Content-Type: message/rfc822
+
+Return-Path: <online-bounce@bruun-rasmussen.dk>
+Received: (qmail 7318 invoked by uid 399); 5 Jul 2018 16:37:36 -0000
+Received: from unknown (HELO mailgw1.surf-town.net) (10.32.12.1)
+  by 10.32.10.11 with ESMTP; 5 Jul 2018 16:37:36 -0000
+X-Originating-IP: 10.32.12.1
+Received: by mailgw1.surf-town.net (Postfix, from userid 65534)
+	id A852E4E162; Thu,  5 Jul 2018 18:37:35 +0200 (CEST)
+Received: from localhost (unknown [127.0.0.1])
+	by mailgw1.surf-town.net (Postfix) with ESMTP id 9D6964E13A
+	for <thomas@skurk.dk>; Thu,  5 Jul 2018 18:37:35 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at mailgw1.surf-town.net
+X-Spam-Flag: NO
+X-Spam-Score: 0.11
+X-Spam-Level:
+X-Spam-Status: No, score=0.11 tagged_above=-999 required=7
+	tests=[DKIM_SIGNED=0.001, DKIM_VALID=0.001, DKIM_VALID_AU=0.001,
+	DKIM_VERIFIED=0.001, HTML_MESSAGE=0.001, MAILING_LIST_MULTI=-1,
+	MIME_HTML_ONLY=1.105] autolearn=disabled
+Received: from mailgw1.surf-town.net ([127.0.0.1])
+	by localhost (mailgw1.surf-town.net [127.0.0.1]) (amavisd-new, port 10024)
+	with LMTP id VikeQ8obU0s9 for <thomas@skurk.dk>;
+	Thu,  5 Jul 2018 18:37:32 +0200 (CEST)
+X-Greylist: domain auto-whitelisted by SQLgrey-1.8.0-rc2
+Received-SPF: pass (bruun-rasmussen.dk: 62.242.147.169 is authorized to use 'online-bounce@bruun-rasmussen.dk' in 'mfrom' identity (mechanism 'a:mail.bruun-rasmussen.dk' matched)) receiver=mailgw1.surf-town.net; identity=mailfrom; envelope-from="online-bounce@bruun-rasmussen.dk"; helo=mail.bruun-rasmussen.dk; client-ip=62.242.147.169
+Received: from mail.bruun-rasmussen.dk (unknown [62.242.147.169])
+	by mailgw1.surf-town.net (Postfix) with ESMTPS id 182824E14C
+	for <thomas@skurk.dk>; Thu,  5 Jul 2018 18:37:32 +0200 (CEST)
+X-Footer: YnJ1dW4tcmFzbXVzc2VuLmRr
+Received: from bifrost2.bruun-rasmussen.dk ([10.1.10.57])
+	by mail.bruun-rasmussen.dk (Kerio Connect 9.2.3) with ESMTP
+	for thomas@skurk.dk;
+	Thu, 5 Jul 2018 18:37:32 +0200
+Received: from bifrost2.bruun-rasmussen.dk (localhost [127.0.0.1])
+	by bifrost2.bruun-rasmussen.dk (Postfix) with ESMTP id 465B310C006
+	for <thomas@skurk.dk>; Thu,  5 Jul 2018 18:37:32 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=bruun-rasmussen.dk;
+	s=bifrost.prod; t=1530808652;
+	bh=p2B7Q4BKhoZxyRZ5SdjHd/PzBVzHXwOkzHnlUzl1Lj4=;
+	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:
+	 List-Post:List-Unsubscribe;
+Content-Type: text/plain
+MIME-Version: 1.0
+
+(Body supressed)
+
+--1530808656mail10.surf-town.net319888--

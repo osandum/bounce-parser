@@ -18,7 +18,7 @@ public class BounceParser {
 
     public static MailDeliveryStatus parseMessage(Message msg)
             throws MessagingException, BounceParserException {
-        LOG.debug(msg.getMessageNumber() + ": \"" + msg.getSubject() + "\"");
+        LOG.debug("{}: \"{}\"", msg.getMessageNumber(), msg.getSubject());
 
         String rp[] = msg.getHeader("Return-Path");
         if (rp != null && rp.length > 0 && !"<>".equals(rp[0]))
@@ -61,14 +61,14 @@ public class BounceParser {
     private static void parsePart(Part p, MailDeliveryStatus res) throws MessagingException, IOException {
         String ct = p.getContentType().toLowerCase();
 
-        if (LOG.isDebugEnabled()) {
-            LOG.debug("##  ContentType: " + ct);
+      /*if (LOG.isDebugEnabled()) {
+            LOG.debug("##  ContentType: {}", ct);
             Enumeration headers = p.getAllHeaders();
             while (headers.hasMoreElements()) {
                 Header h = (Header) headers.nextElement();
-                LOG.debug("##  " + h.getName() + "=" + h.getValue());
+                LOG.debug("##  {}={}", h.getName(), h.getValue());
             }
-        }
+        }*/
 
         if (ct.startsWith("multipart/")) {
             MimeMultipart c = (MimeMultipart) p.getContent();
@@ -78,12 +78,24 @@ public class BounceParser {
                     parsePart(bp, res);
                 }
                 catch (IOException ex) {
-                    LOG.warn("failed to parse MIME part ]" + bp.getContentType() + "]: " + ex.getMessage());
+                    LOG.warn("failed to parse MIME part [{}]: {}", bp.getContentType(), ex.getMessage());
                 }
             }
         }
         else if (ct.startsWith("text/plain")) {
             String plainText = p.getContent().toString();
+            LOG.debug("## Plain text: \"{}\"", plainText);
+            
+            Enumeration headers = p.getAllHeaders();
+            if (headers.hasMoreElements()) {
+                Header h = (Header)headers.nextElement();
+                if (h.getName().startsWith("Hi. This is the qmail")) {
+                    String qmailBotchedPrefix = h.getName();
+                    while (headers.hasMoreElements())
+                        qmailBotchedPrefix += "\n" + ((Header)headers.nextElement()).getName();
+                    plainText = qmailBotchedPrefix + "\n" + plainText;
+                }
+            }            
             
             QmailFailure qf = QmailFailure.tryParse(plainText);
             if (qf != null) {
@@ -124,6 +136,7 @@ public class BounceParser {
                     String name = e.getName().toLowerCase();
                     String value = e.getValue();
 
+                    LOG.debug("##  DSN {}={}", name, value);
                     if ("action".equals(name))
                         res.setDeliveryAction(MailDeliveryAction.parse(value));
                     if ("status".equals(name))
@@ -179,7 +192,7 @@ public class BounceParser {
                     String name = e.getName();
                     String value = e.getValue();
 
-                    LOG.debug(e.getName() + " = \"" + e.getValue() + "\"");
+                    LOG.debug("{} = \"{}\"", e.getName(), e.getValue());
                     res.addOrignalHeader(name, value);
                 }
             } while (s.available() > 0);
@@ -198,11 +211,11 @@ public class BounceParser {
             }
         }
         else {
-            LOG.debug("ContentType: " + ct);
+            LOG.debug("ContentType: {}", ct);
             Enumeration headers = p.getAllHeaders();
             while (headers.hasMoreElements()) {
                 Header h = (Header) headers.nextElement();
-                LOG.debug(h.getName() + "=" + h.getValue());
+                LOG.debug("{}={}", h.getName(), h.getValue());
             }
         }
     }
