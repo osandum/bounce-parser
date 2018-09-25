@@ -43,7 +43,7 @@ public class BounceParser {
             throw new BounceParserException("failed to parse MIME message [" + msg.getContentType() + "]: " + ex.getMessage());
         }
         catch (ParseException ex) {
-            throw new BounceParserException("failed to parse MIME message [" + msg.getContentType() + "]: " + ex.getMessage());           
+            throw new BounceParserException("failed to parse MIME message [" + msg.getContentType() + "]: " + ex.getMessage());
         }
 
         if (res.getDeliveryAction() == null)
@@ -85,7 +85,7 @@ public class BounceParser {
         else if (ct.startsWith("text/plain")) {
             String plainText = p.getContent().toString();
             LOG.debug("## Plain text: \"{}\"", plainText);
-            
+
             Enumeration headers = p.getAllHeaders();
             if (headers.hasMoreElements()) {
                 Header h = (Header)headers.nextElement();
@@ -95,8 +95,8 @@ public class BounceParser {
                         qmailBotchedPrefix += "\n" + ((Header)headers.nextElement()).getName();
                     plainText = qmailBotchedPrefix + "\n" + plainText;
                 }
-            }            
-            
+            }
+
             QmailFailure qf = QmailFailure.tryParse(plainText);
             if (qf != null) {
                 res.setFinalRecipient(parseRecipient(qf.getRecipient()));
@@ -110,7 +110,7 @@ public class BounceParser {
                     res.setFinalRecipient(parseRecipient(xf.getRecipient()));
                     res.setReportingAgent(xf.getReportingHost());
                     res.setDeliveryAction(MailDeliveryAction.failed);
-                    res.setDeliveryStatus(MailSystemStatusCode.parse("4.0.0"));                    
+                    res.setDeliveryStatus(MailSystemStatusCode.parse(xf.getStatusCode()));
                 }
             }
             // Analyze plainText - it will often contain a copy of our own mail
@@ -211,12 +211,7 @@ public class BounceParser {
             }
         }
         else {
-            LOG.debug("ContentType: {}", ct);
-            Enumeration headers = p.getAllHeaders();
-            while (headers.hasMoreElements()) {
-                Header h = (Header) headers.nextElement();
-                LOG.debug("{}={}", h.getName(), h.getValue());
-            }
+            LOG.info("ContentType: [{}] - ignored", ct);
         }
     }
 
