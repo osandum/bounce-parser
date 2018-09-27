@@ -24,21 +24,21 @@ Received: from in12d.electric.net (89.104.206.13) by
  15.20.906.15 via Frontend Transport; Thu, 5 Jul 2018 16:37:47 +0000
 Received: from 1fb7GM-000Ac0-52 by in12d.electric.net with hostsite:2153977 (Exim 4.90_1)
 	id 1fb7GM-000AmV-5p
-	for online-bounce@bruun-rasmussen.dk; Thu, 05 Jul 2018 09:37:46 -0700
+	for bounces@example.dk; Thu, 05 Jul 2018 09:37:46 -0700
 Received: by emcmailer; Thu, 05 Jul 2018 09:37:46 -0700
 Received: from mailout-lvl1-01.surftown.com ([212.97.133.98])
 	by in12d.electric.net with esmtps (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256)
 	(Exim 4.90_1)
 	id 1fb7GM-000Ac0-52
-	for online-bounce@bruun-rasmussen.dk; Thu, 05 Jul 2018 09:37:46 -0700
+	for bounces@example.dk; Thu, 05 Jul 2018 09:37:46 -0700
 Received: from surftown.com (mail.surftown.com [212.97.133.57])
 	by mailout-lvl1-01.surftown.com (Postfix) with ESMTP id 523AB601CB
-	for <online-bounce@bruun-rasmussen.dk>; Thu,  5 Jul 2018 18:37:41 +0200 (CEST)
+	for <bounces@example.dk>; Thu,  5 Jul 2018 18:37:41 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at surftown.com
 Received: (qmail 7360 invoked for bounce); 5 Jul 2018 16:37:40 -0000
 Date: Thu, 5 Jul 2018 16:37:40 +0000
 From: <MAILER-DAEMON@mail10.surf-town.net>
-To: <online-bounce@bruun-rasmussen.dk>
+To: <bounces@example.dk>
 Content-Type: multipart/mixed;
 	boundary="1530808656mail10.surf-town.net319888"
 Subject: failure notice
@@ -127,7 +127,7 @@ Hi. This is the qmail-send program at mail10.surf-town.net.
 I'm afraid I wasn't able to deliver your message to the following addresses.
 This is a permanent error; I've given up. Sorry it didn't work out.
 
-<thomas@skurk.dk>:
+<sample9@example.dk>:
 user is over quota
 
 
@@ -136,7 +136,7 @@ user is over quota
 --1530808656mail10.surf-town.net319888
 Content-Type: message/rfc822
 
-Return-Path: <online-bounce@bruun-rasmussen.dk>
+Return-Path: <bounces@example.dk>
 Received: (qmail 7318 invoked by uid 399); 5 Jul 2018 16:37:36 -0000
 Received: from unknown (HELO mailgw1.surf-town.net) (10.32.12.1)
   by 10.32.10.11 with ESMTP; 5 Jul 2018 16:37:36 -0000
@@ -145,7 +145,7 @@ Received: by mailgw1.surf-town.net (Postfix, from userid 65534)
 	id A852E4E162; Thu,  5 Jul 2018 18:37:35 +0200 (CEST)
 Received: from localhost (unknown [127.0.0.1])
 	by mailgw1.surf-town.net (Postfix) with ESMTP id 9D6964E13A
-	for <thomas@skurk.dk>; Thu,  5 Jul 2018 18:37:35 +0200 (CEST)
+	for <sample9@example.dk>; Thu,  5 Jul 2018 18:37:35 +0200 (CEST)
 X-Virus-Scanned: Debian amavisd-new at mailgw1.surf-town.net
 X-Spam-Flag: NO
 X-Spam-Score: 0.11
@@ -156,26 +156,21 @@ X-Spam-Status: No, score=0.11 tagged_above=-999 required=7
 	MIME_HTML_ONLY=1.105] autolearn=disabled
 Received: from mailgw1.surf-town.net ([127.0.0.1])
 	by localhost (mailgw1.surf-town.net [127.0.0.1]) (amavisd-new, port 10024)
-	with LMTP id VikeQ8obU0s9 for <thomas@skurk.dk>;
+	with LMTP id VikeQ8obU0s9 for <sample9@example.dk>;
 	Thu,  5 Jul 2018 18:37:32 +0200 (CEST)
 X-Greylist: domain auto-whitelisted by SQLgrey-1.8.0-rc2
-Received-SPF: pass (bruun-rasmussen.dk: 62.242.147.169 is authorized to use 'online-bounce@bruun-rasmussen.dk' in 'mfrom' identity (mechanism 'a:mail.bruun-rasmussen.dk' matched)) receiver=mailgw1.surf-town.net; identity=mailfrom; envelope-from="online-bounce@bruun-rasmussen.dk"; helo=mail.bruun-rasmussen.dk; client-ip=62.242.147.169
-Received: from mail.bruun-rasmussen.dk (unknown [62.242.147.169])
+Received-SPF: pass (bruun-rasmussen.dk: 62.242.147.169 is authorized to use 'bounces@example.dk' in 'mfrom' identity (mechanism 'a:mx.example.dk' matched)) receiver=mailgw1.surf-town.net; identity=mailfrom; envelope-from="bounces@example.dk"; helo=mx.example.dk; client-ip=62.242.147.169
+Received: from mx.example.dk (unknown [62.242.147.169])
 	by mailgw1.surf-town.net (Postfix) with ESMTPS id 182824E14C
-	for <thomas@skurk.dk>; Thu,  5 Jul 2018 18:37:32 +0200 (CEST)
+	for <sample9@example.dk>; Thu,  5 Jul 2018 18:37:32 +0200 (CEST)
 X-Footer: YnJ1dW4tcmFzbXVzc2VuLmRr
-Received: from bifrost2.bruun-rasmussen.dk ([10.1.10.57])
-	by mail.bruun-rasmussen.dk (Kerio Connect 9.2.3) with ESMTP
-	for thomas@skurk.dk;
+Received: from server2.local ([10.1.10.57])
+	by mx.example.dk (Kerio Connect 9.2.3) with ESMTP
+	for sample9@example.dk;
 	Thu, 5 Jul 2018 18:37:32 +0200
-Received: from bifrost2.bruun-rasmussen.dk (localhost [127.0.0.1])
-	by bifrost2.bruun-rasmussen.dk (Postfix) with ESMTP id 465B310C006
-	for <thomas@skurk.dk>; Thu,  5 Jul 2018 18:37:32 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=bruun-rasmussen.dk;
-	s=bifrost.prod; t=1530808652;
-	bh=p2B7Q4BKhoZxyRZ5SdjHd/PzBVzHXwOkzHnlUzl1Lj4=;
-	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:
-	 List-Post:List-Unsubscribe;
+Received: from server2.local (localhost [127.0.0.1])
+	by server2.local (Postfix) with ESMTP id 465B310C006
+	for <sample9@example.dk>; Thu,  5 Jul 2018 18:37:32 +0200 (CEST)
 Content-Type: text/plain
 MIME-Version: 1.0
 

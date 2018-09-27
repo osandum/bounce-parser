@@ -13,7 +13,7 @@ public class EximFailureParserTest extends TestCase {
 "A message that you sent could not be delivered to one or more of its\n" +
 "recipients. This is a permanent error. The following address(es) failed:\n" +
 "\n" +
-"  lasse_jeppesen@mailme.dk\n" +
+"  sample3@example.mailme.dk\n" +
 "    (sa) Message rejected by abuse@mailme.dk\n" +
 "    (sa) User profile spam level exceeded\n" +
 "    (sa) Adjust if needed at http://www.mailme.dk\n" +
@@ -27,8 +27,8 @@ public class EximFailureParserTest extends TestCase {
 "A message that you sent could not be delivered to one or more of its\n" +
 "recipients. This is a permanent error. The following address(es) failed:\n" +
 "\n" +
-"  sarumatxxxxxxxxxxx@gmail.com\n" +
-"    SMTP error from remote mail server after RCPT TO:<sarumatxxxxxxxxxxx@gmail.com>:\n" +
+"  sample11@example.com\n" +
+"    SMTP error from remote mail server after RCPT TO:<sample11@example.com>:\n" +
 "    host gmail-smtp-in.l.google.com [172.217.194.26]:\n" +
 "    550-5.1.1 The email account that you tried to reach does not exist. Please try\n" +
 "    550-5.1.1 double-checking the recipient's email address for typos or\n" +

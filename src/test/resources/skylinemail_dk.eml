@@ -1,8 +1,8 @@
 Return-Path: <>
 Received: from ec1-route31.net.comendo.com ([89.104.217.186])
-	by mail.bruun-rasmussen.dk (Kerio Connect 8.4.3)
+	by mx.example.dk (Kerio Connect 8.4.3)
 	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256 bits))
-	for online-bounce@bruun-rasmussen.dk;
+	for bounces@example.dk;
 	Wed, 20 May 2015 15:58:43 +0200
 Return-Path: <>
 X-Senderip: 194.150.115.31
@@ -15,7 +15,7 @@ X-Comendo-TLSReception: 0
 X-Comendo-ID: ec1-n1:1432130322!EE/9A-16934-2139C555!online-bounce
 X-Spamscore-required: 2
 X-Spamscore: 0.000000
-X-Spaminfo: [e01:0:1] [e02:0:0] 
+X-Spaminfo: [e01:0:1] [e02:0:0]
 Authentication-Results: ec1-node1.net.comendo.com smtp.mail=@mscan.skylinemail.dk; spf=neutral
 Received: from [194.150.115.31] ([194.150.115.31:50410] helo=mscan.skylinemail.dk)
 	by ec1-node1.net.comendo.com (envelope-from <>)
@@ -23,10 +23,10 @@ Received: from [194.150.115.31] ([194.150.115.31:50410] helo=mscan.skylinemail.d
 	id EE/9A-16934-2139C555; Wed, 20 May 2015 15:58:43 +0200
 Received: from mscan.skylinemail.dk
         by mscan.skylinemail.dk (IceWarp 11.1.2.0 x64) with SMTP id 201505201558398492
-        for <online-bounce@bruun-rasmussen.dk>; Wed, 20 May 2015 15:58:39 +0200
+        for <bounces@example.dk>; Wed, 20 May 2015 15:58:39 +0200
 Date: Wed, 20 May 2015 15:58:39 +0200
 From: Mail Delivery Subsystem <MAILER-DAEMON@elromail.dk>
-To: <online-bounce@bruun-rasmussen.dk>
+To: <bounces@example.dk>
 Message-Id: <97b07cc06627635b8ed11ecd6b1412db-1186234195@mscan.skylinemail.dk>
 Subject: Returned mail: could not connect and send the mail to 194.150.115.84
 MIME-Version: 1.0
@@ -39,7 +39,7 @@ Content-Transfer-Encoding: 8bit
 The original message was received at Mon, 18 May 2015 15:48:42 +0200
 
   ----- The following addresses had permanent fatal errors -----
-<lindoe@elromail.dk>
+<sample8@example.dk>
 
   ----- Transcript of session follows -----
 554 could not connect and send the mail to 194.150.115.84
@@ -50,8 +50,8 @@ Content-Type: message/delivery-status
 Reporting-MTA: DNS; mscan.skylinemail.dk
 Arrival-Date: Mon, 18 May 2015 15:48:42 +0200
 
-Original-Recipient: RFC822; <lindoe@elromail.dk>
-Final-Recipient: RFC822; <lindoe@elromail.dk>
+Original-Recipient: RFC822; <sample8@example.dk>
+Final-Recipient: RFC822; <sample8@example.dk>
 Action: failed
 Remote-MTA: DNS; 194.150.115.84
 Last-Attempt-Date: Wed, 20 May 2015 15:58:39 +0200
@@ -59,43 +59,29 @@ Last-Attempt-Date: Wed, 20 May 2015 15:58:39 +0200
 --1186234195201505181548404522-1186230088_8@mscan.skylinemail.dk
 Content-Type: message/rfc822
 
-Return-Path: <online-bounce@bruun-rasmussen.dk>
-Received: from mail.bruun-rasmussen.dk ([77.234.168.9])
+Return-Path: <bounces@example.dk>
+Received: from mx.example.dk ([77.234.168.9])
         by mscan.skylinemail.dk (IceWarp 11.1.2.0 x64) with ESMTP (SSL) id 201505181548394510
-        for <lindoe@elromail.dk>; Mon, 18 May 2015 15:48:39 +0200
+        for <sample8@example.dk>; Mon, 18 May 2015 15:48:39 +0200
 X-Footer: YnJ1dW4tcmFzbXVzc2VuLmRr
-Received: from bifrost3.bruun-rasmussen.dk ([10.1.10.59])
-	by mail.bruun-rasmussen.dk (Kerio Connect 8.4.3)
-	for lindoe@elromail.dk;
+Received: from server3.local ([10.1.10.59])
+	by mx.example.dk (Kerio Connect 8.4.3)
+	for sample8@example.dk;
 	Mon, 18 May 2015 15:48:37 +0200
-Received: from bifrost3.bruun-rasmussen.dk (localhost [127.0.0.1])
-	by bifrost3.bruun-rasmussen.dk (Postfix) with ESMTP id BC231E04E
-	for <lindoe@elromail.dk>; Mon, 18 May 2015 15:48:37 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=bruun-rasmussen.dk;
-	s=bifrost.prod; t=1431956917;
-	bh=RC1XKcNtocSZUbOAfMgKGLRItWtYXydKiHbm2SaRoos=;
-	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:
-	 List-Post:List-Unsubscribe;
-	b=P1WZNu/zVmrJYeSWw5qZho04aPAbLwvDpQpHeqRLBStubjHiAFoKSvG49K9opoWVT
-	 cbPAB7wzSPN9WEQe9boC+rlzO73dzXr78zb2x2r7NIBLodWOc76t24Z2NP7AtspWXK
-	 xiQtthc66AdZVUuaskBnD9csZTksnNKE99WlfpSM=
+Received: from server3.local (localhost [127.0.0.1])
+	by server3.local (Postfix) with ESMTP id BC231E04E
+	for <sample8@example.dk>; Mon, 18 May 2015 15:48:37 +0200 (CEST)
 Date: Mon, 18 May 2015 15:48:37 +0200 (CEST)
-From: Bruun Rasmussen Nyhedsbrev <nyhedsbrev@bruun-rasmussen.dk>
-To: Aase Balle Jensen <lindoe@elromail.dk>
-Message-ID: <209430749.40291431956917769.JavaMail.drift@bruun-rasmussen.dk>
+From: Nyhedsbrev <nyhedsbrev@example.dk>
+To: A. B. Recipient <sample8@example.dk>
+Message-ID: <209430749.40291431956917769.MTA@example.dk>
 Subject: =?iso-8859-1?Q?Russisk_kunst_fra_f=F8r_revolutionen_p=E5_auktion__?=
 MIME-Version: 1.0
-Content-Type: multipart/related; 
+Content-Type: multipart/related;
 	boundary="----=_Part_4350_2116640867.1431956917725"
 X-Mail-Generated: bifrost3; Mon May 18 15:48:37 CEST 2015
 Precedence: bulk
 List-Post: NO (posting not allowed on this list)
-List-Unsubscribe: <http://www.bruun-rasmussen.dk/unsubscribe?978B66C2A515155B8184D3CF2ACCD2911E4BDCF2&utm_source=newsletter&utm_campaign=Newsletter_857_Russian-unsubscribe&utm_medium=email>
-X-BR-Subscription-Id: 978B66C2A515155B8184D3CF2ACCD2911E4BDCF2
-X-Language: da
-X-BR-Reference: 
-X-BR-Mail-Id: b469658f3742749f
-X-Mail-Dispatched: bifrost3; Mon May 18 15:48:37 CEST 2015
 
 ------=_Part_4350_2116640867.1431956917725
 Content-Type: text/html; charset=us-ascii
@@ -128,10 +114,9 @@ TD.textBodyRight, TD.textImage { width: 240px; }
 .textSummary { padding: 5px 5px 5px 5px; border-top: 1px solid #666666; border-bottom: 1px solid #666666; }
 .textImage P, .textImageText P { margin: 5px 0px 5px 0px; }
 .mailSheet { background-color: white; max-width: 980px; text-align: start; border: 1px solid #701123; }
-.mailBody { padding: 0px 48px 16px 93px; }      
+.mailBody { padding: 0px 48px 16px 93px; }
 .mailBody IMG { max-width: 600px; height: auto;  }
     --></style><center><div class="mailSheet"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td background="cid:part.1.1431956917684@mail" bgcolor="#701123" height="70" width="100%"><img alt="[logo]" border="0" height="49" hspace="24" src="cid:part.2.1431956917684@mail" width="274"></td></tr><tr><td background="cid:part.3.1431956917684@mail" height="16"></td></tr></table><div class="mailBody"><table cellpadding="0" cellspacing="0" class="innerLayout"><!-- ROW 1 of 1--><tr><td class="layout" colspan="99"><table border="0" cellpadding="0" cellspacing="0" class="article" width="100%"><tr><td width="100%">
 
 
 --1186234195201505181548404522-1186230088_8@mscan.skylinemail.dk--
-

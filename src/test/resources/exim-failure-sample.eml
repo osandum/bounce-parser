@@ -1,7 +1,7 @@
 Return-Path: <>
 Received: from mail6.bemta14.messagelabs.com ([193.109.254.103])
-	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4)
-	for online-bounce@bruun-rasmussen.dk;
+	by mx.example.dk (Kerio Connect 8.2.4)
+	for bounces@example.dk;
 	Sat, 10 May 2014 07:59:32 +0200
 Return-Path: <>
 Received: from [193.109.255.99:21331] by server-5.bemta-14.messagelabs.com id 92/18-26413-440CD635; Sat, 10 May 2014 05:59:32 +0000
@@ -17,23 +17,23 @@ Received: from mx3.mailme.dk (HELO mx3.mailme.dk) (81.19.232.133)
   by server-8.tower-48.messagelabs.com with SMTP; 10 May 2014 05:59:29 -0000
 Received: from root by mx3.mailme.dk with local (Exim 4.71)
 	id 1Wj0Jk-0007Dp-Qg
-	for online-bounce@bruun-rasmussen.dk; Sat, 10 May 2014 07:59:28 +0200
+	for bounces@example.dk; Sat, 10 May 2014 07:59:28 +0200
 Date: Sat, 10 May 2014 07:59:28 +0200
 Message-Id: <E1Wj0Jk-0007Dp-Qg@mx3.mailme.dk>
-X-Failed-Recipients: lasse_jeppesen@mailme.dk
+X-Failed-Recipients: sample3@example.mailme.dk
 Auto-Submitted: auto-replied
 From: Mail Delivery System <Mailer-Daemon@mx3.mailme.dk>
-To: online-bounce@bruun-rasmussen.dk
+To: bounces@example.dk
 Subject: Mail delivery failed: returning message to sender
 X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Mail-From: 
+X-SA-Exim-Mail-From:
 
 This message was created automatically by mail delivery software.
 
 A message that you sent could not be delivered to one or more of its
 recipients. This is a permanent error. The following address(es) failed:
 
-  lasse_jeppesen@mailme.dk
+  sample3@example.mailme.dk
     (sa) Message rejected by abuse@mailme.dk
     (sa) User profile spam level exceeded
     (sa) Adjust if needed at http://www.mailme.dk
@@ -42,45 +42,26 @@ recipients. This is a permanent error. The following address(es) failed:
 ------ The body of the message is 21525 characters long; only the first
 ------ 16384 or so are included here.
 
-Return-path: <online-bounce@bruun-rasmussen.dk>
-Received: from [77.234.168.9] (helo=mail.bruun-rasmussen.dk)
+Return-path: <bounces@example.dk>
+Received: from [77.234.168.9] (helo=mx.example.dk)
 	by mx3.mailme.dk with esmtp (Exim 4.71)
-	(envelope-from <online-bounce@bruun-rasmussen.dk>)
+	(envelope-from <bounces@example.dk>)
 	id 1Wj0Jf-0007Dj-Ct
-	for lasse_jeppesen@mailme.dk; Sat, 10 May 2014 07:59:28 +0200
+	for sample3@example.mailme.dk; Sat, 10 May 2014 07:59:28 +0200
 X-Footer: YnJ1dW4tcmFzbXVzc2VuLmRr
-Received: from bifrost2.bruun-rasmussen.dk ([10.1.10.57])
-	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4);
+Received: from server2.local ([10.1.10.57])
+	by mx.example.dk (Kerio Connect 8.2.4);
 	Sat, 10 May 2014 07:59:05 +0200
-Received: from bifrost2.bruun-rasmussen.dk (localhost [127.0.0.1])
-	by bifrost2.bruun-rasmussen.dk (Postfix) with ESMTP id E51471263D;
+Received: from server2.local (localhost [127.0.0.1])
+	by server2.local (Postfix) with ESMTP id E51471263D;
 	Sat, 10 May 2014 00:52:25 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=bruun-rasmussen.dk;
-	s=bifrost.prod; t=1399675946;
-	bh=G3nKx69yXgOjZZg3SgrHu9ZX8ZkXetN8vcFtNW3ncyk=;
-	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:
-	 List-Unsubscribe;
-	b=UIE+0UzIjNlsMmSL+Rtw+H0avTyQknTTApc0K8qQ7f77TjYxyuHdcLjfD8wt/ji81
-	 L4Cz/tmpGd85EvnnLP5Ff+gGwlPtpyJ/6MmZvaVfcro5iCoO6sQ9xq2GFoFVqpCFQx
-	 /1cxZ7gCYtY7qt4R+IugpaIaeXe7X1N0FTkA61nc=
 Date: Sat, 10 May 2014 00:52:25 +0200 (CEST)
-From: Bruun Rasmussen Online <online@bruun-rasmussen.dk>
-To: Lasse Neregaard Jeppesen <lasse_jeppesen@mailme.dk>
-Message-ID: <2070711897.139261399675945936.JavaMail.drift@bruun-rasmussen.dk>
+From: Sample Sender <sample.sender@example.dk>
+To: Lasse Neregaard Jeppesen <sample3@example.mailme.dk>
+Message-ID: <2070711897.139261399675945936.MTA@example.dk>
 MIME-Version: 1.0
-Content-Type: multipart/related; 
+Content-Type: multipart/related;
 	boundary="----=_Part_13969_318827104.1399675945891"
-X-Agent-Search-For: Rolex
-X-Mail-Generated: bifrost2; Sat May 10 00:52:25 CEST 2014
-Precedence: bulk
-List-Unsubscribe: <http://www.bruun-rasmussen.dk/delete-agent.do?onlineAgentId=179007549&utm_source=searchagent-unsubscribe&utm_medium=email>
-X-Agent-Id: 179007549
-X-Agent-Item-Category: Ure
-X-Customer-Number: 278095
-X-Language: da
-X-Mail-Dispatched: bifrost2; Sat May 10 00:52:25 CEST 2014
-X-SA-Exim-Connect-IP: 77.234.168.9
-X-SA-Exim-Mail-From: online-bounce@bruun-rasmussen.dk
 Subject: =?iso-8859-1?Q?2_nye_emner_opfylder_Deres_s=F8gekriterier?=
 X-Spam-Checker-Version: SpamAssassin 3.3.1 (2010-03-16) on mx3.mailme.dk
 X-Spam-Flag: YES

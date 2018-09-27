@@ -29,31 +29,31 @@ public class QmailFailureParserTest extends TestCase {
 "- the e-mailmessage was in queue and couldn't be delivered in the past 3 days.\n" +
 "---------------------------------------------------------------------\n" +
 "\n" +
-"<mfrey1@versatel.nl>:\n" +
+"<sample6@example.nl>:\n" +
 "The users mailfolder is over the allowed quota (size).\n" +
 "";
-    
+
     private final static String PLAIN_FAILURE2 = "Hi. This is the qmail-send program at mail19.surf-town.net.\n" +
 "I'm afraid I wasn't able to deliver your message to the following addresses.\n" +
 "This is a permanent error; I've given up. Sorry it didn't work out.\n" +
 "\n" +
-"<carina@bjornsabro.dk>:\n" +
+"<sample10@example.dk>:\n" +
 "user is over quota\n" +
 "";
-    
+
     public QmailFailureParserTest(String testName) {
         super(testName);
     }
 
     public void testFailure1() throws ParseException {
         QmailFailure res = QmailFailure.tryParse(PLAIN_FAILURE1);
-        
+
         assertNotNull(res);
     }
 
     public void testFailure2() throws ParseException {
         QmailFailure res = QmailFailure.tryParse(PLAIN_FAILURE2);
-        
+
         assertNotNull(res);
     }
 }

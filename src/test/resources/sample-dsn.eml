@@ -1,14 +1,14 @@
 Return-Path: <>
 Received: from mail6.bemta3.messagelabs.com ([195.245.230.39])
-	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4)
+	by mx.example.dk (Kerio Connect 8.2.4)
 	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256 bits))
-	for online-bounce@bruun-rasmussen.dk;
+	for bounces@example.dk;
 	Sat, 10 May 2014 22:57:56 +0200
 Return-Path: <>
 Received: from [85.158.138.179:45043] by server-2.bemta-3.messagelabs.com id 25/98-23530-4D29E635; Sat, 10 May 2014 20:57:56 +0000
 X-Msg-Ref: server-3.tower-169.messagelabs.com!1399755474!3191643!1
 X-Originating-IP: [195.54.99.213]
-X-SpamReason: No, hits=0.0 required=7.0 tests=sa_preprocessor: 
+X-SpamReason: No, hits=0.0 required=7.0 tests=sa_preprocessor:
   VHJ1c3RlZCBJUDogMTk1LjU0Ljk5LjIxMyA9PiAxMTczMDY=\n
 X-StarScan-Received:
 X-StarScan-Version: 6.11.3; banners=-,-,-
@@ -18,24 +18,24 @@ Received: from smtprelay-b22.telenor.se (HELO smtprelay-b22.telenor.se) (195.54.
   by server-3.tower-169.messagelabs.com with DHE-RSA-AES256-SHA encrypted SMTP; 10 May 2014 20:57:54 -0000
 Received: from ipb4.telenor.se (ipb4.telenor.se [195.54.127.167])
 	by smtprelay-b22.telenor.se (Postfix) with ESMTP id 3893A14002
-	for <online-bounce@bruun-rasmussen.dk>; Sat, 10 May 2014 22:57:54 +0200 (CEST)
+	for <bounces@example.dk>; Sat, 10 May 2014 22:57:54 +0200 (CEST)
 X-SENDER-IP: [195.54.127.12]
 X-LISTENER: [smtp.bredband.net]
 X-IronPort-Anti-Spam-Filtered: true
 X-IronPort-Anti-Spam-Result: AtIFAPORblPDNn8MmWdsb2JhbACDG4EThlalMQkGgmMBl09+Fg4BAQEBAQgLCwcUKIIyQxkBARM6AQEBCh4VD0kBiEUBCJxfrWyFNIVWhwGBGg4CAQECaoMVgRmSaoJgDJoxOzCBAQgX
 X-IPAS-Result: AtIFAPORblPDNn8MmWdsb2JhbACDG4EThlalMQkGgmMBl09+Fg4BAQEBAQgLCwcUKIIyQxkBARM6AQEBCh4VD0kBiEUBCJxfrWyFNIVWhwGBGg4CAQECaoMVgRmSaoJgDJoxOzCBAQgX
-X-IronPort-AV: E=Sophos;i="4.97,1025,1389740400"; 
+X-IronPort-AV: E=Sophos;i="4.97,1025,1389740400";
    d="scan'208,145,147,217";a="578495027"
 Received: from mm-proxy3.telenor.se ([195.54.127.12])
   by ipb4.telenor.se with ESMTP; 10 May 2014 22:57:53 +0200
-Received: by mm-proxy3.telenor.se (8.5.103) id 52D6B7EF02FD8376 for online-bounce@bruun-rasmussen.dk; Sat, 10 May 2014 22:57:53 +0200
+Received: by mm-proxy3.telenor.se (8.5.103) id 52D6B7EF02FD8376 for bounces@example.dk; Sat, 10 May 2014 22:57:53 +0200
 From: Mail Delivery Service <postmaster@mm-proxy3.telenor.se>
 Subject: Delivery Status Notification
-To: online-bounce@bruun-rasmussen.dk
+To: bounces@example.dk
 Date: Sat, 10 May 2014 22:57:53 +0200
 Message-ID: <52D6B7EF02FD8375@mm-proxy3.telenor.se>
 X-CP-Transaction-ID: 52D6B7EF02FD8374
-X-CP-For: jannejar@algonet.se
+X-CP-For: sample7@example.se
 MIME-Version: 1.0
 Content-Type: Multipart/Report; report-type=delivery-status; boundary="========/52D6B7EF02FD8374/mm-proxy3.telenor.se"
 
@@ -49,9 +49,9 @@ Content-Type: text/plain; charset=ISO-8859-1
 Content-Transfer-Encoding: 8bit
 
  - These recipients of your message have been processed by the mail server:
-jannejar@algonet.se; Failed; 5.2.2 (mailbox full)
+sample7@example.se; Failed; 5.2.2 (mailbox full)
 
-    Remote MTA mm-be6.telenor.se: SMTP diagnostic: 552 RCPT TO:<jannejar@algonet.se> Mailbox disk quota exceeded
+    Remote MTA mm-be6.telenor.se: SMTP diagnostic: 552 RCPT TO:<sample7@example.se> Mailbox disk quota exceeded
 
 
 
@@ -62,54 +62,41 @@ Reporting-MTA: dns; mm-proxy3.telenor.se
 Received-from-MTA: dns; ipb5.telenor.se (195.54.127.168)
 Arrival-Date: Sat, 10 May 2014 22:57:53 +0200
 
-Final-Recipient: rfc822; jannejar@algonet.se
+Final-Recipient: rfc822; sample7@example.se
 Action: Failed
 Status: 5.2.2 (mailbox full)
 Remote-MTA: dns; mm-be6.telenor.se
-Diagnostic-Code: smtp; 552 RCPT TO:<jannejar@algonet.se> Mailbox disk quota exceeded
+Diagnostic-Code: smtp; 552 RCPT TO:<sample7@example.se> Mailbox disk quota exceeded
 
 --========/52D6B7EF02FD8374/mm-proxy3.telenor.se
 Content-Type: Message/RFC822
 
-Return-Path: <online-bounce@bruun-rasmussen.dk>
+Return-Path: <bounces@example.dk>
 Received: from ipb5.telenor.se (195.54.127.168) by mm-proxy3.telenor.se (8.5.103)
-        id 52D6B7EF02FD8374 for jannejar@algonet.se; Sat, 10 May 2014 22:57:53 +0200
+        id 52D6B7EF02FD8374 for sample7@example.se; Sat, 10 May 2014 22:57:53 +0200
 X-LISTENER: [mailgw.glocalnet.net]
 X-IronPort-Anti-Spam-Filtered: true
 X-IronPort-Anti-Spam-Result: Ai4FAL2RblNN6qgJ/2dsb2JhbABZgkJEAU6+bodbB3cWdIIyOgEBBxkBARY3AQEBCQEeBRAPBzASAYhFAQirCIRVAQWgBREGjFeGQpJumWWDODsw
 X-IPAS-Result: Ai4FAL2RblNN6qgJ/2dsb2JhbABZgkJEAU6+bodbB3cWdIIyOgEBBxkBARY3AQEBCQEeBRAPBzASAYhFAQirCIRVAQWgBREGjFeGQpJumWWDODsw
-X-IronPort-AV: E=Sophos;i="4.97,1025,1389740400"; 
+X-IronPort-AV: E=Sophos;i="4.97,1025,1389740400";
    d="scan'208,217,147,145";a="674911530"
-Received: from mail.bruun-rasmussen.dk ([77.234.168.9])
+Received: from mx.example.dk ([77.234.168.9])
   by ipb5.telenor.se with ESMTP; 10 May 2014 22:57:53 +0200
 X-Footer: YnJ1dW4tcmFzbXVzc2VuLmRr
-Received: from bifrost2.bruun-rasmussen.dk ([10.1.10.57])
-	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4);
+Received: from server2.local ([10.1.10.57])
+	by mx.example.dk (Kerio Connect 8.2.4);
 	Sat, 10 May 2014 22:57:40 +0200
-Received: from bifrost2.bruun-rasmussen.dk (localhost [127.0.0.1])
-	by bifrost2.bruun-rasmussen.dk (Postfix) with ESMTP id 5175010C05D;
+Received: from server2.local (localhost [127.0.0.1])
+	by server2.local (Postfix) with ESMTP id 5175010C05D;
 	Sat, 10 May 2014 22:57:40 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=bruun-rasmussen.dk;
-	s=bifrost.prod; t=1399755460;
-	bh=CAPIQW9yeavjBmjCBN9ynvTq7bhlfDPpD6X3QCD2qvo=;
-	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type;
-	b=GmDyMsr9tysAPkpsS1yT3hkCQ8QCf1VlMuFy/DNnQ8vu+slF7YxBaJm3a2oXfJKWF
-	 mjf3vqXR71Jk1nqCVllZrXNmlRKhZjP6lKGcQCWUKtESJYHJvUCTeTHe5tvSyyasP5
-	 WE9LQnygn5K4+pJ5XIiWELTG8xZmoPMVoF4hUBMo=
 Date: Sat, 10 May 2014 22:57:40 +0200 (CEST)
-From: Bruun Rasmussen Online <online@bruun-rasmussen.dk>
-To: Janne Jarzelius <jannejar@algonet.se>
-Message-ID: <1720339393.202891399755460321.JavaMail.drift@bruun-rasmussen.dk>
+From: Sample Sender <sample.sender@example.dk>
+To: Janne Jarzelius <sample7@example.se>
+Message-ID: <1720339393.202891399755460321.MTA@example.dk>
 Subject: =?iso-8859-1?Q?=D6verbud_p=E5_katalognr_1420/192?=
 MIME-Version: 1.0
-Content-Type: multipart/related; 
+Content-Type: multipart/related;
 	boundary="----=_Part_20478_1684709565.1399755460200"
-X-Mail-Generated: bifrost2; Sat May 10 22:57:40 CEST 2014
-X-Customer-Number: 829739
-X-Auction-Number: 1420
-X-Language: sv
-X-Auction-Id: 100000697
-X-Mail-Dispatched: bifrost2; Sat May 10 22:57:40 CEST 2014
 
 ------=_Part_20478_1684709565.1399755460200
 Content-Type: text/html; charset=us-ascii
@@ -142,7 +129,7 @@ TD.textBodyRight, TD.textImage { width: 240px; }
 .textSummary { padding: 5px 5px 5px 5px; border-top: 1px solid #666666; border-bottom: 1px solid #666666; }
 .textImage P, .textImageText P { margin: 5px 0px 5px 0px; }
     --></style><div style="border:1px solid #701123; background-color: white;"><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td background="cid:part.1.1399755460114@mail" bgcolor="#701123" height="70" width="100%"><img alt="[logo]" border="0" height="49" hspace="24" src="cid:part.2.1399755460114@mail" width="274"></td></tr><tr><td background="cid:part.3.1399755460114@mail" height="16"></td></tr></table><div style="padding: 0px 48px 16px 93px">
-    
+
 
     <h2>Ni har blivit &ouml;verbjuden p&aring; katalognr 1420/192</h2>
 
@@ -172,12 +159,12 @@ TD.textBodyRight, TD.textImage { width: 240px; }
       </tr>
     </table>
 
-    
+
       <p>
        Detta f&ouml;rem&aring;l s&auml;ljs p&aring; online-auktion m&aring;ndag den 12 maj 2014&nbsp;
        med f&ouml;rv&auml;ntat klubbslag kl. 21:03:40.
      </p>
-    
+
 
     <p><small>Budmeddelanden skickas ut i enlighet med Era inst&auml;llningar under <a href="http://www.bruun-rasmussen.dk/ssl/edit-notifications.do?utm_medium=email&utm_campaign=1420&utm_source=overbid-notify&utm_content=notifications">E-post och SMS-meddelanden</a> p&aring; Er sida.</small></p>
     <p>Med v&auml;nlig h&auml;lsning<br><strong>Bruun Rasmussen Konstauktioner</strong><br><a href="http://www.bruun-rasmussen.dk/index.do?utm_medium=email&utm_campaign=1420&utm_source=overbid-notify&utm_content=signature">www.bruun-rasmussen.dk</a></p>
@@ -368,4 +355,3 @@ IG64bb/df5q14dTdeJIVPuDiq4SlCVZmf//Z
 
 
 --========/52D6B7EF02FD8374/mm-proxy3.telenor.se--
-

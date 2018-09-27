@@ -1,9 +1,9 @@
 Return-Path: <>
-Message-ID: <3836964997-36181@mail.bruun-rasmussen.dk>
+Message-ID: <3836964997-36181@mx.example.dk>
 Received: from mail6.bemta14.messagelabs.com ([193.109.254.103])
-	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4)
+	by mx.example.dk (Kerio Connect 8.2.4)
 	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256 bits))
-	for online-bounce@bruun-rasmussen.dk;
+	for bounces@example.dk;
 	Sat, 10 May 2014 07:55:35 +0200
 Return-Path: <>
 Received: from [193.109.255.99:57098] by server-4.bemta-14.messagelabs.com id D6/3F-02781-75FBD635; Sat, 10 May 2014 05:55:35 +0000
@@ -27,7 +27,7 @@ Received: from qmail29.zonnet.nl ([10.170.1.106])
 Received: (qmail 3414 invoked for bounce); 10 May 2014 05:55:32 -0000
 Date: 10 May 2014 05:55:32 -0000
 From: MAILER-DAEMON@qmail29.zonnet.nl
-To: online-bounce@bruun-rasmussen.dk
+To: bounces@example.dk
 Subject: failure notice
 
 Hi. This is the qmail-send program at qmail29.zonnet.nl.
@@ -50,55 +50,39 @@ accepted.
 - the e-mailmessage was in queue and couldn't be delivered in the past 3 days.
 ---------------------------------------------------------------------
 
-<mfrey1@versatel.nl>:
+<sample6@example.nl>:
 The users mailfolder is over the allowed quota (size).
 
 --- Below this line is a copy of the message.
 
-Return-Path: <online-bounce@bruun-rasmussen.dk>
+Return-Path: <bounces@example.dk>
 Received: (qmail 3411 invoked by uid 0); 10 May 2014 05:55:32 -0000
 Received: from unknown ([10.170.1.102])
           (envelope-sender <>)
           by qmail29.zonnet.nl (qmail-ldap-1.03) with QMQP
           for < >; 10 May 2014 05:55:32 -0000
-Delivered-To: CLUSTERHOST mail5.versatel.nl mfrey1@versatel.nl
+Delivered-To: CLUSTERHOST mail5.versatel.nl sample6@example.nl
 Received: (qmail 14494 invoked by uid 0); 10 May 2014 05:55:32 -0000
-Received: from mail.bruun-rasmussen.dk ([77.234.168.9])
-          (envelope-sender <online-bounce@bruun-rasmussen.dk>)
+Received: from mx.example.dk ([77.234.168.9])
+          (envelope-sender <bounces@example.dk>)
           by mail5.versatel.nl (qmail-ldap-1.03) with SMTP
           for < >; 10 May 2014 05:55:32 -0000
 X-Footer: YnJ1dW4tcmFzbXVzc2VuLmRr
-Received: from bifrost2.bruun-rasmussen.dk ([10.1.10.57])
-	by mail.bruun-rasmussen.dk (Kerio Connect 8.2.4);
+Received: from server2.local ([10.1.10.57])
+	by mx.example.dk (Kerio Connect 8.2.4);
 	Sat, 10 May 2014 07:53:58 +0200
-Received: from bifrost2.bruun-rasmussen.dk (localhost [127.0.0.1])
-	by bifrost2.bruun-rasmussen.dk (Postfix) with ESMTP id 30C93F086;
+Received: from server2.local (localhost [127.0.0.1])
+	by server2.local (Postfix) with ESMTP id 30C93F086;
 	Sat, 10 May 2014 00:44:19 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple; d=bruun-rasmussen.dk;
-	s=bifrost.prod; t=1399675459;
-	bh=DUWteCBH3Q4BCOj31lLr4Z6dPWB8XXdqdr+JEKl3AiU=;
-	h=Date:From:To:Message-ID:Subject:MIME-Version:Content-Type:
-	 List-Unsubscribe;
-	b=ntIk+2HNJBNOgorlCqdMFCSHlBgQlIws2Ql7AUrYE1gOA7A9hGY2aoGxWNbW77o2E
-	 LzwyJDI00UqLAXlPckJwnr4ODFBASDBX2LgrreZfuFA/jso3d9DlBR9+s6uImvo/ZX
-	 tWm8KS5CymEJhUkkWIKxkGE2tQzzQ/WEFwi2SY78=
 Date: Sat, 10 May 2014 00:44:19 +0200 (CEST)
-From: Bruun Rasmussen Online <online@bruun-rasmussen.dk>
-To: Marco Frey <mfrey1@versatel.nl>
-Message-ID: <123838202.117191399675459198.JavaMail.drift@bruun-rasmussen.dk>
+From: Sample Sender <sample.sender@example.dk>
+To: A. Recipient <sample6@example.nl>
+Message-ID: <123838202.117191399675459198.MTA@example.dk>
 Subject: 9 new lots matches your search criteria
 MIME-Version: 1.0
-Content-Type: multipart/related; 
+Content-Type: multipart/related;
 	boundary="----=_Part_11761_708495516.1399675459094"
-X-Agent-Search-For: pedersen
-X-Mail-Generated: bifrost2; Sat May 10 00:44:19 CEST 2014
 Precedence: bulk
-List-Unsubscribe: <http://www.bruun-rasmussen.dk/delete-agent.do?onlineAgentId=28537509&utm_source=searchagent-unsubscribe&utm_medium=email>
-X-Agent-Id: 28537509
-X-Agent-Item-Category: 
-X-Customer-Number: 820409
-X-Language: en
-X-Mail-Dispatched: bifrost2; Sat May 10 00:44:19 CEST 2014
 
 ------=_Part_11761_708495516.1399675459094
 Content-Type: text/html; charset=ISO-8859-1
@@ -464,5 +448,3 @@ bk8/x+1bissi7kYMPUHNcwurIfGTS+S2Bp4XGf8AppWpJqVsfme3YN6g4P6VMOvqXU6eh1pJ9xWR
 g9fWriskiB0bKnkGgRy+ufvNRI9FArMEOK1dQXffSH3qtsqWMpG1jY5KgH1HFKIJF+5IT7OM1c2C
 nBaQGTHYXZ1uS8PlLG1ssIwSTkMSTjHvWikAU5PzN6mpwuKdt70JDbuf/9k=
 ------=_Part_11761_708495516.1399675459094--
-
-
