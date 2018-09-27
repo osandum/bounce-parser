@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>net.sandum</groupId>
-        <artifactId>basepom</artifactId>
-        <version>1</version>
+        <groupId>org.basepom</groupId>
+        <artifactId>basepom-minimal</artifactId>
+        <version>27</version>
     </parent>
 
     <groupId>dk.sandum</groupId>
@@ -58,7 +58,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.12</version>
+            <version>1.6.6</version>
             <scope>test</scope>
         </dependency>
         <dependency>
