@@ -17,9 +17,9 @@ public class EximFailure implements Serializable {
     private String m_reason;
     private String m_statusCode;
 
-    private final static Logger LOG = LoggerFactory.getLogger(EximFailure.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EximFailure.class);
 
-    private final static Pattern EXIM_FAILURE_PATTERN
+    private static final Pattern EXIM_FAILURE_PATTERN
             = Pattern.compile("This message was created automatically by mail delivery software\\..*"
                      + "This is a permanent error\\. The following address\\(es\\) failed:\\s+(\\S+@\\S+)(.*)"
                      , Pattern.DOTALL | Pattern.MULTILINE);
@@ -27,10 +27,10 @@ public class EximFailure implements Serializable {
 //    (sa) User profile spam level exceeded
 //    (sa) Adjust if needed at http://www.mailme.dk
 
-    private final static Pattern EXIM_TAIL1_PATTERN
+    private static final Pattern EXIM_TAIL1_PATTERN
             = Pattern.compile("Message rejected by (\\S*)\\s+([^\\n]+)"
                      , Pattern.DOTALL | Pattern.MULTILINE);
-    private final static Pattern EXIM_TAIL2_PATTERN
+    private static final Pattern EXIM_TAIL2_PATTERN
             = Pattern.compile("host (\\S*)\\s+\\[[0-9.]+\\]:\\s+([^\\n]+)\\s+\\d+[- ](\\d+\\.\\d+\\.\\d+)\\s"
                      , Pattern.DOTALL | Pattern.MULTILINE);
 

@@ -15,18 +15,18 @@ public class QmailFailure implements Serializable {
     private String m_reportingHost;
     private String m_recipient;
     private String m_reason;
-    
-    private final static Logger LOG = LoggerFactory.getLogger(QmailFailure.class);
 
-    private final static Pattern QMAIL_FAILURE_PATTERN
-            = Pattern.compile("This is the qmail-send program at ([-.a-z0-9]*[^.])\\..*" 
+    private static final Logger LOG = LoggerFactory.getLogger(QmailFailure.class);
+
+    private static final Pattern QMAIL_FAILURE_PATTERN
+            = Pattern.compile("This is the qmail-send program at ([-.a-z0-9]*[^.])\\..*"
                    + "This is a permanent error; I've given up\\. Sorry it didn't work out\\..*"
                    + "^<([^<>]+)>:\\s+([^\\n]+)$"
                     , Pattern.DOTALL | Pattern.MULTILINE);
 
     public static QmailFailure tryParse(String plainText) throws ParseException {
         Matcher m = QMAIL_FAILURE_PATTERN.matcher(plainText);
-        if (!m.find()) 
+        if (!m.find())
             return null;
 
         QmailFailure res = new QmailFailure();
@@ -34,7 +34,7 @@ public class QmailFailure implements Serializable {
         res.m_reportingHost = m.group(1);
         res.m_recipient = m.group(2);
         res.m_reason = m.group(3);
-        
+
         return res;
     }
 
@@ -49,6 +49,6 @@ public class QmailFailure implements Serializable {
     public String getReason() {
         return m_reason;
     }
-    
-    
+
+
 }
