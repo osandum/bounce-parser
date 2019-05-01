@@ -12,13 +12,13 @@ import javax.mail.internet.ParseException;
  * @author osa
  */
 public class MailDisposition {
-    public static enum ActionMode {
+    public enum ActionMode {
         MANUAL, AUTOMATIC
     };
-    public static enum SendingMode {
+    public enum SendingMode {
         MANUAL, AUTOMATIC
     };
-    public static enum DispositionType {
+    public enum DispositionType {
         DISPLAYED, DELETED
     };
 
@@ -32,7 +32,7 @@ public class MailDisposition {
 //              disposition-type
 //              [ "/" disposition-modifier
 //              *( "," disposition-modifier ) ]
-    private final static Pattern PP = Pattern.compile("(manual|automatic)-action/MDN-sent-(manual|automatic)[aly]+;\\s*(displayed|deleted)(/(.+))?");
+    private static final Pattern PP = Pattern.compile("(manual|automatic)-action/MDN-sent-(manual|automatic)[aly]+;\\s*(displayed|deleted)(/(.+))?");
 
     public static MailDisposition parse(String disp) throws ParseException {
         Matcher m = PP.matcher(disp);
@@ -64,9 +64,9 @@ public class MailDisposition {
     public List<String> getModifiers() {
         return m_modifiers;
     }
-    
+
     public boolean isAutomatedDeletion() {
         return m_actionMode == ActionMode.AUTOMATIC && m_sendingMode == SendingMode.AUTOMATIC && m_dispositionType == DispositionType.DELETED;
     }
-    
+
 }
