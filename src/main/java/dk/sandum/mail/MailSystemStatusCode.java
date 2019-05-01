@@ -12,9 +12,11 @@ import javax.mail.internet.ParseException;
  */
 public class MailSystemStatusCode implements Serializable {
 
-    private short m_class;
-    private short m_subject;
-    private short m_detail;
+    private static final long serialVersionUID = 6225102679735630328L;
+
+    private final short m_class;
+    private final short m_subject;
+    private final short m_detail;
     private transient String _t;
     /**
      * Success
@@ -28,18 +30,25 @@ public class MailSystemStatusCode implements Serializable {
      * Permanent Failure
      */
     public static final int CLASS_PERMANENT = 5;
+
     private final static Pattern PP = Pattern.compile("([245])\\.([0-9]{1,3})\\.([0-9]{1,3})(\\s.*)?");
+
+    private MailSystemStatusCode(short c, short s, short d) {
+        this.m_class = c;
+        this.m_subject = s;
+        this.m_detail = d;
+    }
 
     public static MailSystemStatusCode parse(String code) throws ParseException {
         Matcher m = PP.matcher(code);
         if (!m.matches())
             throw new ParseException();
 
-        MailSystemStatusCode res = new MailSystemStatusCode();
-        res.m_class = Short.parseShort(m.group(1));
-        res.m_subject = Short.parseShort(m.group(2));
-        res.m_detail = Short.parseShort(m.group(3));
-        return res;
+        short c = Short.parseShort(m.group(1));
+        short s = Short.parseShort(m.group(2));
+        short d = Short.parseShort(m.group(3));
+
+        return new MailSystemStatusCode(c, s, d);
     }
 
     public boolean isSuccess() {
