@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FindBugsFilter>
+  <And>
+    <Bug category="PERFORMANCE"/>
+    <Class name="~dk.sandum.mail\.[^.]+"/>
+  </And>
+  <And>
+    <Bug code="EI2"/>
+    <Class name="~dk.sandum.mail\.[^.]+"/>
+  </And>
+  <And>
+    <Bug code="EI"/>
+    <Class name="~dk.sandum.mail\.[^.]+"/>
+  </And>
+</FindBugsFilter>

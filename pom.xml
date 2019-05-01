@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.basepom</groupId>
         <artifactId>basepom-minimal</artifactId>
-        <version>27</version>
+        <version>28</version>
     </parent>
 
     <groupId>dk.sandum</groupId>
@@ -32,16 +32,28 @@
                     <source>1.6</source>
                     <target>1.6</target>
                 </configuration>
-            </plugin>          
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
+    <properties>
+        <spotbugs.excludeFilterFile>config/spotbugs-exclude.xml</spotbugs.excludeFilterFile>
+    </properties>
+
     <dependencies>
-        <dependency>
+        <!-- dependency>
             <groupId>javax.mail</groupId>
             <artifactId>javax.mail-api</artifactId>
             <version>1.5.6</version>
-        </dependency>
+        </dependency -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
@@ -52,7 +64,7 @@
             <groupId>com.sun.mail</groupId>
             <artifactId>javax.mail</artifactId>
             <version>1.5.6</version>
-            <scope>test</scope>
+            <!-- scope>test</scope -->
         </dependency>
 
         <dependency>
