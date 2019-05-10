@@ -1,13 +1,14 @@
 package dk.sandum.mail;
 
 import javax.mail.internet.ParseException;
-import junit.framework.TestCase;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  *
  * @author osa
  */
-public class QmailFailureParserTest extends TestCase {
+public class QmailFailureParserTest {
 
     private final static String PLAIN_FAILURE1 = "Hi. This is the qmail-send program at qmail29.zonnet.nl.\n" +
 "I'm afraid I wasn't able to deliver your message to the following addresses.\n" +
@@ -41,19 +42,17 @@ public class QmailFailureParserTest extends TestCase {
 "user is over quota\n" +
 "";
 
-    public QmailFailureParserTest(String testName) {
-        super(testName);
-    }
-
+    @Test
     public void testFailure1() throws ParseException {
         QmailFailure res = QmailFailure.tryParse(PLAIN_FAILURE1);
 
-        assertNotNull(res);
+        Assert.assertNotNull(res);
     }
 
+    @Test
     public void testFailure2() throws ParseException {
         QmailFailure res = QmailFailure.tryParse(PLAIN_FAILURE2);
 
-        assertNotNull(res);
+        Assert.assertNotNull(res);
     }
 }

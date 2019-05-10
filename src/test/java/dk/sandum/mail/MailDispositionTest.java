@@ -1,20 +1,17 @@
 package dk.sandum.mail;
 
 import javax.mail.internet.ParseException;
-import junit.framework.TestCase;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
- *
  * @author osa
  */
-public class MailDispositionTest extends TestCase {
-    
-    public MailDispositionTest(String testName) {
-        super(testName);
-    }
-    
-    // TODO add test methods here. The name must begin with 'test'. For example:
+public class MailDispositionTest {
+
+    @Test
     public void testParse() throws ParseException {
         MailDisposition md = MailDisposition.parse("automatic-action/MDN-sent-automatically; deleted");
+        Assert.assertNotNull(md);
     }
 }

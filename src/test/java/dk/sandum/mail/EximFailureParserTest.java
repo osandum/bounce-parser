@@ -1,12 +1,13 @@
 package dk.sandum.mail;
 
 import javax.mail.internet.ParseException;
-import junit.framework.TestCase;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  * @author osa
  */
-public class EximFailureParserTest extends TestCase {
+public class EximFailureParserTest {
 
     private final static String PLAIN_FAILURE1 = "This message was created automatically by mail delivery software.\n" +
 "\n" +
@@ -21,7 +22,7 @@ public class EximFailureParserTest extends TestCase {
 "------ This is a copy of the message, including all the headers. ------\n" +
 "------ The body of the message is 21525 characters long; only the first\n" +
 "...";
-    
+
     private final static String PLAIN_FAILURE2 = "This message was created automatically by mail delivery software.\n" +
 "\n" +
 "A message that you sent could not be delivered to one or more of its\n" +
@@ -36,20 +37,19 @@ public class EximFailureParserTest extends TestCase {
 "    550 5.1.1  https://support.google.com/mail/?p=NoSuchUser u8-v6si8328409plh.253 - gsmtp\n" +
 "\n" +
 "------ This is a copy of the message, including all the headers. ------";
-    
-    public EximFailureParserTest(String testName) {
-        super(testName);
-    }
 
+
+    @Test
     public void testFailure1() throws ParseException {
         EximFailure res = EximFailure.tryParse(PLAIN_FAILURE1);
-        
+
         assertNotNull(res);
     }
 
+    @Test
     public void testFailure2() throws ParseException {
         EximFailure res = EximFailure.tryParse(PLAIN_FAILURE2);
-        
+
         assertNotNull(res);
     }
 }
