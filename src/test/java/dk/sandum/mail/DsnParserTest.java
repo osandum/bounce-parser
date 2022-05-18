@@ -101,17 +101,20 @@ public class DsnParserTest {
 
     @Test
     public void testEximResponse() throws MessagingException, BounceParserException {
-        assertEquals(MailDeliveryAction.failed, parseEml("exim-failure-sample.eml").getDeliveryAction());
+        MailDeliveryStatus mds = parseEml("exim-failure-sample.eml");
+        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
     }
 
     @Test
     public void testGoogleResponse() throws MessagingException, BounceParserException {
-        assertEquals(MailDeliveryAction.delayed, parseEml("gmail-delayed-sample.eml").getDeliveryAction());
+        MailDeliveryStatus mds = parseEml("gmail-delayed-sample.eml");
+        assertEquals(MailDeliveryAction.delayed, mds.getDeliveryAction());
     }
 
     @Test
     public void testSurftownResponse() throws MessagingException, BounceParserException {
-        assertEquals(MailDeliveryAction.failed, parseEml("surftown-failure-sample.eml").getDeliveryAction());
+        MailDeliveryStatus mds = parseEml("surftown-failure-sample.eml");
+        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
     }
 
     @Test
