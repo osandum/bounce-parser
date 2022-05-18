@@ -29,8 +29,10 @@ public class BounceParser {
         res.setSentDate(msg.getSentDate());
 
         String id[] = msg.getHeader("Message-ID");
-        if (id != null && id.length > 0)
+        if (id != null && id.length > 0) {
             res.setMessageId(id[0]);
+            LOG.debug("Message-ID: {}", res.getMessageId());
+        }
 
         String to[] = msg.getHeader("To");
         if (to != null && to.length > 0 && !"<>".equals(to[0]))
@@ -63,14 +65,14 @@ public class BounceParser {
     private static void parsePart(Part p, MailDeliveryStatus res) throws MessagingException, IOException {
         String ct = p.getContentType().toLowerCase();
 
-      /*if (LOG.isDebugEnabled()) {
+        if (LOG.isDebugEnabled()) {
             LOG.debug("##  ContentType: {}", ct);
             Enumeration headers = p.getAllHeaders();
             while (headers.hasMoreElements()) {
                 Header h = (Header) headers.nextElement();
                 LOG.debug("##  {}={}", h.getName(), h.getValue());
             }
-        }*/
+        }
 
         if (ct.startsWith("multipart/")) {
             MimeMultipart c = (MimeMultipart) p.getContent();
@@ -138,7 +140,7 @@ public class BounceParser {
                     String name = e.getName().toLowerCase();
                     String value = e.getValue();
 
-                    LOG.debug("##  DSN {}={}", name, value);
+                    LOG.debug("##  DSN {}: \"{}\"", name, value);
                     if ("action".equals(name))
                         res.setDeliveryAction(MailDeliveryAction.parse(value));
                     if ("status".equals(name))
