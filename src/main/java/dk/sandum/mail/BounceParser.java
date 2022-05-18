@@ -40,10 +40,10 @@ public class BounceParser {
             parsePart(msg, res);
         }
         catch (IOException ex) {
-            throw new BounceParserException("failed to parse MIME message [" + msg.getContentType() + "]: " + ex.getMessage());
+            throw new BounceParserException(res.getMessageId() + ": failed to parse MIME message [" + msg.getContentType() + "]: " + ex.getMessage());
         }
         catch (ParseException ex) {
-            throw new BounceParserException("failed to parse MIME message [" + msg.getContentType() + "]: " + ex.getMessage());
+            throw new BounceParserException(res.getMessageId() + ": failed to parse MIME message [" + msg.getContentType() + "]: " + ex.getMessage());
         }
 
         if (res.getDeliveryAction() == null) {
@@ -54,7 +54,7 @@ public class BounceParser {
             if (res.getDeliveryAction().isFailed())
                 res.setDeliveryStatus(MailSystemStatusCode.parse("4.0.0"));
             else
-                throw new BounceParserException("Unrecognized DSN format. No status code found.");
+                throw new BounceParserException(res.getMessageId() + ": Unrecognized DSN format. No status code found.");
         }
 
         return res;
