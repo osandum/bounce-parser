@@ -46,8 +46,10 @@ public class BounceParser {
             throw new BounceParserException("failed to parse MIME message [" + msg.getContentType() + "]: " + ex.getMessage());
         }
 
-        if (res.getDeliveryAction() == null)
-            throw new BounceParserException("Unrecognized DSN format. No action code found.");
+        if (res.getDeliveryAction() == null) {
+            LOG.debug("{}: Unrecognized DSN format. No action code found.", res.getMessageId());
+            res.setDeliveryAction(MailDeliveryAction.unknown);
+        }
         if (res.getDeliveryStatus() == null) {
             if (res.getDeliveryAction().isFailed())
                 res.setDeliveryStatus(MailSystemStatusCode.parse("4.0.0"));

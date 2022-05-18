@@ -5,7 +5,7 @@ package dk.sandum.mail;
  */
 public enum MailDeliveryAction {
 
-    failed, failure, delayed, delivered, relayed, expanded;
+    failed, failure, delayed, delivered, relayed, expanded, unknown;
 
     public static MailDeliveryAction parse(String action) {
         return action == null ? null : valueOf(action.toLowerCase());
