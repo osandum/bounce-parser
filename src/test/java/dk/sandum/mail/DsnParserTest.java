@@ -118,6 +118,13 @@ public class DsnParserTest {
     }
 
     @Test
+    public void testQuotaExceededResponse() throws MessagingException, BounceParserException {
+        MailDeliveryStatus mds = parseEml("quota-exceeded-sample.eml");
+        assertEquals("4.2.2", mds.getDeliveryStatus().toString());
+        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
+    }
+
+    @Test
     public void testBadAddress() throws MessagingException, BounceParserException {
         try {
             parseEml("bad-address-sample.eml");

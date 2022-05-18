@@ -62,6 +62,8 @@ public class BounceParser {
         return res;
     }
 
+    private static final Pattern QUOTA_EXCEEDED = Pattern.compile("quota exceeded|over quota", Pattern.DOTALL | Pattern.MULTILINE);
+
     private static void parsePart(Part p, MailDeliveryStatus res) throws MessagingException, IOException {
         String ct = p.getContentType().toLowerCase();
 
@@ -125,7 +127,10 @@ public class BounceParser {
         }
         else if (ct.startsWith("message/delivery-status")) {
             // Niiiiice, we got an http://rfc.net/rfc3464.html DSN:
-            InputStream s = new BufferedInputStream((InputStream) p.getContent());
+            MailDeliveryAction action = null;
+            MailSystemStatusCode status = null;
+            String diagnostic = null;
+            InputStream s = new BufferedInputStream((InputStream)p.getContent());
 
             do {
                 InternetHeaders dsnHeaders = new InternetHeaders(s);
@@ -142,18 +147,31 @@ public class BounceParser {
 
                     LOG.debug("##  DSN {}: \"{}\"", name, value);
                     if ("action".equals(name))
-                        res.setDeliveryAction(MailDeliveryAction.parse(value));
+                        action = MailDeliveryAction.parse(value);
                     if ("status".equals(name))
-                        res.setDeliveryStatus(MailSystemStatusCode.parse(value));
+                        status = MailSystemStatusCode.parse(value);
                     if ("original-recipient".equals(name))
                         res.setOriginalRecipient(parseRecipient(value));
                     if ("final-recipient".equals(name))
                         res.setFinalRecipient(parseRecipient(value));
                     if ("reporting-mta".equals(name))
                         res.setReportingAgent(value);
+                    if ("diagnostic-code".equals(name))
+                        diagnostic = value.toLowerCase();
                 }
             } while (s.available() > 0);
             s.close();
+
+            if (diagnostic != null && QUOTA_EXCEEDED.matcher(diagnostic).find()) {
+                if (action == null)
+                    action = MailDeliveryAction.failed;
+                if (status == null)
+                    status = MailSystemStatusCode.parse("4.2.2");
+            }
+            if (action != null)
+                res.setDeliveryAction(action);
+            if (status != null)
+                res.setDeliveryStatus(status);
         }
         else if (ct.startsWith("message/disposition-notification")) {
             // Hmmmm, we got an http://tools.ietf.org/html/rfc3798 MDN:
