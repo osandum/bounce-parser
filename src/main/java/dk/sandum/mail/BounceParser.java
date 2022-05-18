@@ -180,7 +180,7 @@ public class BounceParser {
                 }
             } while (s.available() > 0);
         }
-        else if (ct.startsWith("text/rfc822")) {
+        else if (ct.startsWith("text/rfc822") || ct.startsWith("message/rfc822-headers")) {
             InputStream s = new BufferedInputStream((InputStream) p.getContent());
 
             do {

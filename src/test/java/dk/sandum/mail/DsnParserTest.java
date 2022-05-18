@@ -1,6 +1,10 @@
 package dk.sandum.mail;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -8,6 +12,7 @@ import javax.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import static org.junit.Assert.*;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -16,69 +21,115 @@ import org.junit.Test;
 public class DsnParserTest {
     private final static Logger LOG = LoggerFactory.getLogger(DsnParserTest.class);
 
+    private static File samplesDir;
+
+    @BeforeClass
+    public static void setUpClass() {
+        samplesDir = new File("samples");
+        assertTrue(samplesDir.getAbsolutePath() + ": samples directory not found", samplesDir.exists() && samplesDir.isDirectory());
+        LOG.info("\n# Loading samples from {}", samplesDir.getAbsolutePath());
+    }
+
     private MailDeliveryStatus parseEml(String eml) throws MessagingException, BounceParserException {
-        InputStream is = getClass().getResourceAsStream(eml);
+        return parseEml(_res(eml));
+    }
 
-        Session s = Session.getDefaultInstance(new Properties());
-        MimeMessage dsn = new MimeMessage(s, is);
-        assertNotNull(dsn);
+    private static URL _res(String eml) {
+        URL res = DsnParserTest.class.getClassLoader().getResource(eml);
+        assertNotNull(eml, res);
+        return res;
+    }
 
+    private MailDeliveryStatus parseEml(URL src) throws MessagingException, BounceParserException {
+        MimeMessage dsn = _parseMail(src);
 
-        LOG.info("\n# ============================\n# Parse \"" + dsn.getSubject() + "\"" + dsn.getMessageID());
+        LOG.debug("\n# ============================\n# {}\n# Parse \"{}\" {}", src, dsn.getSubject(), dsn.getMessageID());
         MailDeliveryStatus mds = BounceParser.parseMessage(dsn);
         assertNotNull(mds);
 
         return mds;
     }
 
+    private static MimeMessage _parseMail(URL src) throws MessagingException {
+        LOG.info("parse({})", src);
+        Session s = Session.getDefaultInstance(new Properties());
+        try (InputStream is = src.openStream()) {
+            MimeMessage dsn = new MimeMessage(s, is);
+            assertNotNull(dsn);
+            return dsn;
+        }
+        catch (IOException ex) {
+            throw new AssertionError(ex.getMessage());
+        }
+    }
+
     @Test
     public void testSampleDsn() throws MessagingException, BounceParserException {
-        assertEquals(MailDeliveryAction.failed, parseEml("/sample-dsn.eml").getDeliveryAction());
+        MailDeliveryStatus mds = parseEml("sample-dsn.eml");
+        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
     }
 
     @Test
     public void testLmtpResponse() throws MessagingException, BounceParserException {
-        assertEquals(MailDeliveryAction.failed, parseEml("/lmtp-sample.eml").getDeliveryAction());
+        MailDeliveryStatus mds = parseEml("lmtp-sample.eml");
+        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
     }
 
     @Test
     public void testQmailResponse() throws MessagingException, BounceParserException {
-        assertEquals(MailDeliveryAction.failed, parseEml("/qmail-failure-sample.eml").getDeliveryAction());
+        MailDeliveryStatus mds = parseEml("qmail-failure-sample.eml");
+        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
     }
 
     @Test
-    public void testMdn() throws MessagingException, BounceParserException {
-        assertEquals(MailDeliveryAction.failed, parseEml("/dovecot-mdn-sample.eml").getDeliveryAction());
+    public void testDovecotMdn() throws MessagingException, BounceParserException {
+        MailDeliveryStatus mds = parseEml("dovecot-mdn-sample.eml");
+        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
     }
 
     @Test
     public void testSkylineDk() throws MessagingException, BounceParserException {
-        assertEquals(MailDeliveryAction.failed, parseEml("/skylinemail_dk.eml").getDeliveryAction());
+        MailDeliveryStatus mds = parseEml("skylinemail_dk.eml");
+        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
+    }
+
+    @Test
+    public void testKundenserverDe() throws MessagingException, BounceParserException {
+        MailDeliveryStatus mds = parseEml("kundenserver_de.eml");
+        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
     }
 
     @Test
     public void testEximResponse() throws MessagingException, BounceParserException {
-        assertEquals(MailDeliveryAction.failed, parseEml("/exim-failure-sample.eml").getDeliveryAction());
+        assertEquals(MailDeliveryAction.failed, parseEml("exim-failure-sample.eml").getDeliveryAction());
     }
 
     @Test
     public void testGoogleResponse() throws MessagingException, BounceParserException {
-        assertEquals(MailDeliveryAction.delayed, parseEml("/gmail-delayed-sample.eml").getDeliveryAction());
+        assertEquals(MailDeliveryAction.delayed, parseEml("gmail-delayed-sample.eml").getDeliveryAction());
     }
 
     @Test
     public void testSurftownResponse() throws MessagingException, BounceParserException {
-        assertEquals(MailDeliveryAction.failed, parseEml("/surftown-failure-sample.eml").getDeliveryAction());
+        assertEquals(MailDeliveryAction.failed, parseEml("surftown-failure-sample.eml").getDeliveryAction());
     }
 
     @Test
     public void testBadAddress() throws MessagingException, BounceParserException {
         try {
-            parseEml("/bad-address-sample.eml");
+            parseEml("bad-address-sample.eml");
             fail("BounceParserException expected");
         }
         catch (BounceParserException ex) {
             // expected
+        }
+    }
+
+    @Test
+    public void testLocalSamples() throws MessagingException, BounceParserException, MalformedURLException {
+        for (File sampleFile : samplesDir.listFiles()) {
+            MailDeliveryStatus dsn = parseEml(sampleFile.toURI().toURL());
+            assertNotNull(sampleFile.getAbsolutePath(), dsn);
         }
     }
 }
