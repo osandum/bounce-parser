@@ -125,6 +125,24 @@ public class DsnParserTest {
     }
 
     @Test
+    public void testTOnlineQuota() throws MessagingException, BounceParserException {
+        MailDeliveryStatus mds = parseEml("t-online-quota-sample.eml");
+        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
+        assertEquals("5.2.2", mds.getDeliveryStatus().toString());
+        assertNotNull(mds.getFinalRecipient());
+    }
+
+    @Test
+    public void testForwardedPolicyFailure() throws MessagingException, BounceParserException {
+        MailDeliveryStatus mds = parseEml("forwarded-policy-failure-sample.eml");
+        assertEquals(MailDeliveryAction.failed, mds.getDeliveryAction());
+        assertEquals("5.7.515", mds.getDeliveryStatus().toString());
+        assertNotNull(mds.getOriginalRecipient());
+        assertNotNull(mds.getFinalRecipient());
+        assertFalse(mds.getOriginalRecipient().getAddress().equalsIgnoreCase(mds.getFinalRecipient().getAddress()));
+    }
+
+    @Test
     public void testBadAddress() throws MessagingException, BounceParserException {
         try {
             parseEml("bad-address-sample.eml");

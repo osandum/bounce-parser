@@ -1,0 +1,84 @@
+Return-Path: <>
+Delivered-To: bounce@sys.sender.example
+Received: from mail.sender.example
+	by mail.sender.example with LMTP
+	id AAAAAAAAAAAAAAAAAAAAAAw
+	(envelope-from <>)
+	for <bounce@sys.sender.example>; Fri, 06 Mar 2026 10:46:26 +0100
+Received: from localhost (localhost [127.0.0.1])
+	by mail.sender.example (Postfix) with ESMTP id 1EA592ED4046
+	for <bounce@sys.sender.example>; Fri,  6 Mar 2026 10:46:26 +0100 (CET)
+Received: from smtprelay.relay.example (smtprelay.relay.example [192.0.2.1])
+	by mail.sender.example (Postfix) with ESMTPS id E883A2ED0BFB
+	for <bounce@sys.sender.example>; Fri,  6 Mar 2026 10:46:25 +0100 (CET)
+Received: by smtprelay.relay.example (Postfix)
+	id BE4D2E0713; Fri,  6 Mar 2026 10:46:25 +0100 (CET)
+Date: Fri,  6 Mar 2026 10:46:25 +0100 (CET)
+From: MAILER-DAEMON@smtprelay.relay.example (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: bounce@sys.sender.example
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="0C685E05B6.1772790385/smtprelay.relay.example"
+Content-Transfer-Encoding: 8bit
+Message-Id: <20260306094625.BE4D2E0713@smtprelay.relay.example>
+
+This is a MIME-encapsulated message.
+
+--0C685E05B6.1772790385/smtprelay.relay.example
+Content-Description: Notification
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+This is the mail system at host smtprelay.relay.example.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<jdoe@hotmail.example>: host
+    hotmail-com.olc.protection.outlook.com[52.101.68.1] said: 550 5.7.515
+    Access denied, sending domain SENDER.EXAMPLE doesn't meet the required
+    authentication level. The sender's domain in the 5322.From address doesn't
+    meet the authentication requirements defined for the sender.
+    Spf= Fail , Dkim= Fail , DMARC= Fail [AAAAAAAAAAAAAA.eurprd02.prod.outlook.com
+    2026-03-06T09:46:25.760Z AAAAAAAAAAAAAAAAAA] (in reply to end of DATA command)
+
+--0C685E05B6.1772790385/smtprelay.relay.example
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; smtprelay.relay.example
+Arrival-Date: Fri,  6 Mar 2026 10:46:25 +0100 (CET)
+
+Final-Recipient: rfc822; jdoe@hotmail.example
+Original-Recipient: rfc822;info@customer.example
+Action: failed
+Status: 5.7.515
+Remote-MTA: dns; hotmail-com.olc.protection.outlook.com
+Diagnostic-Code: smtp; 550 5.7.515 Access denied, sending domain
+    SENDER.EXAMPLE doesn't meet the required authentication level.
+    Spf= Fail , Dkim= Fail , DMARC= Fail
+
+--0C685E05B6.1772790385/smtprelay.relay.example
+Content-Description: Undelivered Message Headers
+Content-Type: text/rfc822-headers
+Content-Transfer-Encoding: 8bit
+
+Return-Path: <bounce@sys.sender.example>
+Date: Fri, 6 Mar 2026 10:46:17 +0100 (CET)
+From: Example Sender <sender@sender.example>
+To: John Doe <info@customer.example>
+Message-ID: <12345678.1772790377745.JavaMail@sender.example>
+Subject: Example subject
+Content-Type: multipart/related;
+	boundary="----=_Part_702_120854791.1772790377674"
+
+--0C685E05B6.1772790385/smtprelay.relay.example--
