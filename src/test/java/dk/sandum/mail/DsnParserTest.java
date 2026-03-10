@@ -12,6 +12,7 @@ import javax.mail.internet.MimeMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import static org.junit.Assert.*;
+import org.junit.Assume;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -26,8 +27,8 @@ public class DsnParserTest {
     @BeforeClass
     public static void setUpClass() {
         samplesDir = new File("samples");
-        assertTrue(samplesDir.getAbsolutePath() + ": samples directory not found", samplesDir.exists() && samplesDir.isDirectory());
-        LOG.info("\n# Loading samples from {}", samplesDir.getAbsolutePath());
+        if (samplesDir.exists() && samplesDir.isDirectory())
+            LOG.info("\n# Loading samples from {}", samplesDir.getAbsolutePath());
     }
 
     private MailDeliveryStatus parseEml(String eml) throws MessagingException, BounceParserException {
@@ -155,6 +156,7 @@ public class DsnParserTest {
 
     @Test
     public void testLocalSamples() throws MessagingException, BounceParserException, MalformedURLException {
+        Assume.assumeTrue("samples/ directory not present, skipping", samplesDir.exists() && samplesDir.isDirectory());
         for (File sampleFile : samplesDir.listFiles()) {
             MailDeliveryStatus dsn = parseEml(sampleFile.toURI().toURL());
             assertNotNull(sampleFile.getAbsolutePath(), dsn);
