@@ -118,6 +118,14 @@ public class BounceParser {
                     res.setDeliveryAction(MailDeliveryAction.failed);
                     res.setDeliveryStatus(MailSystemStatusCode.parse(xf.getStatusCode()));
                 }
+                else {
+                    TOnlineFailure tf = TOnlineFailure.tryParse(plainText);
+                    if (tf != null) {
+                        res.setFinalRecipient(parseRecipient(tf.getRecipient()));
+                        res.setDeliveryAction(MailDeliveryAction.failed);
+                        res.setDeliveryStatus(MailSystemStatusCode.parse(tf.getStatusCode()));
+                    }
+                }
             }
             // Analyze plainText - it will often contain a copy of our own mail
             // including all headers sent

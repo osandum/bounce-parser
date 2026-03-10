@@ -1,0 +1,36 @@
+Return-Path: <>
+Delivered-To: bounce@sys.sender.example
+Received: from mail.sender.example
+	by mail.sender.example with LMTP
+	id AAAAAAAAAAAAAAAAAAAAAAw
+	(envelope-from <>)
+	for <bounce@sys.sender.example>; Thu, 05 Mar 2026 01:20:52 +0100
+Received: from localhost (localhost [127.0.0.1])
+	by mail.sender.example (Postfix) with ESMTP id E25982E9860A
+	for <bounce@sys.sender.example>; Thu,  5 Mar 2026 00:48:02 +0100 (CET)
+Received: from mailout09.t-online.de (mailout09.t-online.de [194.25.134.84])
+	by mail.sender.example (Postfix) with ESMTPS id 8D3422E9565E
+	for <bounce@sys.sender.example>; Thu,  5 Mar 2026 00:48:02 +0100 (CET)
+Received: from mailin31.aul.t-online.de (mailin31.aul.t-online.de [10.223.144.71])
+	by mailout09.t-online.de (Postfix) with SMTP id 27D6637A08
+	for <bounce@sys.sender.example>; Thu,  5 Mar 2026 00:47:06 +0100 (CET)
+X-Failed-Recipients: jdoe@t-online.de
+From: Mail Delivery System <Mailer-Daemon@t-online.de>
+To: bounce@sys.sender.example
+Subject: Mail delivery failed: returning message to sender
+Message-Id: <AAAAAAAAAAAAA@mailin31.aul.t-online.de>
+Date: Thu, 5 Mar 2026 00:46:38 +0100
+
+|------------------------- Failed addresses follow: ---------------------|
+ <jdoe@t-online.de>
+   552 5.2.2 <jdoe@t-online.de> Quota exceeded (mailbox for user is full)
+
+|------------------------- Message header follows: ----------------------|
+Date: Thu, 5 Mar 2026 00:46:27 +0100 (CET)
+From: Example Sender <sender@sender.example>
+To: John Doe <jdoe@t-online.de>
+Message-ID: <12345678.1772667987429.JavaMail@sender.example>
+Subject: Example subject
+Content-Type: multipart/related;
+	boundary="----=_Part_18141_1614143431.1772667987419"
+
