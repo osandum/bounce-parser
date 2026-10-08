@@ -70,15 +70,14 @@ public class MailSystemStatusCode implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if (obj == null) {
+        if (obj == null)
             return false;
-        }
         if (obj == this)
             return true;
         if (getClass() != obj.getClass())
             return false;
         MailSystemStatusCode that = (MailSystemStatusCode) obj;
-        return this.m_class == that.m_class && this.m_subject != that.m_subject && this.m_detail != that.m_detail;
+        return this.m_class == that.m_class && this.m_subject == that.m_subject && this.m_detail == that.m_detail;
     }
 
     @Override
